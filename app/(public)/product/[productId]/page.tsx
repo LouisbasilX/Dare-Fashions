@@ -1,0 +1,87 @@
+import { createClient } from '@/lib/supabase/server'
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
+import AddToBasketButton from '@/components/products/AddToBasketButton'
+import { formatCurrency } from '@/lib/utils'
+
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{ productId: string }>
+}) {
+  const { productId } = await params
+  const supabase = await createClient()
+
+  const { data: product, error } = await supabase
+    .from('products')
+    .select('*')
+    .eq('id', productId)
+    .single()
+
+  if (error || !product) {
+    notFound()
+  }
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+        <Link href="/" className="hover:underline">Home</Link>
+        <span className="mx-2">›</span>
+        <span className="text-gray-700 dark:text-gray-300">{product.name}</span>
+      </nav>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* Image */}
+        <div className="bg-white dark:bg-[#1e1e1e] p-4 rounded-lg shadow">
+          {product.image_url ? (
+            <Image
+              src={product.image_url}
+              alt={product.name}
+              width={600}
+              height={600}
+              className="w-full h-auto object-contain rounded"
+              priority
+            />
+          ) : (
+            <div className="w-full h-96 bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 dark:text-gray-400">
+              No image available
+            </div>
+          )}
+        </div>
+
+        {/* Details */}
+        <div>
+          <h1 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
+            {product.name}
+          </h1>
+          {/* Price with high contrast */}
+          <p className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+            {formatCurrency(product.price)}
+          </p>
+          <div className="prose max-w-none mb-6">
+            <p className="text-gray-700 dark:text-gray-300">
+              {product.description || 'No description provided.'}
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <p className="text-sm">
+              <span className="font-medium text-gray-900 dark:text-white">Availability:</span>{' '}
+              {product.available > 0 ? (
+                <span className="text-green-600 dark:text-green-400">
+                  In stock ({product.available} available)
+                </span>
+              ) : (
+                <span className="text-red-600 dark:text-red-400">Out of stock</span>
+              )}
+            </p>
+          </div>
+
+          <AddToBasketButton productId={product.id} maxAvailable={product.available} />
+        </div>
+      </div>
+    </div>
+  )
+}

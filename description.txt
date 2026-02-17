@@ -1,0 +1,156 @@
+RP Apparels E‑Commerce – Project Summary
+🧱 Tech Stack
+Framework: Next.js 16 (App Router), React 19, TypeScript 5.6+
+
+Styling: Tailwind CSS 4
+
+Backend & Auth: Supabase (PostgreSQL, Auth, Realtime) – latest compatible versions
+
+Image Hosting: Cloudinary (free tier, with environment variables)
+
+Package Manager: npm (or pnpm)
+
+📁 Core Folder Structure
+text
+app/
+  (public)/               # Public routes (no auth required)
+    page.tsx              # Homepage (products list)
+    products/[productId]/ # Product detail page
+    basket/[basketId]/    # Individual basket view
+    baskets/              # List of user's baskets (pending, invalid, paid)
+    login/                 # Login page
+    register/              # Registration page
+    faq/                   # FAQ page
+  admin/                   # Protected admin routes
+    layout.tsx             # Admin layout (role check)
+    page.tsx               # Dashboard
+    baskets/               # Manage baskets
+    deliveries/            # Manage deliveries
+    products/              # Product CRUD
+  api/                     # (optional) API routes
+components/                # Reusable components
+  ui/                      # Buttons, inputs, etc.
+  products/                # ProductCard, ProductSearch
+  basket/                  # BasketIcon, BasketItemList, OrderModal, BasketActions
+  admin/                   # Admin-specific components
+lib/
+  supabase/                # Supabase clients (client, server, admin)
+  types.ts                  # TypeScript types (derived from DB)
+  utils.ts                  # Format currency, etc.
+actions/                   # Server actions (basket.ts, admin.ts)
+proxy.ts                   # Edge proxy (optional, can be removed)
+🗄️ Database Schema (Key Tables)
+products: id, name, description, price, stock, available, image_url
+
+baskets: id, customer_id, guest_session_id, status (pending, paid, shipped, invalid), customer_name, phone, state, delivery_note, paid_at, created_at
+
+basket_items: id, basket_id, product_id, quantity, price_at_time
+
+orders: id, original_basket_id, customer_id, guest_session_id, customer_name, phone, state, total, paid_at (immutable snapshot)
+
+order_items: id, order_id, product_id, product_name, quantity, price_at_time, subtotal
+
+deliveries: id, state, status (pending, shipped, completed), assigned_at, shipped_at
+
+customers: id, role (default 'user'), name, phone, state (optional)
+
+Triggers:
+
+Automatic customers row creation on new auth user.
+
+Basket status updates when items or product availability change.
+
+🔐 Authentication & Roles
+Supabase Auth with email/password (email confirmation disabled for testing).
+
+Guest users identified by guest_session_id cookie.
+
+Registered users have a customers record with role ('user' or 'admin').
+
+Admin routes protected by layout (checks role === 'admin').
+
+Admin server actions verify role.
+
+🛒 Guest & User Flows
+Guest: Can browse, add to basket (cookie‑based session). After filling details in modal, order is sent via WhatsApp. Basket becomes paid when admin marks it; a new empty basket is auto‑created.
+
+Registered user: Same flow, but baskets linked to customer_id. After login, any guest baskets are transferred via linkGuestBasketsToUser.
+
+Basket list (/baskets) shows pending, invalid, and paid orders (from orders table).
+
+📦 Order & Payment Flow
+User adds items → basket created (pending).
+
+User fills details in modal → saved to basket.
+
+Admin (via WhatsApp link) views basket at /admin/baskets/[id] and clicks "Mark as Paid".
+
+mark_baskets_paid RPC:
+
+Checks stock, deducts available.
+
+Creates an immutable order and order_items snapshot.
+
+Marks original basket paid.
+
+Creates a new empty pending basket for the same user/guest.
+
+Stock is reduced only once; order history preserved.
+
+📦 Delivery Management
+Admin can assign multiple baskets (by state) to a delivery.
+
+Deliveries can be marked shipped, which updates all baskets in that delivery.
+
+📸 Product Images
+Upload via Cloudinary using server action (uploadProductImage).
+
+Environment variables: NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET.
+
+📱 WhatsApp Integration
+Modal collects customer details, saves to basket, then opens WhatsApp with formatted message including admin link.
+
+🚀 Current Status
+All core features implemented and tested.
+
+Admin role check active (set manually via SQL).
+
+Guest and registered user flows work.
+
+Real‑time notifications (toast) on basket status changes.
+
+🔧 Pending / Optional Enhancements
+Product edit/delete in admin.
+
+Delivery list enhancements (export CSV).
+
+Order confirmation emails.
+
+Pagination for product list.
+
+Soft delete for products (to preserve order history).
+
+Add loading skeletons and better error boundaries.
+
+🧪 Testing Credentials
+Admin user: set role manually in customers table.
+
+Regular user: register via /register.
+
+📌 Important Environment Variables
+text
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+✅ Quick Commands
+Dev: npm run dev
+
+Build: npm run build
+
+Generate types: npx supabase@latest gen types typescript --linked > lib/supabase/types.ts
+
+This summary captures the entire project's essence, enabling a new chat to continue development seamlessly.
