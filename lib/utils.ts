@@ -34,9 +34,6 @@ export const isProductNew = (createdAt: string): boolean => {
 }
 
 export const getBaseUrl = () => {
-  if (process.env.VERCEL_URL) {
-    // Vercel automatically sets this env var
-    return `https://${process.env.VERCEL_URL}`;
-  }
-  return process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  // For debugging – replace with your actual Vercel URL
+  return 'https://rp-apparels.vercel.app';
 };
