@@ -2,6 +2,7 @@
 
 import jsPDF from 'jspdf'
 import autoTable, { type CellHookData } from 'jspdf-autotable'
+import { getVideoThumbnailUrl } from '@/lib/cloudinary-helpers'
 
 interface OrderItem {
   product_name: string
@@ -9,6 +10,7 @@ interface OrderItem {
   price_at_time: number
   subtotal: number
   image_url?: string | null
+  video_url?: string | null
 }
 
 interface Order {
@@ -62,13 +64,24 @@ export default function DownloadOrderPDF({ order }: { order: Order }) {
     // Build table rows
     const rows = []
     for (const item of order.items) {
-      const imgData = await getBase64Image(item.image_url)
+      
+      // Determine which image to display and which URL to link to
+                let displayImageUrl = item.image_url
+                let linkUrl = item.image_url
+      
+                // If no image but video exists, use video thumbnail for display and video URL for linking
+                if (!displayImageUrl && item.video_url) {
+                  displayImageUrl = getVideoThumbnailUrl(item.video_url)
+                  linkUrl = item.video_url
+                }
+      const imgData = await getBase64Image(displayImageUrl)
+      
       rows.push([
         { content: item.product_name, styles: { cellWidth: 30 } }, // product column width 30mm
         item.quantity.toString(),
         formatNaira(item.price_at_time),
         formatNaira(item.subtotal),
-        { content: '', image: imgData, imageUrl: item.image_url }
+        { content: '', image: imgData, imageUrl: linkUrl }
       ])
     }
 
@@ -136,7 +149,7 @@ export default function DownloadOrderPDF({ order }: { order: Order }) {
   return (
     <button
       onClick={generatePDF}
-      className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700"
+      className="bg-(--burgundy-dark) text-white px-4 py-2 rounded hover:bg-(--burgundy)"
     >
       Download PDF
     </button>

@@ -1,6 +1,6 @@
 // actions/basket.ts
 'use server'
-
+import { checkBotId } from 'botid/server';
 import { createClient } from '@/lib/supabase/server'
 import { cookies } from 'next/headers'
 import { revalidatePath } from 'next/cache'
@@ -10,9 +10,25 @@ import { BasketInsert } from '@/lib/types'
 // Create a new basket or add item to existing basket
 // ------------------------------------------------------------------
 export async function createBasket(productId: string, quantity: number) {
+  const cookieStore = await cookies()
+   const verification = await checkBotId();
+  if (verification.isBot) {
+    throw new Error('Suspicious activity detected');
+  }
+  // Ensure guest session exists BEFORE createClient reads it into the header
+  let guestSessionId = cookieStore.get('guest_session_id')?.value
+  if (!guestSessionId) {
+    guestSessionId = crypto.randomUUID()
+    cookieStore.set('guest_session_id', guestSessionId, {
+      maxAge: 60 * 60 * 24 * 365,
+      path: '/',
+    })
+  }
+
+  // NOW create client — guest_session_id is guaranteed in cookie
   const supabase = await createClient()
 
-  // Get product details
+  // Product check
   const { data: product, error: prodError } = await supabase
     .from('products')
     .select('id, price, available')
@@ -23,71 +39,67 @@ export async function createBasket(productId: string, quantity: number) {
   if (product.available < quantity) throw new Error('Not enough stock')
 
   const { data: { user } } = await supabase.auth.getUser()
-  const cookieStore = await cookies()
+  let basketId: string | null = null
 
-  // Guest session ID
-  let guestSessionId = cookieStore.get('guest_session_id')?.value
-  if (!guestSessionId && !user) {
-    guestSessionId = crypto.randomUUID()
-    cookieStore.set('guest_session_id', guestSessionId, {
-      maxAge: 60 * 60 * 24 * 365,
-      path: '/',
-    })
-  }
-
-  // Get existing basket ID from cookie
-  let basketId: string | null = cookieStore.get('basketId')?.value ?? null
-
-  // Validate existing basket if any
-  if (basketId) {
+  // ---------- LOGGED IN USER ----------
+  if (user) {
     const { data: existingBasket } = await supabase
       .from('baskets')
-      .select('customer_id, guest_session_id, status')
-      .eq('id', basketId)
-      .single()
+      .select('id')
+      .eq('customer_id', user.id)
+      .in('status', ['pending', 'invalid'])
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .maybeSingle()
 
     if (existingBasket) {
-      const belongsToCurrent =
-        (user && existingBasket.customer_id === user.id) ||
-        (!user && existingBasket.guest_session_id === guestSessionId)
-
-      if (!belongsToCurrent) {
-        // Basket belongs to another user – ignore it
-        basketId = null
-      } else if (existingBasket.status === 'paid') {
-        // Basket is paid – we need a new one
-        basketId = null
-      }
+      basketId = existingBasket.id
     } else {
-      // Basket not found (maybe deleted)
-      basketId = null
-    }
-  }
-
-  // Create new basket if needed
-  if (!basketId) {
-    const newBasket: BasketInsert = {
-      status: 'pending',
-      customer_id: user?.id || null,
-      guest_session_id: guestSessionId || null,
+      const { data: newBasket, error: insertError } = await supabase
+        .from('baskets')
+        .insert({ status: 'pending', customer_id: user.id })
+        .select('id')
+        .single()
+      if (insertError) throw insertError
+      basketId = newBasket.id
     }
 
-    const { data: basket, error: basketError } = await supabase
-      .from('baskets')
-      .insert(newBasket)
-      .select('id')
-      .single()
-    if (basketError || !basket) {
-      console.error('❌ Basket insert error details:', basketError)
-      throw new Error(`Failed to create basket: ${basketError?.message || 'Unknown error'}`)
-    }
-
-    basketId = basket.id
     cookieStore.set('basketId', basketId, { maxAge: 60 * 60 * 24 * 30, path: '/' })
   }
 
-  // At this point, basketId is guaranteed to be a string
-  if (!basketId) throw new Error('Basket ID missing after creation') // should never happen
+  // ---------- GUEST USER ----------
+  else {
+    basketId = cookieStore.get('basketId')?.value ?? null
+
+    // Validate existing basket
+    if (basketId) {
+      const { data: existingBasket } = await supabase
+        .from('baskets')
+        .select('customer_id, guest_session_id, status')
+        .eq('id', basketId)
+        .single()
+
+      if (existingBasket) {
+        const belongsToCurrent = existingBasket.guest_session_id === guestSessionId
+        if (!belongsToCurrent || existingBasket.status === 'paid') {
+          basketId = null
+        }
+      } else {
+        basketId = null
+      }
+    }
+
+    if (!basketId) {
+      const { data: newBasket, error: insertError } = await supabase
+        .from('baskets')
+        .insert({ status: 'pending', guest_session_id: guestSessionId })
+        .select('id')
+        .single()
+      if (insertError) throw insertError
+      basketId = newBasket.id
+      cookieStore.set('basketId', basketId, { maxAge: 60 * 60 * 24 * 30, path: '/' })
+    }
+  }
 
   // Upsert basket item
   const { error: itemError } = await supabase
@@ -107,11 +119,14 @@ export async function createBasket(productId: string, quantity: number) {
   revalidatePath(`/basket/${basketId}`)
   return { basketId }
 }
-
 // ------------------------------------------------------------------
 // Update (or delete) an item in a basket
 // ------------------------------------------------------------------
 export async function updateBasketItem(basketId: string, productId: string, quantity: number) {
+   const verification = await checkBotId();
+  if (verification.isBot) {
+    throw new Error('Suspicious activity detected');
+  }
   const supabase = await createClient()
 
   if (quantity <= 0) {
@@ -156,9 +171,12 @@ export async function updateBasketDetails(
     customer_name: string
     phone: string
     state: string
-    delivery_note?: string
   }
 ) {
+   const verification = await checkBotId();
+  if (verification.isBot) {
+    throw new Error('Suspicious activity detected');
+  }
   const supabase = await createClient()
 
   const { error } = await supabase
@@ -167,7 +185,6 @@ export async function updateBasketDetails(
       customer_name: details.customer_name,
       phone: details.phone,
       state: details.state,
-      delivery_note: details.delivery_note || null,
     })
     .eq('id', basketId)
 
@@ -282,21 +299,95 @@ export async function getUserOrders() {
 // ------------------------------------------------------------------
 // Link guest baskets to a newly registered user (call after signup)
 // ------------------------------------------------------------------
-export async function linkGuestBasketsToUser(userId: string) {
+// actions/basket.ts
+// actions/basket.ts
+// actions/basket.ts
+export async function consolidateUserBaskets() {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) throw new Error('Not authenticated')
+
+  const { data, error } = await supabase.rpc('consolidate_user_baskets', {
+    p_user_id: user.id,
+  })
+  if (error) throw error
+  return data as string // target basket ID
+}
+
+export async function mergeGuestBasket(consent: boolean) {
   const supabase = await createClient()
   const cookieStore = await cookies()
   const guestSessionId = cookieStore.get('guest_session_id')?.value
+  const { data: { user } } = await supabase.auth.getUser()
 
-  if (!guestSessionId) return
+  if (!user) throw new Error('Not authenticated')
 
-  // Transfer all baskets with this guest_session_id to the user
-  const { error } = await supabase
+  let targetBasketId: string | null = null
+
+  // 1. Handle guest basket (if present)
+  if (guestSessionId) {
+    if (consent) {
+      const { data, error } = await supabase.rpc('merge_guest_basket', {
+        p_guest_session_id: guestSessionId,
+        p_user_id: user.id,
+      })
+      if (error) throw error
+      targetBasketId = data as string
+    } else {
+      const { error } = await supabase.rpc('delete_guest_basket', {
+        p_guest_session_id: guestSessionId,
+      })
+      if (error) throw error
+    }
+    // Clear guest cookie regardless
+    cookieStore.set('guest_session_id', '', { maxAge: 0, path: '/' })
+  }
+
+  // 2. Consolidate user's own baskets (if not already done)
+  if (!targetBasketId) {
+    const { data, error } = await supabase.rpc('consolidate_user_baskets', {
+      p_user_id: user.id,
+    })
+    if (error) throw error
+    targetBasketId = data as string
+  }
+
+  // 3. Cleanup: delete any empty baskets for this user (except target)
+  // First, get all other pending/invalid baskets
+  const { data: otherBaskets, error: fetchError } = await supabase
     .from('baskets')
-    .update({ customer_id: userId, guest_session_id: null })
-    .eq('guest_session_id', guestSessionId)
+    .select('id')
+    .eq('customer_id', user.id)
+    .in('status', ['pending', 'invalid'])
+    .neq('id', targetBasketId)
 
-  if (error) throw error
+  if (fetchError) throw fetchError
 
-  // Clear the guest session cookie
-  cookieStore.set('guest_session_id', '', { maxAge: 0, path: '/' })
+  if (otherBaskets && otherBaskets.length > 0) {
+    for (const basket of otherBaskets) {
+      // Call the security definer function to delete if empty
+      await supabase.rpc('delete_basket_if_empty', { p_basket_id: basket.id })
+    }
+  }
+
+  // 4. Check if the target basket itself is empty
+  const { count, error: countError } = await supabase
+    .from('basket_items')
+    .select('*', { count: 'exact', head: true })
+    .eq('basket_id', targetBasketId)
+
+  if (countError) throw countError
+
+  if (count === 0) {
+    // Target basket is empty – delete it
+    await supabase.rpc('delete_basket_if_empty', { p_basket_id: targetBasketId })
+    targetBasketId = null
+    cookieStore.delete('basketId')
+  } else {
+    // Update cookie to point to the remaining basket
+    cookieStore.set('basketId', targetBasketId, { maxAge: 60 * 60 * 24 * 30, path: '/' })
+  }
+
+  revalidatePath('/baskets')
+  return { targetBasketId }
 }

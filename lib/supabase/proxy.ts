@@ -1,13 +1,11 @@
+// lib/supabase/proxy.ts
 import { createServerClient } from '@supabase/ssr'
 import { type NextRequest, NextResponse } from 'next/server'
-import { Database } from './types'
 
 export async function updateSession(request: NextRequest) {
-  console.log('[Proxy] Path:', request.nextUrl.pathname)
-
   let supabaseResponse = NextResponse.next({ request })
 
-  const supabase = createServerClient<Database>(
+  const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
@@ -16,6 +14,13 @@ export async function updateSession(request: NextRequest) {
           return request.cookies.getAll()
         },
         setAll(cookiesToSet) {
+          // Step 1: set on request so server components can read them
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value)
+          )
+          // Step 2: rebuild response with updated request
+          supabaseResponse = NextResponse.next({ request })
+          // Step 3: set on response so browser gets updated cookies
           cookiesToSet.forEach(({ name, value, options }) =>
             supabaseResponse.cookies.set(name, value, options)
           )
@@ -24,16 +29,13 @@ export async function updateSession(request: NextRequest) {
     }
   )
 
-  const { data: { user }, error } = await supabase.auth.getUser()
-  console.log('[Proxy] User:', user?.email ?? 'none', 'Error:', error?.message ?? 'none')
+  // ✅ Use getClaims() not getUser() — validates JWT locally, no network call
+  const { data } = await supabase.auth.getClaims()
 
-  // Protect admin routes – EXCEPT the login page itself
+  // Protect admin routes
   const isAdminRoute = request.nextUrl.pathname.startsWith('/admin')
-  const isLoginPage = request.nextUrl.pathname === '/admin/login'
-
-  if (!user && isAdminRoute && !isLoginPage) {
-    console.log('[Proxy] No user, redirecting to /admin/login')
-    return NextResponse.redirect(new URL('/admin/login', request.url))
+  if (!data?.claims && isAdminRoute) {
+    return NextResponse.redirect(new URL('/login', request.url))
   }
 
   return supabaseResponse

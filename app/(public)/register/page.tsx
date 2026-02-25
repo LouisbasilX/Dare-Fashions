@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { NIGERIAN_STATES } from '@/lib/constants'
-import { linkGuestBasketsToUser } from '@/actions/basket'
+import { mergeGuestBasket } from '@/actions/basket' // import the new function
 
 export default function RegisterPage() {
   const [email, setEmail] = useState('')
@@ -64,12 +64,13 @@ export default function RegisterPage() {
         }
       }
 
-      // 3. Transfer any guest baskets to this user
+      // 3. Merge any existing guest basket into the new user's account
       try {
-        await linkGuestBasketsToUser(data.user.id)
-        console.log('Guest baskets linked successfully')
+        // mergeGuestBasket with consent = true (merge automatically)
+        await mergeGuestBasket(true)
+        console.log('Guest basket merged successfully')
       } catch (err) {
-        console.error('Failed to link guest baskets:', err)
+        console.error('Failed to merge guest basket:', err)
       }
 
       // 4. Redirect to homepage (user is already logged in)
@@ -92,7 +93,7 @@ export default function RegisterPage() {
 
   return (
     <div className="bg-white dark:bg-gray-800 p-8 rounded shadow-md w-full max-w-md mx-auto my-8">
-      <h1 className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">Register</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">Sign Up</h1>
       <form onSubmit={handleRegister} className="space-y-4">
         {error && (
           <div className="bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-400 px-4 py-3 rounded">
@@ -152,7 +153,7 @@ export default function RegisterPage() {
           disabled={loading}
           className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white py-2 rounded transition"
         >
-          {loading ? 'Creating...' : 'Register'}
+          {loading ? 'Creating...' : 'Sign Up'}
         </button>
       </form>
       <p className="mt-4 text-center text-gray-600 dark:text-gray-400">

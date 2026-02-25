@@ -37,24 +37,55 @@ export async function markBasketsPaid(basketIds: string[]) {
   const adminClient = createAdminClient()
   const { error } = await adminClient.rpc('mark_baskets_paid', { basket_ids: basketIds })
   if (error) throw error
+
+  // After RPC, fetch the updated status of the baskets
+  const { data: baskets, error: fetchError } = await adminClient
+    .from('baskets')
+    .select('id, status')
+    .in('id', basketIds)
+
+  if (fetchError) throw fetchError
+
+  const paid = baskets?.filter(b => b.status === 'paid').map(b => b.id) || []
+  const skipped = basketIds.filter(id => !paid.includes(id))
+
   revalidatePath('/admin/baskets')
+  return { paid, skipped }
 }
 
 // Upload product image to Cloudinary
-export async function uploadProductImage(formData: FormData) {
+// actions/admin.ts - enhanced upload with AI enhancement
+
+export async function uploadProductImage(formData: FormData, enhanceImage = false) {
   try {
     await verifyAdmin()
     const file = formData.get('image') as File | null
     if (!file || file.size === 0) return { publicUrl: null }
 
+    // Enforce max 5MB
+    const MAX_SIZE = 5 * 1024 * 1024
+    if (file.size > MAX_SIZE) {
+      throw new Error('Image must be less than 5MB')
+    }
+
     const bytes = await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
+
+    // Explicitly type transformations as string array
+    const transformations: string[] = []
+    
+    // Add AI enhancement if requested
+    if (enhanceImage) {
+      transformations.push('e_enhance') // Basic AI enhancement
+    }
 
     const result = await new Promise<any>((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
         {
           folder: 'rp-apparels/products',
           resource_type: 'auto',
+          // Pass transformations array only if not empty
+          transformation: transformations.length > 0 ? transformations : undefined,
         },
         (error, result) => {
           if (error) reject(error)
@@ -63,6 +94,7 @@ export async function uploadProductImage(formData: FormData) {
       )
       uploadStream.end(buffer)
     })
+    
     return { publicUrl: result.secure_url }
   } catch (error) {
     console.error('❌ uploadProductImage error:', error)
@@ -155,4 +187,72 @@ export async function sendPasswordReset(email: string) {
   if (error) throw error
   // In production, you'd send the email via Supabase's built-in email service.
   // This action is just to trigger the email – Supabase will send it.
+}
+
+export async function uploadProductVideo(formData: FormData) {
+  try {
+    await verifyAdmin()
+    const file = formData.get('video') as File | null
+    if (!file || file.size === 0) return { publicUrl: null }
+
+    // Enforce max 3MB
+    const MAX_SIZE = 10 * 1024 * 1024 // 3MB in bytes
+    if (file.size > MAX_SIZE) {
+      throw new Error('Video file must be less than 3MB')
+    }
+
+    const bytes = await file.arrayBuffer()
+    const buffer = Buffer.from(bytes)
+
+    const result = await new Promise<any>((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        {
+          folder: 'rp-apparels/products/videos',
+          resource_type: 'video',        // required for video files
+        },
+        (error, result) => {
+          if (error) reject(error)
+          else resolve(result)
+        }
+      )
+      uploadStream.end(buffer)
+    })
+
+    return { publicUrl: result.secure_url }
+  } catch (error) {
+    console.error('❌ uploadProductVideo error:', error)
+    throw new Error(`Video upload failed: ${error instanceof Error ? error.message : 'Unknown error'}`)
+  }
+}
+
+// actions/admin.ts
+
+// ... (keep existing imports and config)
+
+/**
+ * Delete a file from Cloudinary given its URL
+ * Returns true if successful, false if file not found or error
+ */
+export async function deleteCloudinaryFile(fileUrl: string) {
+  try {
+    await verifyAdmin() // ensure only admin can delete
+
+    // Extract public ID from Cloudinary URL
+    // Example URL: https://res.cloudinary.com/cloud_name/image/upload/v12345/folder/public_id.jpg
+    const urlParts = fileUrl.split('/')
+    const versionIndex = urlParts.findIndex(part => part.startsWith('v'))
+    if (versionIndex === -1) return false
+
+    const publicIdWithExtension = urlParts.slice(versionIndex + 1).join('/')
+    const publicId = publicIdWithExtension.substring(0, publicIdWithExtension.lastIndexOf('.')) // remove extension
+
+    // Determine resource type (image or video) from URL path
+    const resourceType = fileUrl.includes('/video/') ? 'video' : 'image'
+
+    const result = await cloudinary.uploader.destroy(publicId, { resource_type: resourceType })
+    return result.result === 'ok'
+  } catch (error) {
+    console.error('❌ deleteCloudinaryFile error:', error)
+    return false
+  }
 }

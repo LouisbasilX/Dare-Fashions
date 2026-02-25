@@ -6,20 +6,22 @@ import AdminNav from '@/components/admin/AdminNav'
 
 export default async function AdminLayout({ children }: { children: ReactNode }) {
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  
+  // ✅ getClaims() works locally with asymmetric keys, getUser() may fail
+  const { data, error } = await supabase.auth.getClaims()
 
-  if (!user) {
+  if (error || !data?.claims) {
     redirect('/login')
   }
 
   const { data: customer } = await supabase
     .from('customers')
     .select('role')
-    .eq('id', user.id)
+    .eq('id', data.claims.sub)  // sub = user ID
     .single()
 
   if (!customer || customer.role !== 'admin') {
-    redirect('/')
+    redirect('/shop')
   }
 
   return (

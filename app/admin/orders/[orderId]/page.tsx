@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { formatCurrency } from '@/lib/utils'
 import { ArrowLeft } from 'lucide-react'
+import { getVideoThumbnailUrl } from '@/lib/cloudinary-helpers'
+import DownloadOrderPDF from '@/components/admin/DownloadOrderPDF' // 👈 import the single‑order PDF component
 
 export default async function OrderDetailPage({
   params,
@@ -37,9 +39,13 @@ export default async function OrderDetailPage({
         Back to Orders
       </Link>
 
-      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-        Order #{orderId.slice(0, 8)}
-      </h1>
+      {/* Title + Download button */}
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+          Order #{orderId.slice(0, 8)}
+        </h1>
+        <DownloadOrderPDF order={order} /> {/* 👈 button added */}
+      </div>
 
       {/* Customer Info Card */}
       <div className="bg-white dark:bg-[#1e1e1e] rounded-lg shadow border border-gray-200 dark:border-gray-700 p-6 mb-6">
@@ -78,15 +84,17 @@ export default async function OrderDetailPage({
       <div className="bg-white dark:bg-[#1e1e1e] rounded-lg shadow border border-gray-200 dark:border-gray-700 p-6 mb-6">
         <h2 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Items</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {order.items.map((item: any) => (
+          {order.items.map((item: any) => {
+            const imageSrc = item.image_url || getVideoThumbnailUrl(item.video_url)
+            return (
             <div
               key={item.id}
               className="flex gap-4 p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800/50"
             >
-              {item.image_url && (
+              {imageSrc && (
                 <div className="relative w-16 h-16 flex-shrink-0">
                   <Image
-                    src={item.image_url}
+                    src={imageSrc}
                     alt={item.product_name}
                     fill
                     className="object-cover rounded"
@@ -104,7 +112,7 @@ export default async function OrderDetailPage({
                 </div>
               </div>
             </div>
-          ))}
+          )})}
         </div>
         <div className="mt-6 flex justify-end">
           <p className="text-xl font-bold text-gray-900 dark:text-white">

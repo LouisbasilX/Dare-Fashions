@@ -7,6 +7,8 @@ import { formatCurrency } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { softDeleteProduct } from '@/actions/admin'
+import { getVideoThumbnailUrl } from '@/lib/cloudinary-helpers'
+
 
 export function ProductCardList({ products }: { products: Product[] }) {
   const router = useRouter()
@@ -27,15 +29,17 @@ export function ProductCardList({ products }: { products: Product[] }) {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {products.map((product) => (
+      {products.map((product) => {
+        const imageSrc = product.image_url || getVideoThumbnailUrl(product.video_url)
+        return(
         <div
           key={product.id}
           className="bg-white dark:bg-[#1e1e1e] rounded-lg shadow hover:shadow-md transition border border-gray-200 dark:border-gray-700 overflow-hidden"
         >
           <Link href={`/product/${product.id}`} className="block aspect-square bg-gray-100 dark:bg-gray-800 relative">
-            {product.image_url ? (
+            {imageSrc ? (
               <Image
-                src={product.image_url}
+                src={imageSrc}
                 alt={product.name}
                 fill
                 className="object-cover"
@@ -71,7 +75,7 @@ export function ProductCardList({ products }: { products: Product[] }) {
             <div className="flex gap-2">
               <Link
                 href={`/admin/products/${product.id}/edit`}
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded-lg transition"
+                className="flex-1 bg-(--gold-dark) hover:bg-(--gold) text-white text-center py-2 rounded-lg transition"
               >
                 Edit
               </Link>
@@ -87,7 +91,7 @@ export function ProductCardList({ products }: { products: Product[] }) {
             </div>
           </div>
         </div>
-      ))}
+    )})}
     </div>
   )
 }

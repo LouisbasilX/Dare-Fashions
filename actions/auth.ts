@@ -32,5 +32,5 @@ export async function logout() {
     console.error('[Logout] Error:', error)
   }
 
-  redirect('/')
+  redirect('/shop')
 }

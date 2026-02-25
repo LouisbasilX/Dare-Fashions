@@ -12,31 +12,6 @@ export type Database = {
   __InternalSupabase: {
     PostgrestVersion: "14.1"
   }
-  graphql_public: {
-    Tables: {
-      [_ in never]: never
-    }
-    Views: {
-      [_ in never]: never
-    }
-    Functions: {
-      graphql: {
-        Args: {
-          extensions?: Json
-          operationName?: string
-          query?: string
-          variables?: Json
-        }
-        Returns: Json
-      }
-    }
-    Enums: {
-      [_ in never]: never
-    }
-    CompositeTypes: {
-      [_ in never]: never
-    }
-  }
   public: {
     Tables: {
       basket_items: {
@@ -83,7 +58,6 @@ export type Database = {
           created_at: string
           customer_id: string | null
           customer_name: string | null
-          delivery_note: string | null
           guest_session_id: string | null
           id: string
           paid_at: string | null
@@ -96,7 +70,6 @@ export type Database = {
           created_at?: string
           customer_id?: string | null
           customer_name?: string | null
-          delivery_note?: string | null
           guest_session_id?: string | null
           id?: string
           paid_at?: string | null
@@ -109,7 +82,6 @@ export type Database = {
           created_at?: string
           customer_id?: string | null
           customer_name?: string | null
-          delivery_note?: string | null
           guest_session_id?: string | null
           id?: string
           paid_at?: string | null
@@ -176,6 +148,7 @@ export type Database = {
           product_name: string
           quantity: number
           subtotal: number
+          video_url: string | null
         }
         Insert: {
           id?: string
@@ -186,6 +159,7 @@ export type Database = {
           product_name: string
           quantity: number
           subtotal: number
+          video_url?: string | null
         }
         Update: {
           id?: string
@@ -196,6 +170,7 @@ export type Database = {
           product_name?: string
           quantity?: number
           subtotal?: number
+          video_url?: string | null
         }
         Relationships: [
           {
@@ -281,7 +256,9 @@ export type Database = {
           image_url: string | null
           name: string
           price: number
+          sex: string
           stock: number
+          video_url: string | null
         }
         Insert: {
           available?: number
@@ -292,7 +269,9 @@ export type Database = {
           image_url?: string | null
           name: string
           price: number
+          sex?: string
           stock?: number
+          video_url?: string | null
         }
         Update: {
           available?: number
@@ -303,7 +282,27 @@ export type Database = {
           image_url?: string | null
           name?: string
           price?: number
+          sex?: string
           stock?: number
+          video_url?: string | null
+        }
+        Relationships: []
+      }
+      subscribers: {
+        Row: {
+          created_at: string | null
+          email: string
+          id: string
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          id?: string
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          id?: string
         }
         Relationships: []
       }
@@ -312,6 +311,16 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      consolidate_user_baskets: { Args: { p_user_id: string }; Returns: string }
+      custom_access_token_hook: { Args: { event: Json }; Returns: Json }
+      delete_basket_if_empty: {
+        Args: { p_basket_id: string }
+        Returns: boolean
+      }
+      delete_guest_basket: {
+        Args: { p_guest_session_id: string }
+        Returns: undefined
+      }
       get_customers_with_email: {
         Args: never
         Returns: {
@@ -324,7 +333,29 @@ export type Database = {
           state: string
         }[]
       }
+      get_guest_session_id: { Args: never; Returns: string }
+      is_admin: { Args: never; Returns: boolean }
       mark_baskets_paid: { Args: { basket_ids: string[] }; Returns: undefined }
+      merge_basket_items: {
+        Args: { source_basket_id: string; target_basket_id: string }
+        Returns: undefined
+      }
+      merge_guest_basket: {
+        Args: { p_guest_session_id: string; p_user_id: string }
+        Returns: string
+      }
+      merge_guest_baskets: {
+        Args: { p_guest_session_id: string; p_user_id: string }
+        Returns: undefined
+      }
+      merge_user_baskets: {
+        Args: { p_guest_session_id: string; p_user_id: string }
+        Returns: Json
+      }
+      set_app_guest_session_id: {
+        Args: { session_id: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
@@ -453,9 +484,6 @@ export type CompositeTypes<
     : never
 
 export const Constants = {
-  graphql_public: {
-    Enums: {},
-  },
   public: {
     Enums: {},
   },

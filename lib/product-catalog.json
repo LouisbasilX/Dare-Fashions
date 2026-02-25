@@ -1,0 +1,2640 @@
+{
+  "femaleWear": {
+    "category": "Female Wear",
+    "subcategories": [
+      {
+        "name": "Premium Dresses",
+        "items": [
+          {
+            "id": "femaleWear-Premium Dresses-1",
+            "name": "Royal Prestige Gown",
+            "descriptions": [
+              "A regal statement piece designed for unforgettable entrances.",
+              "Crafted for women who command attention effortlessly.",
+              "Luxury satin finish with a powerful silhouette.",
+              "An elegant masterpiece for gala nights and elite events.",
+              "Bold, refined, and unapologetically sophisticated.",
+              "Where royal energy meets modern couture.",
+              "Premium tailoring with timeless glamour appeal.",
+              "Designed to turn moments into memories.",
+              "A grand evening gown with elite presence.",
+              "Step in. Stand out. Own the night."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-2",
+            "name": "Luxury Signature Dress",
+            "descriptions": [
+              "A refined classic elevated with premium detailing.",
+              "Smooth satin texture with a flawless fit.",
+              "Timeless elegance for high-value occasions.",
+              "Crafted for confidence and poise.",
+              "Minimalist luxury with maximum impact.",
+              "The perfect blend of grace and boldness.",
+              "A signature piece for your power wardrobe.",
+              "Designed to flatter and impress effortlessly.",
+              "Modern luxury tailored to perfection.",
+              "Because ordinary is never an option."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-3",
+            "name": "Midnight Royale",
+            "descriptions": [
+              "Dark elegance crafted for elite evenings.",
+              "Sleek silhouette with commanding presence.",
+              "Luxury evening wear with royal depth.",
+              "Bold, dramatic, and irresistibly refined.",
+              "Designed for spotlight moments.",
+              "A powerful blend of mystery and prestige.",
+              "Premium fabric with flawless drape.",
+              "Unforgettable style for unforgettable nights.",
+              "Grace in motion, power in presence.",
+              "Where sophistication meets seduction."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-4",
+            "name": "Velvet Empire Gown",
+            "descriptions": [
+              "Plush velvet construction with regal structure.",
+              "A dress that speaks before you do.",
+              "Deep tones that command every room.",
+              "Luxury fabric with breathtaking texture.",
+              "Built for women who lead, never follow.",
+              "Opulence woven into every thread.",
+              "Your presence amplified, your style elevated.",
+              "Grand silhouette for grand occasions.",
+              "Royalty reimagined for the modern woman.",
+              "Wear it once. Be remembered forever."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-5",
+            "name": "Celestial Drape Dress",
+            "descriptions": [
+              "Flowing elegance that moves like the night sky.",
+              "A dreamy silhouette for enchanting evenings.",
+              "Light fabric with heavenly drape and fall.",
+              "Designed to make every entrance cinematic.",
+              "Effortless sophistication at its finest.",
+              "Ethereal beauty for the woman who dazzles.",
+              "A gown that belongs on red carpets.",
+              "Soft power in premium fabric.",
+              "The dress that completes the moment.",
+              "Float in. Captivate everyone."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-6",
+            "name": "Sovereign Satin Gown",
+            "descriptions": [
+              "Satin luxury crafted for elite events.",
+              "Flawless finish with a commanding silhouette.",
+              "Regal structure meets modern sensibility.",
+              "A gown that holds court wherever you go.",
+              "Statement elegance for high-stakes nights.",
+              "Confidence stitched into every seam.",
+              "Premium craftsmanship with timeless appeal.",
+              "Bold, powerful, and impossibly chic.",
+              "Because queens don't blend in.",
+              "The ultimate wardrobe authority piece."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-7",
+            "name": "Aurora Prestige Dress",
+            "descriptions": [
+              "Colors that shift like the dawn — stunning and rare.",
+              "A dress built for women who glow effortlessly.",
+              "Premium layers with breathtaking dimension.",
+              "Designed for the woman who outshines the room.",
+              "Luxury detailing with a modern twist.",
+              "Magnetic elegance that draws every eye.",
+              "A masterpiece of light and movement.",
+              "From first look to last glance — unforgettable.",
+              "High-fashion drama for exclusive events.",
+              "Wear the aurora. Own the night."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-8",
+            "name": "Black Label Evening Gown",
+            "descriptions": [
+              "The pinnacle of evening fashion.",
+              "Structured silhouette with luxury drape.",
+              "Designed for women with non-negotiable standards.",
+              "Bold black refinement for elite occasions.",
+              "A timeless piece in the language of power.",
+              "Premium fabric that rewards every movement.",
+              "The dress that defines the evening.",
+              "Quiet luxury. Loud impact.",
+              "For events that demand the extraordinary.",
+              "This is what excellence looks like."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-9",
+            "name": "Emerald Opulence Dress",
+            "descriptions": [
+              "Jewel-toned luxury that demands attention.",
+              "Rich fabric with a bold, lush silhouette.",
+              "A showstopper built for premium wardrobes.",
+              "Confidence-inspiring color with flawless cut.",
+              "Designed for the woman who refuses to whisper.",
+              "Drape yourself in prestige.",
+              "A statement of success and elegance.",
+              "Lush, dramatic, and impossibly refined.",
+              "For evenings that deserve more than ordinary.",
+              "Own the emerald. Own the room."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-10",
+            "name": "Champagne Affair Gown",
+            "descriptions": [
+              "Soft gold tones with sophisticated shimmer.",
+              "Luxury occasion wear with festive elegance.",
+              "Designed to celebrate in the finest way.",
+              "A gown as special as the moments you wear it in.",
+              "Premium construction with champagne finish.",
+              "Radiate warmth and confidence simultaneously.",
+              "Light-catching fabric with a brilliant fall.",
+              "Subtle luxury with extraordinary impact.",
+              "The dress that makes celebrations perfect.",
+              "Toast to excellence — wear it tonight."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-11",
+            "name": "Scarlet Power Dress",
+            "descriptions": [
+              "Bold scarlet energy that commands every space.",
+              "Designed for women who lead the room.",
+              "Rich fabric with a striking, confident silhouette.",
+              "Power color meets luxury construction.",
+              "A dress that makes timid impossible.",
+              "Premium tailoring with fierce elegance.",
+              "Red was made for women like you.",
+              "Drama and refinement in equal measure.",
+              "The statement piece of the season.",
+              "Walk in red. Be impossible to ignore."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-12",
+            "name": "Ivory Grace Gown",
+            "descriptions": [
+              "Pure ivory elegance with soft, flowing movement.",
+              "A gown that whispers luxury and sophistication.",
+              "Understated beauty with premium fabric weight.",
+              "Crafted for moments that demand perfection.",
+              "Timeless color with contemporary silhouette.",
+              "The epitome of refined femininity.",
+              "Ivory isn't simple — it's supremely elevated.",
+              "Flowing luxury for exclusive occasions.",
+              "A gown for women who know their worth.",
+              "Effortless. Refined. Unforgettable."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-13",
+            "name": "Obsidian Couture Dress",
+            "descriptions": [
+              "Jet black luxury with high-fashion edge.",
+              "Structured couture lines with bold attitude.",
+              "A dress that redefines dark elegance.",
+              "Premium tailoring with a razor-sharp silhouette.",
+              "Black never looked this powerful or refined.",
+              "Designed for women who don't need color to stand out.",
+              "Couture construction for elite occasions.",
+              "The power of black, elevated to an art form.",
+              "Bold, precise, and unmistakably premium.",
+              "Wear the night itself."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-14",
+            "name": "Rose Gold Prestige Gown",
+            "descriptions": [
+              "Warm metallic tones with feminine luxury.",
+              "A gown that glows from the inside out.",
+              "Designed for celebrations worth remembering.",
+              "Premium shimmer fabric with elegant structure.",
+              "Rose gold isn't a color — it's a statement.",
+              "Modern femininity meets timeless glamour.",
+              "Crafted for the woman who deserves the spotlight.",
+              "Luxurious movement with breathtaking finish.",
+              "Every occasion becomes extraordinary in this gown.",
+              "Shine unapologetically."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-15",
+            "name": "The Dominique Gown",
+            "descriptions": [
+              "Named for women who command entire rooms.",
+              "Architectural silhouette with premium fabric.",
+              "Designed for the woman the world watches.",
+              "Bold structure with sophisticated restraint.",
+              "A gown that tells its own story of power.",
+              "Premium craftsmanship meets unmistakable presence.",
+              "Elegance that doesn't ask for permission.",
+              "For the night you decide to be legendary.",
+              "Authority and beauty woven into one.",
+              "The Dominique. Because average was never your style."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-16",
+            "name": "Cascade Luxury Dress",
+            "descriptions": [
+              "Fluid layers that cascade with breathtaking grace.",
+              "Movement-forward design with premium drape.",
+              "A dress that flows like confidence itself.",
+              "Effortless luxury from neckline to hem.",
+              "Designed for women who make entrances.",
+              "Premium construction with artistic movement.",
+              "Every step is a statement in this gown.",
+              "Cascading elegance for unforgettable occasions.",
+              "The dress that moves as beautifully as you do.",
+              "Luxury in motion."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-17",
+            "name": "The Vivienne",
+            "descriptions": [
+              "Old-world glamour reimagined for modern women.",
+              "Lush fabric with couture-level construction.",
+              "A gown steeped in timeless elegance.",
+              "For women who appreciate heritage and luxury.",
+              "Premium tailoring that honors the art of dressing.",
+              "Sophisticated and powerfully feminine.",
+              "Where history meets high fashion.",
+              "Named for the icons who wore elegance as armor.",
+              "Because some dresses are more than dresses.",
+              "The Vivienne. A legacy on your terms."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-18",
+            "name": "Noir Prestige Gown",
+            "descriptions": [
+              "French-inspired luxury in deep, rich tones.",
+              "Designed for the most exclusive evenings.",
+              "Premium fabric with an old-money silhouette.",
+              "Quiet confidence with maximum visual impact.",
+              "A gown that earns respect before you speak.",
+              "Bold in its restraint, powerful in its elegance.",
+              "Crafted for women with impeccable standards.",
+              "Subtle luxury that insiders recognize immediately.",
+              "The kind of gown that becomes a story.",
+              "Prestige, personified."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-19",
+            "name": "Twilight Couture Gown",
+            "descriptions": [
+              "A gown that captures the magic between day and night.",
+              "Deep jewel tones with luxurious shimmer.",
+              "Designed for occasions that exist in their own world.",
+              "Premium construction with cinematic drama.",
+              "Wear the twilight — mysterious and breathtaking.",
+              "Silhouette that flatters with artistic precision.",
+              "Fashion that feels like a moment frozen in time.",
+              "For the woman who makes events memorable.",
+              "A gown as rare and beautiful as the hour it's named for.",
+              "Twilight deserves couture."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-20",
+            "name": "Crystal Edge Dress",
+            "descriptions": [
+              "Embellished details with striking clarity and brilliance.",
+              "Premium fabric meets exquisite crystal-inspired detailing.",
+              "Designed to catch every light in every room.",
+              "A dress that sparkles as much as the occasion demands.",
+              "Luxury eveningwear with showstopping details.",
+              "For women who believe more is always more — elegantly.",
+              "Crafted to make you the most memorable person present.",
+              "Dazzling construction with sophisticated restraint.",
+              "Bold detail, premium execution.",
+              "Light follows you. So does every eye."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-21",
+            "name": "Mahogany Silk Gown",
+            "descriptions": [
+              "Rich earth tones with luxurious silk construction.",
+              "A gown that radiates warmth and sophistication.",
+              "Designed for the woman confident in quiet luxury.",
+              "Deep, rich color with premium fabric weight.",
+              "Sophisticated and undeniably powerful.",
+              "Warmth and elegance perfectly balanced.",
+              "A rare choice for women with discerning taste.",
+              "Silk construction worthy of its name.",
+              "For evenings that call for depth and refinement.",
+              "Luxury that warms every room."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-22",
+            "name": "The Alexandrine",
+            "descriptions": [
+              "Named for imperial taste and timeless authority.",
+              "Grand silhouette with commanding elegance.",
+              "Premium fabric with regal structure and flow.",
+              "For women who carry occasion with effortless grace.",
+              "A gown with the confidence of centuries behind it.",
+              "Formal luxury for the most distinguished events.",
+              "Crafted for women who don't need a title to command respect.",
+              "Imperial elegance, contemporary execution.",
+              "The dress that makes ordinary occasions extraordinary.",
+              "The Alexandrine. Rule with elegance."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-23",
+            "name": "Blush Prestige Gown",
+            "descriptions": [
+              "Delicate blush tones with powerful construction.",
+              "Femininity and authority in perfect balance.",
+              "Premium fabric with romantic-yet-commanding presence.",
+              "Designed for the woman who is both soft and strong.",
+              "A gown that shows beauty isn't weakness — it's power.",
+              "Crafted with luxurious attention to every detail.",
+              "Romantic elegance for exclusive occasions.",
+              "Blush that hits differently when the tailoring is this fine.",
+              "For nights where beauty is the boldest statement.",
+              "Wear blush. Make the boldest entrance."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-24",
+            "name": "The Majestica",
+            "descriptions": [
+              "The grandest dress in any room you enter.",
+              "Premium construction on a truly architectural scale.",
+              "Designed for galas, premieres, and legendary nights.",
+              "A gown that becomes the event itself.",
+              "Luxury maximized at every design point.",
+              "For the woman who makes the occasion.",
+              "Commanding silhouette with breathtaking detail.",
+              "Majesty isn't given — but this gown delivers it.",
+              "You don't wear the Majestica. You inhabit it.",
+              "The ultimate statement in premium evening fashion."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-25",
+            "name": "Amber Luxe Dress",
+            "descriptions": [
+              "Warm amber tones with radiant, premium finish.",
+              "A dress that glows as beautifully as golden hour.",
+              "Designed for women who light up every room.",
+              "Rich color meets luxury construction.",
+              "Sophisticated warmth with sophisticated style.",
+              "Premium fabric that flatters every movement.",
+              "A standout piece for premium wardrobes.",
+              "For evenings you want to remember in golden detail.",
+              "Warm, powerful, and impossibly chic.",
+              "Glow in amber. Captivate everyone."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-26",
+            "name": "Silver Screen Gown",
+            "descriptions": [
+              "Old Hollywood glamour for the modern woman.",
+              "Silver-toned luxury with legendary appeal.",
+              "Designed to look like cinema, feel like a dream.",
+              "A gown worthy of standing ovations.",
+              "Premium construction with vintage-inspired prestige.",
+              "Timeless drama in every carefully crafted detail.",
+              "For the woman who was born for spotlight moments.",
+              "Silver isn't understated — it's supremely elevated.",
+              "Glamour that never goes out of style.",
+              "Step into the silver screen of your own life."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-27",
+            "name": "Garnet Prestige Gown",
+            "descriptions": [
+              "Deep garnet tones with rich, commanding presence.",
+              "Jewel-toned luxury for exceptional occasions.",
+              "Premium fabric with striking color depth.",
+              "A gown that exudes confidence and refinement.",
+              "For women with bold taste and flawless execution.",
+              "Rich, deep, and unmistakably premium.",
+              "Garnet: the color of women who know their power.",
+              "Designed for the most distinguished evenings.",
+              "A jewel in fabric form.",
+              "Rare color. Exceptional dress. Unforgettable you."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-28",
+            "name": "The Opulence Gown",
+            "descriptions": [
+              "Excess, but make it tasteful.",
+              "Lavish construction for genuinely lavish occasions.",
+              "Premium at every single touch point.",
+              "Designed for women who don't believe in restraint.",
+              "Bold luxury with sophisticated execution.",
+              "When the occasion demands the absolute best.",
+              "A gown that answers the question before it's asked.",
+              "Opulence isn't a word — it's a lifestyle, in fabric form.",
+              "For the woman whose presence is the main event.",
+              "Own opulence. Wear it tonight."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-29",
+            "name": "Platinum Grace Gown",
+            "descriptions": [
+              "Rare platinum tones with luxury construction.",
+              "Above gold — in color and quality.",
+              "Designed for women who set the standard.",
+              "A gown with the prestige of its namesake metal.",
+              "Premium craftsmanship in a color that commands awe.",
+              "Understated luxury that the discerning eye recognizes.",
+              "Platinum doesn't shout — it simply outshines.",
+              "For occasions that require the extraordinary.",
+              "A gown that ages as beautifully as fine metal.",
+              "Rare. Refined. Radiant."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-30",
+            "name": "The Empress Gown",
+            "descriptions": [
+              "Regal power in fabric form.",
+              "Structured silhouette with commanding premium detail.",
+              "For the woman who walks as if she owns the room — because she does.",
+              "Couture-level construction with imperial presence.",
+              "A gown built on the tradition of powerful women.",
+              "Wear authority. Wear elegance. Wear the Empress.",
+              "Timeless design with unmistakable premium quality.",
+              "For events that deserve the grandest entrance.",
+              "The Empress: because some women simply reign.",
+              "Premium tailoring for women without limits."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-31",
+            "name": "Sable Luxe Gown",
+            "descriptions": [
+              "Deep sable tones with luxurious sophistication.",
+              "Sleek, dark, and unmistakably premium.",
+              "A gown for women who prefer power over decoration.",
+              "Bold structure with quiet elegance.",
+              "Premium fabric in the most commanding of tones.",
+              "Designed for the woman who knows that darkness is its own kind of light.",
+              "Sable: the color of authority and refinement.",
+              "Structured luxury for elite occasions.",
+              "Subtle. Powerful. Extraordinary.",
+              "When you wear sable, everything else fades."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-32",
+            "name": "Golden Dusk Gown",
+            "descriptions": [
+              "Warm gold tones that capture the magic of fading light.",
+              "Premium luxury with the warmth of golden hour.",
+              "Designed to make every moment feel like a sunset.",
+              "Rich color with flawless construction.",
+              "A gown that radiates confidence and elegance.",
+              "For women who glow from the inside out.",
+              "Golden never looked this sophisticated.",
+              "Designed for evenings as beautiful as the color itself.",
+              "Wear the dusk. Become the most beautiful thing in the room.",
+              "Gold, elevated to something truly extraordinary."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-33",
+            "name": "Bordeaux Prestige Dress",
+            "descriptions": [
+              "Wine-toned luxury with old-world sophistication.",
+              "Deep Bordeaux hues with commanding presence.",
+              "Designed for the woman with refined, powerful taste.",
+              "Rich color meets premium construction for a flawless result.",
+              "A gown as layered and sophisticated as its namesake.",
+              "Bordeaux: the color of women who appreciate depth.",
+              "Premium fabric with sophisticated, complex character.",
+              "For evenings that deserve richness in every detail.",
+              "Wear depth. Command presence.",
+              "A gown that reveals more the longer you look."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-34",
+            "name": "The Celestine",
+            "descriptions": [
+              "Heavenly construction for earthly occasions.",
+              "Soft luxury with divine structure.",
+              "Premium craftsmanship that feels almost otherworldly.",
+              "A gown with effortless, celestial beauty.",
+              "Designed for women who drift into rooms and own them.",
+              "Ethereal yet powerful — like the sky itself.",
+              "Luxury that feels spiritual in its attention to detail.",
+              "For moments that feel bigger than the ordinary.",
+              "The Celestine: because some things are above average.",
+              "Wear heaven. Make the room orbit you."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-35",
+            "name": "Oxblood Signature Dress",
+            "descriptions": [
+              "Bold, dark, and unmistakably premium.",
+              "A dress for women who don't arrive — they arrive.",
+              "Rich oxblood tones with powerful construction.",
+              "Premium fabric in a color that commands immediate respect.",
+              "Designed for women who prefer intensity to decoration.",
+              "Dark luxury at its most sophisticated.",
+              "A statement piece for the woman with exquisite taste.",
+              "Bold color. Bolder woman.",
+              "Oxblood: the unofficial color of power.",
+              "Intense. Premium. You."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-36",
+            "name": "Duchess Collection Gown",
+            "descriptions": [
+              "Draped in the elegance of noble tradition.",
+              "Premium construction with refined, aristocratic detail.",
+              "A gown for women who carry themselves with natural authority.",
+              "Old-money aesthetics with modern premium execution.",
+              "Designed for women who set the tone at every event.",
+              "Quiet luxury that speaks volumes to those who understand.",
+              "For occasions that call for understated magnificence.",
+              "The Duchess: a name that carries weight.",
+              "Premium tailoring with the confidence of heritage.",
+              "Elegance that needs no introduction."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-37",
+            "name": "Sapphire Statement Gown",
+            "descriptions": [
+              "Bold sapphire tones for the woman who commands attention.",
+              "Rich jewel color with luxury fabric and construction.",
+              "Designed to make blue the most powerful color in the room.",
+              "Premium craftsmanship in a genuinely show-stopping shade.",
+              "A gown as rare and precious as the gemstone it celebrates.",
+              "Sapphire: bold, beautiful, and uncompromising.",
+              "Deep blue luxury for the most exclusive occasions.",
+              "For women who know that color is a choice — and power is the intent.",
+              "Jewel-toned drama with premium execution.",
+              "Rare color. Rarer woman."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-38",
+            "name": "The Sovereign Dress",
+            "descriptions": [
+              "Built for women who answer to no one.",
+              "Premium construction with undeniable authority.",
+              "A dress that communicates power before you speak a word.",
+              "Regal design for truly sovereign occasions.",
+              "Crafted for women who define, rather than follow, the standard.",
+              "Luxury tailoring with uncompromising presence.",
+              "The Sovereign: because leadership looks like this.",
+              "Bold, commanding, and impossibly refined.",
+              "For women who don't enter rooms — they transform them.",
+              "Sovereignty isn't claimed. It's worn."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-39",
+            "name": "Pearlescent Luxury Gown",
+            "descriptions": [
+              "Soft luminous tones with premium pearlescent finish.",
+              "A gown that glows with soft, irresistible radiance.",
+              "Luxurious light-catching fabric for enchanting occasions.",
+              "Designed for women who radiate presence naturally.",
+              "Pearlescent beauty with powerful underlying structure.",
+              "Luminous luxury for your most important events.",
+              "A gown that makes the light work for you.",
+              "Soft color. Strong impression.",
+              "Crafted for women whose elegance is its own kind of power.",
+              "Glow softly. Command completely."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-40",
+            "name": "Mahogany Prestige Gown",
+            "descriptions": [
+              "Rich, warm tones with commanding luxury construction.",
+              "Deep mahogany color for the woman with bold taste.",
+              "Premium fabric in a color that radiates confidence.",
+              "Designed for women who prefer depth over flash.",
+              "Warmth and authority combined in one extraordinary gown.",
+              "A sophisticated color for a sophisticated woman.",
+              "Premium tailoring that honors every curve.",
+              "Deep, rich, and utterly compelling.",
+              "For evenings that call for warmth and power in equal measure.",
+              "Wear mahogany. Own every moment."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-41",
+            "name": "Ivory Luxe Evening Gown",
+            "descriptions": [
+              "Pure ivory construction for the most refined occasions.",
+              "Premium luxury in the most timeless of colors.",
+              "Designed for women who understand that simplicity is sophistication.",
+              "Ivory never looked this powerful or precisely tailored.",
+              "A gown that lets your presence speak louder than color.",
+              "For women who don't need bold color to command attention.",
+              "Premium fabric with understated elegance.",
+              "Quiet luxury for genuinely premium occasions.",
+              "Crafted with an almost obsessive attention to fabric quality.",
+              "Ivory. Elevated beyond all expectation."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-42",
+            "name": "The Countess Gown",
+            "descriptions": [
+              "Named for the nobility of women who simply know.",
+              "Premium construction with old-world grandeur.",
+              "A gown that carries centuries of elegance in its design.",
+              "For women who command respect without demanding it.",
+              "Aristocratic beauty with contemporary luxury execution.",
+              "A rare piece for a woman with rare taste.",
+              "Heritage-inspired premium fashion for modern occasions.",
+              "The Countess: because some women elevate every room they enter.",
+              "Quiet authority in the finest possible fabric.",
+              "Wear your title. You've earned it."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-43",
+            "name": "Moonlit Satin Gown",
+            "descriptions": [
+              "Soft silver-white tones with a lunar shimmer.",
+              "Premium satin construction for dream-worthy occasions.",
+              "A gown that makes you look lit from within.",
+              "Designed for evenings as beautiful as a full moon.",
+              "Luminous luxury in the finest satin construction.",
+              "Moonlight was made to complement this gown.",
+              "For women who are most powerful in the evening.",
+              "Shimmering premium fabric with effortless movement.",
+              "A gown as rare and beautiful as its namesake light.",
+              "Wear moonlight. Enchant everyone."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-44",
+            "name": "Terracotta Prestige Dress",
+            "descriptions": [
+              "Warm earth tones with bold, confident construction.",
+              "Premium fashion in a color that grounds and empowers.",
+              "Designed for women who draw strength from the earth.",
+              "Rich terracotta with sophisticated, modern tailoring.",
+              "A bold color choice for a bold, confident woman.",
+              "Premium fabric with natural, commanding presence.",
+              "Earth tones elevated to genuine luxury.",
+              "For women who know that warmth and power coexist.",
+              "Terracotta: the unofficial color of grounded confidence.",
+              "Wear the earth. Rise above the ordinary."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-45",
+            "name": "Crimson Royale Gown",
+            "descriptions": [
+              "Deep crimson luxury for the boldest occasions.",
+              "A gown as powerful as the color it inhabits.",
+              "Premium construction in the most commanding shade of red.",
+              "For women who want the room — and get it.",
+              "Bold, deep, and unmistakably premium.",
+              "Crimson: the color of women who lead.",
+              "Luxury tailoring in a color that communicates authority instantly.",
+              "Designed for the woman who makes bold her default.",
+              "Rich color meets richer construction.",
+              "Wear crimson. Make history."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-46",
+            "name": "The Evangeline Gown",
+            "descriptions": [
+              "Romantic luxury with genuine power underneath.",
+              "Premium construction with a timeless, feminine silhouette.",
+              "A gown that tells a story of grace and strength.",
+              "For women who believe beauty and power are the same thing.",
+              "Named for women who changed rooms by entering them.",
+              "Luxury craftsmanship with an emotional, memorable design.",
+              "A dress that feels like an occasion in itself.",
+              "Designed for the woman who makes the memorable look effortless.",
+              "Premium fabric meets unforgettable silhouette.",
+              "The Evangeline: because some women define the moment."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-47",
+            "name": "Steel Blue Prestige Gown",
+            "descriptions": [
+              "Cool steel blue tones with commanding premium construction.",
+              "A gown in the color of authority and precision.",
+              "Designed for women who approach elegance like strategy.",
+              "Premium fabric in a sophisticated, modern tone.",
+              "Steel blue: the color of women who are always right.",
+              "Bold construction in a color that means business.",
+              "For occasions where confidence is the dress code.",
+              "A gown that communicates precision and power instantly.",
+              "Premium tailoring in the most powerful of cool tones.",
+              "Wear steel. Look unstoppable."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-48",
+            "name": "Aubergine Luxe Gown",
+            "descriptions": [
+              "Deep purple tones with genuinely royal construction.",
+              "Premium fabric in the color of luxury and distinction.",
+              "For women who choose a different, more powerful shade.",
+              "Aubergine: the color of women who are beyond trends.",
+              "Rich color with rich construction for rich occasions.",
+              "A bold choice that marks a woman of sophisticated taste.",
+              "Premium tailoring in a color that demands a second look.",
+              "Designed for the woman who leads with distinction.",
+              "Deep, luxurious, and uncompromisingly premium.",
+              "Wear aubergine. Redefine the evening."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-49",
+            "name": "The Seraphine Gown",
+            "descriptions": [
+              "Heavenly beauty meets earthly power.",
+              "Premium construction with an angelic silhouette.",
+              "A gown that makes grace look effortless.",
+              "Designed for women who arrive and the room changes.",
+              "Luxury fabric with soft, commanding presence.",
+              "Named for those who move through the world with natural authority.",
+              "Crafted with an almost reverential attention to beauty.",
+              "For occasions that deserve something truly extraordinary.",
+              "The Seraphine: named for angels who command.",
+              "Wear the extraordinary. Be the extraordinary."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-50",
+            "name": "Cognac Prestige Gown",
+            "descriptions": [
+              "Warm cognac tones with luxurious, aged sophistication.",
+              "A gown in a color that communicates taste and premium understanding.",
+              "Premium construction for the woman who appreciates the finest things.",
+              "Rich, warm, complex — like the spirit it's named for.",
+              "Cognac: the color of a woman who has arrived.",
+              "Designed for women with genuinely discerning taste.",
+              "Premium fabric that rewards close attention.",
+              "A gown for evenings that deserve the finest.",
+              "Warm color, warm presence, exceptional construction.",
+              "Aged to perfection. Just like the woman wearing it."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-51",
+            "name": "Onyx Couture Gown",
+            "descriptions": [
+              "Black luxury elevated to couture perfection.",
+              "Premium construction in the most powerful non-color.",
+              "A gown that makes black new again.",
+              "For women who understand that black is a universe.",
+              "Designed with couture precision and luxury execution.",
+              "The most elevated interpretation of a timeless choice.",
+              "Onyx: not just black, but the deepest, most precious version.",
+              "Premium tailoring for the most discerning occasions.",
+              "A gown that redefines what wearing black means.",
+              "Couture black. Nothing else compares."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-52",
+            "name": "Mulberry Prestige Dress",
+            "descriptions": [
+              "Rich mulberry tones with genuinely premium construction.",
+              "A color that straddles bold and sophisticated perfectly.",
+              "Designed for women who want richness without obviousness.",
+              "Premium fabric in a sophisticated, complex tone.",
+              "Mulberry: the color of women who know exactly what they're doing.",
+              "Bold in color, refined in execution.",
+              "For women who prefer their statement understated — but unmistakable.",
+              "Rich tones with premium construction for exceptional occasions.",
+              "A gown for the woman with sophisticated, adventurous taste.",
+              "Complex color. Complex woman."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-53",
+            "name": "Alabaster Luxe Gown",
+            "descriptions": [
+              "Creamy, warm white with premium luxury construction.",
+              "For women who know that white isn't simple — it's supreme.",
+              "Alabaster: the color of women who are above the noise.",
+              "Premium fabric in the most refined interpretation of light.",
+              "Designed for occasions that call for pure, premium elegance.",
+              "Warm white with extraordinary tailoring precision.",
+              "A gown that communicates purity and power simultaneously.",
+              "For the woman who understands that simplicity requires confidence.",
+              "Premium construction in the most quietly powerful of colors.",
+              "Wear alabaster. Say everything without speaking."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-54",
+            "name": "Tanzanite Gown",
+            "descriptions": [
+              "Rare blue-violet tones for the woman of extraordinary taste.",
+              "Named for one of the world's rarest gemstones.",
+              "Premium construction in a color that exists almost nowhere else.",
+              "A genuinely rare choice for a genuinely rare woman.",
+              "Blue and violet merged into something more precious than either.",
+              "Designed for women who are done with colors everyone wears.",
+              "Premium fabric in a tone that stops conversation.",
+              "For occasions that deserve something that doesn't exist in most wardrobes.",
+              "Tanzanite: as rare as the woman who chooses it.",
+              "Extraordinary color. Extraordinary dress. Extraordinary you."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-55",
+            "name": "Amber Royale Gown",
+            "descriptions": [
+              "Warm amber luxury in genuinely royal proportions.",
+              "Premium construction in the most radiant warm tone.",
+              "A gown that makes golden hour wearable.",
+              "Designed for women who radiate without trying.",
+              "Rich amber tones with commanding, luxurious silhouette.",
+              "Premium fabric that catches light in breathtaking ways.",
+              "For women who understand that warmth is power.",
+              "Amber: the color of luxury that has lasted centuries.",
+              "A gown as warm and enduring as its namesake.",
+              "Wear amber. Radiate everything."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-56",
+            "name": "Navy Prestige Gown",
+            "descriptions": [
+              "Deep navy luxury with old-money sophistication.",
+              "Premium construction in the most versatile powerful color.",
+              "A gown that communicates authority without aggression.",
+              "For women who prefer their power contained and precise.",
+              "Navy: the color of women who are always the most capable person present.",
+              "Premium tailoring in a color that never loses relevance.",
+              "Designed for the woman who understands that authority is built, not worn.",
+              "Deep, commanding, and effortlessly sophisticated.",
+              "A gown for genuinely important occasions.",
+              "Wear navy. Be indisputably in charge."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-57",
+            "name": "The Isabella Gown",
+            "descriptions": [
+              "Named for the queens who redefined power.",
+              "Premium construction with genuinely royal presence.",
+              "A gown with a lineage as impressive as its design.",
+              "For women who were born for extraordinary moments.",
+              "Luxury tailoring with a silhouette that commands history.",
+              "Named for women who changed everything.",
+              "Premium fabric with the weight of genuine significance.",
+              "A gown worthy of its name and the woman who wears it.",
+              "The Isabella: for women who make history in the making.",
+              "Wear your legacy."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-58",
+            "name": "Topaz Luxe Dress",
+            "descriptions": [
+              "Warm topaz tones with premium, brilliant construction.",
+              "A dress in a color as precious as the gemstone.",
+              "Designed for women who prefer rare colors and rarer construction.",
+              "Premium fabric in a warm, rich, gemstone tone.",
+              "Topaz: the color of women who understand precious things.",
+              "Warm color with genuinely luxurious execution.",
+              "For occasions that deserve a color as special as they are.",
+              "A standout piece in a color most wardrobes have never seen.",
+              "Rich, warm, and unmistakably premium.",
+              "Topaz. Rare. Beautiful. You."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-59",
+            "name": "Forest Prestige Gown",
+            "descriptions": [
+              "Deep forest green with commanding, natural authority.",
+              "Premium construction in the most powerful shade of green.",
+              "A gown that communicates depth and sophistication.",
+              "For women who draw their power from something deeper.",
+              "Forest green: the color of women who are rooted and powerful.",
+              "Premium fabric in a color that commands respect.",
+              "Designed for women who prefer depth to flash.",
+              "Rich, deep green luxury for exceptional occasions.",
+              "A gown with an almost primal, commanding presence.",
+              "Wear the forest. Own the room."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-60",
+            "name": "Copper Luxe Gown",
+            "descriptions": [
+              "Warm copper tones with brilliant, metallic luxury.",
+              "A gown in the color of heat and radiance.",
+              "Premium construction in an irresistibly warm metallic tone.",
+              "Designed for women who glow in every light.",
+              "Copper: bold enough to be different, refined enough to be premium.",
+              "Metallic warmth with sophisticated, luxury construction.",
+              "For women who want metallic without going silver or gold.",
+              "A standout choice in a color that rewards the eye.",
+              "Premium fabric with warmth and brilliance in equal measure.",
+              "Wear copper. Radiate heat and elegance."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-61",
+            "name": "The Marguerite Gown",
+            "descriptions": [
+              "Named for the quiet strength of the most enduring flower.",
+              "Premium luxury with a timeless, feminine construction.",
+              "A gown that holds its own without shouting.",
+              "Designed for women who understand that elegance is disciplined.",
+              "Named for women who endure — and do so beautifully.",
+              "Luxury tailoring with a sophisticated, enduring design.",
+              "For occasions where lasting impression matters more than immediate shock.",
+              "Premium fabric with a design that reveals more over time.",
+              "The Marguerite: patience and beauty in premium form.",
+              "Wear time on your side."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-62",
+            "name": "Glacier Luxe Gown",
+            "descriptions": [
+              "Cool blue-white tones with commanding, icy beauty.",
+              "Premium construction in a color of breathtaking cold clarity.",
+              "A gown for women whose elegance is precise and powerful.",
+              "Glacier tones: beautiful at a distance, extraordinary up close.",
+              "Cool luxury for women with cool, commanding presence.",
+              "Premium fabric in a color that is rare and visually arresting.",
+              "Designed for women who prefer precision over warmth.",
+              "For occasions that deserve something arrestingly beautiful.",
+              "Cold color. Hot impression.",
+              "Wear the glacier. Chill the room."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-63",
+            "name": "Sienna Prestige Gown",
+            "descriptions": [
+              "Warm sienna tones with earthy, powerful elegance.",
+              "Premium construction in a color rooted in ancient beauty.",
+              "A gown that combines natural warmth with modern luxury.",
+              "Designed for women who draw their power from something timeless.",
+              "Sienna: the color of strength with warmth.",
+              "Rich earth tones with premium, sophisticated construction.",
+              "For women who prefer the warmth of earth to the flash of metal.",
+              "A gown rooted in beauty and constructed in luxury.",
+              "Deep, warm, and unmistakably premium.",
+              "Wear sienna. Be warmly unforgettable."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-64",
+            "name": "The Rosalind Gown",
+            "descriptions": [
+              "Romantic power meets sophisticated construction.",
+              "Named for women who were both beautiful and unbreakable.",
+              "Premium luxury with a design that tells a story of strength.",
+              "A gown as layered and complex as its namesake.",
+              "For women who understand that romance is not weakness.",
+              "Premium tailoring with a timeless, compelling silhouette.",
+              "Designed for women who are never just one thing.",
+              "Romantic in color, powerful in construction.",
+              "The Rosalind: for the woman who contains multitudes.",
+              "Wear complexity. Wear power. Wear the Rosalind."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-65",
+            "name": "Claret Luxe Gown",
+            "descriptions": [
+              "Deep claret tones with wine-dark luxury.",
+              "Premium construction in a color that communicates depth.",
+              "A gown for women who prefer the complex to the obvious.",
+              "Rich, deep, and unmistakably sophisticated.",
+              "Claret: the color of women with cultivated taste.",
+              "Premium fabric in a tone that demands a second look.",
+              "For occasions where richness is the expectation.",
+              "Deep color, deep construction, deep impression.",
+              "A gown as layered and complex as fine claret itself.",
+              "Wear depth. Own the evening."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-66",
+            "name": "Jade Prestige Gown",
+            "descriptions": [
+              "Rich jade tones with the prestige of an ancient luxury.",
+              "Premium construction in a color with centuries of power behind it.",
+              "A gown as precious and commanding as the stone it's named for.",
+              "Designed for women who appreciate rarity in all things.",
+              "Jade: the color of women with rare, cultivated taste.",
+              "Premium fabric in a color that has communicated value since antiquity.",
+              "For women who wear their sophistication with confidence.",
+              "Rich green with the premium weight of genuine luxury.",
+              "A standout piece for the woman with exceptional taste.",
+              "Rare color. Rare woman. Rare occasion."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-67",
+            "name": "The Florentine Gown",
+            "descriptions": [
+              "Italian-inspired luxury with Renaissance-level construction.",
+              "Premium craftsmanship in the tradition of the world's finest fashion.",
+              "A gown with the sophistication of centuries of design mastery.",
+              "For women who understand that the finest things are made, not manufactured.",
+              "Italian luxury elevated to premium wearable art.",
+              "Designed with a devotion to craft that is almost lost today.",
+              "Premium fabric with a design that honors fashion's greatest heritage.",
+              "The Florentine: for women who understand what premium really means.",
+              "Craftsmanship that would impress the great ateliers.",
+              "Wear the Renaissance. Own the modern room."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-68",
+            "name": "Wine Luxe Evening Gown",
+            "descriptions": [
+              "Deep wine tones with commanding luxury construction.",
+              "Premium fabric in a color as rich as the finest vintage.",
+              "A gown that communicates taste and sophistication instantly.",
+              "Designed for women who appreciate the depth in all things.",
+              "Wine: the color of women who understand that the best things improve with time.",
+              "Rich color with rich construction for exceptional occasions.",
+              "For the woman who chooses complexity over simplicity.",
+              "Deep, layered, and unmistakably premium.",
+              "A gown as rewarding to wear as a great wine is to drink.",
+              "Aged taste. Premium execution."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-69",
+            "name": "The Isadora Gown",
+            "descriptions": [
+              "Named for the woman who changed how women move.",
+              "Premium construction with freedom and power woven in.",
+              "A gown that moves as expressively as the woman who wears it.",
+              "Designed for women who refuse to be contained.",
+              "Named for women who defined their own elegance.",
+              "Premium tailoring that celebrates movement as much as stillness.",
+              "For women who understand that the body is the instrument.",
+              "Luxury construction with a liberating, expressive silhouette.",
+              "The Isadora: for women who have always danced to their own rhythm.",
+              "Move freely. Look extraordinary."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-70",
+            "name": "Bronze Prestige Gown",
+            "descriptions": [
+              "Warm bronze tones with genuinely metallic luxury.",
+              "Premium construction in the color of ancient triumph.",
+              "A gown that celebrates the warmth of hard-won achievement.",
+              "Designed for women who have earned their place in every room.",
+              "Bronze: warmer than gold, richer than copper, entirely your own.",
+              "Premium fabric in a metallic tone with genuine depth.",
+              "For women who understand that warm tones communicate strength.",
+              "A standout metallic gown in a color that demands attention.",
+              "Bronze: the color of women who finish stronger than they start.",
+              "Wear the warmth of achievement."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-71",
+            "name": "Violet Luxe Gown",
+            "descriptions": [
+              "Rich violet tones with commanding, creative presence.",
+              "Premium construction in the color of imagination and power.",
+              "A gown that communicates creative sophistication instantly.",
+              "Designed for women who see the world in color others miss.",
+              "Violet: the color of women who combine creativity and authority.",
+              "Premium fabric in a bold, sophisticated, memorable tone.",
+              "For occasions that deserve the most creative luxury approach.",
+              "Rich color with genuinely premium construction.",
+              "A gown for the woman who leads with vision.",
+              "Wear violet. Lead with imagination."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-72",
+            "name": "The Arabella Gown",
+            "descriptions": [
+              "Named for the grace that exists beyond elegance.",
+              "Premium luxury with a silhouette of pure, refined beauty.",
+              "A gown that makes the art of dressing feel effortless.",
+              "Designed for women for whom elegance is simply natural.",
+              "Premium tailoring with an almost effortless beauty.",
+              "Named for the women who wear elegance like skin.",
+              "For occasions where natural grace is the highest achievement.",
+              "Premium construction in service of something almost ineffable.",
+              "The Arabella: for women who elevate every room without effort.",
+              "Natural grace. Premium execution."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-73",
+            "name": "Rust Luxe Dress",
+            "descriptions": [
+              "Bold rust tones with warm, commanding presence.",
+              "Premium construction in a color that is confident and rare.",
+              "A dress for women who don't follow trends — they acknowledge them and move on.",
+              "Warm, earthy, and unmistakably bold.",
+              "Rust: the color of women who don't need approval.",
+              "Premium fabric in a tone that rewards confident women.",
+              "For the woman who knows that unusual choices are the right choices.",
+              "Rich, warm, and powerfully constructed.",
+              "A standout piece in a color that makes a statement without trying.",
+              "Wear rust. Be bold."
+            ]
+          },
+          {
+            "id": "femaleWear-Premium Dresses-74",
+            "name": "The Celestia Gown",
+            "descriptions": [
+              "Star-inspired luxury for the woman who belongs among them.",
+              "Premium construction with a truly celestial silhouette.",
+              "A gown designed for women who operate at an elevated frequency.",
+              "For occasions that feel larger than life itself.",
+              "Celestial beauty in the finest available premium construction.",
+              "Named for the vastness that some women naturally carry.",
+              "Premium fabric with the movement of something cosmic.",
+              "A gown that makes the ordinary extraordinary by entering it.",
+              "The Celestia: for women who don't inhabit the earth — they elevate it.",
+              "Wear the stars. Command the universe."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "maleWear": {
+    "category": "Male Wear",
+    "subcategories": [
+      {
+        "name": "Premium T-Shirts",
+        "items": [
+          {
+            "id": "maleWear-Premium T-Shirts-1",
+            "name": "Elite Core Tee",
+            "descriptions": [
+              "Premium cotton comfort with elevated style.",
+              "Minimal design. Maximum presence.",
+              "Everyday wear redefined for modern elites.",
+              "Tailored fit with luxury softness.",
+              "A refined essential for confident men.",
+              "Built for comfort, styled for impact.",
+              "Casual wear with premium attitude.",
+              "Clean lines, bold energy.",
+              "Effortless street luxury.",
+              "Upgrade your basics instantly."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-2",
+            "name": "Sovereign Stitch Tee",
+            "descriptions": [
+              "Precision-stitched for the man who demands quality.",
+              "Premium cotton blend with a structured, tailored fit.",
+              "Casual confidence in every thread.",
+              "Designed for men who never compromise on quality.",
+              "The foundation piece every premium wardrobe needs.",
+              "Clean, minimal, and unmistakably high quality.",
+              "Built to look better than everything else in the room.",
+              "Effortless luxury for everyday occasions.",
+              "Premium basics done right.",
+              "Because even casual deserves to be elite."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-3",
+            "name": "Authority Tee",
+            "descriptions": [
+              "The tee that communicates confidence before you speak.",
+              "Premium fabric with commanding, clean presence.",
+              "Designed for men who are always in charge.",
+              "Luxury comfort with powerful, minimal design.",
+              "A basic that isn't basic in any way.",
+              "Clean lines on premium fabric — the elite combination.",
+              "Worn by men who understand that quality shows.",
+              "For the man who takes even casual seriously.",
+              "Premium cotton with authority-level tailoring.",
+              "Authority isn't just for suits."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-4",
+            "name": "Prestige Classic Tee",
+            "descriptions": [
+              "The classic reimagined with premium construction.",
+              "Premium cotton with a fit that flatters without trying.",
+              "Designed for the man who elevates the everyday.",
+              "Clean design with the weight of genuine quality.",
+              "A wardrobe staple for men with premium standards.",
+              "Because the classics deserve to be excellent.",
+              "Premium fabric that gets better with wear.",
+              "The right tee for every occasion — casual done right.",
+              "Minimal design. Maximum quality signal.",
+              "Classic is premium when you start with the best."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-5",
+            "name": "Core Luxe Tee",
+            "descriptions": [
+              "Luxury softness meets everyday wearability.",
+              "Premium cotton blend with refined, minimal design.",
+              "The tee that makes casual look intentional.",
+              "Designed for the man who is always put-together.",
+              "Luxury basics for non-basic men.",
+              "Soft enough for comfort, structured enough for style.",
+              "Premium construction in the most versatile format.",
+              "A foundation piece that earns its place in every outfit.",
+              "Clean, premium, and effortlessly confident.",
+              "Core, luxurious, essential."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-6",
+            "name": "The Monolith Tee",
+            "descriptions": [
+              "Solid, structured, and unmistakably premium.",
+              "Heavy-weight premium cotton for the man who means business even casually.",
+              "A tee with the presence of a statement piece.",
+              "Designed for men who want their basics to work harder.",
+              "Premium weight fabric with clean, powerful design.",
+              "The tee that anchors any outfit with authority.",
+              "Monolithic in quality, minimal in design.",
+              "For the man who understands that weight communicates quality.",
+              "Bold in construction, clean in aesthetic.",
+              "Heavy quality. Light effort."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-7",
+            "name": "Refined Essentials Tee",
+            "descriptions": [
+              "The essential tee, refined to its best possible version.",
+              "Premium cotton with carefully calibrated weight and drape.",
+              "Designed for the man who understands what refined actually means.",
+              "A tee that makes every outfit better by being in it.",
+              "Clean design with premium construction throughout.",
+              "Refined isn't a style — it's a standard.",
+              "For men whose casual is other men's dressed up.",
+              "Premium fabric with the fit of something made specifically for you.",
+              "The essential that isn't just essential — it's excellent.",
+              "Refined. Essential. Premium."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-8",
+            "name": "Midnight Blue Luxe Tee",
+            "descriptions": [
+              "Deep midnight blue in premium cotton construction.",
+              "A tee in a color that communicates sophistication.",
+              "Designed for men who choose their basics with intention.",
+              "Premium fabric in a color that works harder than neutrals.",
+              "Midnight blue: the most sophisticated casual color.",
+              "Clean design in a tone that elevates everything.",
+              "For the man who understands that color is a choice, not an afterthought.",
+              "Premium cotton in a color with genuine versatility and depth.",
+              "The tee that makes casual look considered.",
+              "Midnight blue. Premium construction. Instant upgrade."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-9",
+            "name": "The Foundation Tee",
+            "descriptions": [
+              "Built to be the base of your best outfits.",
+              "Premium cotton with the structure every layered look needs.",
+              "Designed with the understanding that basics matter most.",
+              "A tee that performs as well under a blazer as standalone.",
+              "Premium construction for the most important building block.",
+              "Clean, structured, and genuinely premium throughout.",
+              "The foundation that makes everything else look better.",
+              "Designed for men who dress from the base up.",
+              "Premium quality that earns the name 'foundation'.",
+              "Build better. Start here."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-10",
+            "name": "Precision Cut Tee",
+            "descriptions": [
+              "Cut with an almost surgical precision for perfect fit.",
+              "Premium cotton shaped to flatter and perform.",
+              "Designed for men who notice when the cut is off.",
+              "Precision tailoring in the casual format.",
+              "A tee where the fit is the most important feature.",
+              "Premium fabric, premium cut, premium result.",
+              "For men who know that fit communicates everything.",
+              "Crafted with an attention to cut that casual tees usually ignore.",
+              "Clean lines, precise cut, premium fabric.",
+              "Precision in casual. Excellence throughout."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-11",
+            "name": "Heritage Stitch Tee",
+            "descriptions": [
+              "Traditional construction methods with modern premium materials.",
+              "A tee built with the craft of another era.",
+              "Designed for men who value how things are made, not just how they look.",
+              "Premium cotton with heritage-inspired construction technique.",
+              "Quality you can feel from the first touch.",
+              "For the man who understands that real quality is in the making.",
+              "Old craft, new premium fabric — the ideal combination.",
+              "A tee that honors the tradition of making things well.",
+              "Heritage construction. Modern premium result.",
+              "Made right. Worn confidently."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-12",
+            "name": "The Tactician Tee",
+            "descriptions": [
+              "Strategic design for the man who approaches everything with intention.",
+              "Premium cotton with a deliberate, confident aesthetic.",
+              "Designed for men who see casual as a strategy, not an accident.",
+              "Clean design with a premium that rewards close attention.",
+              "A tee for men who are always thinking several steps ahead.",
+              "Premium fabric in a design that communicates considered taste.",
+              "For the man who knows that looking effortless takes effort.",
+              "Strategic minimalism in premium cotton.",
+              "Thoughtful design. Premium execution.",
+              "Casual with a plan."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-13",
+            "name": "Stealth Luxe Tee",
+            "descriptions": [
+              "Quiet luxury that the discerning eye immediately recognizes.",
+              "Premium construction without the need for logos or signals.",
+              "Designed for men who are past the need to announce their quality.",
+              "Luxury that whispers rather than shouts.",
+              "For the man whose quality speaks for itself.",
+              "Premium cotton with the confidence of understatement.",
+              "Clean design with premium construction — the new luxury signal.",
+              "A tee that quietly outclasses everything around it.",
+              "Stealth luxury for men who know.",
+              "Quiet premium. Loud presence."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-14",
+            "name": "The Architect Tee",
+            "descriptions": [
+              "Structured design for the man who builds his look deliberately.",
+              "Premium cotton with architectural precision in every seam.",
+              "Designed for men who approach dressing as an exercise in design.",
+              "A tee that is itself a design object.",
+              "Premium fabric with construction that reveals taste.",
+              "For men who treat their wardrobe as a considered project.",
+              "Clean lines, premium weight, architectural presence.",
+              "Built with the intention of someone who values structure.",
+              "Architectural precision in casual format.",
+              "Design your look. Start here."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-15",
+            "name": "Obsidian Premium Tee",
+            "descriptions": [
+              "Deep black premium cotton that holds its darkness.",
+              "A tee in the most commanding version of the most powerful non-color.",
+              "Designed for men who wear black as a lifestyle, not a choice.",
+              "Premium construction in an obsidian black that doesn't fade.",
+              "Obsidian: not just black, but the deepest version.",
+              "Premium fabric in a color that never needs explanation.",
+              "For men who understand that deep black communicates serious quality.",
+              "Clean design, commanding color, premium construction.",
+              "Obsidian premium. Every casual occasion elevated.",
+              "Deep. Premium. Definitively black."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-16",
+            "name": "Minimal Prestige Tee",
+            "descriptions": [
+              "Maximum prestige through minimum design.",
+              "Premium cotton with a design philosophy of less being more.",
+              "Designed for men who understand that restraint communicates confidence.",
+              "A tee where quality is the only statement needed.",
+              "Clean and minimal — the highest form of casual luxury.",
+              "Premium fabric with a design that doesn't try too hard — and wins.",
+              "For men who have evolved beyond the need for decoration.",
+              "Minimalism as a luxury position.",
+              "Premium construction. Zero unnecessary detail.",
+              "Less everything. More quality."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-17",
+            "name": "The Centurion Tee",
+            "descriptions": [
+              "Built with the endurance of a hundred wears in mind.",
+              "Premium cotton engineered for longevity and consistent quality.",
+              "Designed for men who measure value in years, not seasons.",
+              "A tee that gets better with every wash and wear.",
+              "Premium construction built for the long game.",
+              "For the man who buys once and buys right.",
+              "Durable premium fabric with lasting fit and structure.",
+              "The centurion approach: built to endure.",
+              "A tee that outlasts everything cheap around it.",
+              "Built to last. Designed to impress throughout."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-18",
+            "name": "Stone Luxe Tee",
+            "descriptions": [
+              "Warm stone tones in premium cotton construction.",
+              "A neutral that outperforms every other neutral.",
+              "Designed for men who understand that the right neutral is actually bold.",
+              "Premium fabric in a color that works with everything and outshines most.",
+              "Stone: the sophisticated neutral for premium wardrobes.",
+              "Clean design in a tone that telegraphs taste.",
+              "For the man who has moved beyond grey and white.",
+              "Premium cotton in a color with surprising depth and versatility.",
+              "A tee that makes every combination look considered.",
+              "The premium neutral. The superior choice."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-19",
+            "name": "The Diplomat Tee",
+            "descriptions": [
+              "Smooth, refined, and unobtrusively excellent.",
+              "Premium cotton with a design that works in every situation.",
+              "Designed for men who move across multiple worlds with ease.",
+              "A tee that performs as well at lunch as it does at leisure.",
+              "Premium fabric with a diplomatic elegance.",
+              "For the man who makes every environment work for him.",
+              "Clean design that communicates ease and quality simultaneously.",
+              "A tee that crosses every casual border without a second look.",
+              "Smooth premium. Every situation mastered.",
+              "Diplomatic in design. Premium in execution."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-20",
+            "name": "Charcoal Authority Tee",
+            "descriptions": [
+              "Deep charcoal premium cotton for men of substance.",
+              "A tee in the color that bridges black and grey with more sophistication than either.",
+              "Designed for men who prefer their neutrals to have genuine depth.",
+              "Premium construction in a color that communicates measured authority.",
+              "Charcoal: the neutral for men who have considered the alternatives.",
+              "Clean design in a tone with more character than basic options.",
+              "For the man who understands that charcoal isn't a compromise — it's a choice.",
+              "Premium fabric in a color with real versatility and visual weight.",
+              "Deep, sophisticated, and premium throughout.",
+              "Charcoal authority. Premium foundation."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-21",
+            "name": "The Stoic Tee",
+            "descriptions": [
+              "Quiet, composed, and unmistakably high quality.",
+              "Premium cotton for men who let their quality speak.",
+              "Designed for men who are comfortable with restraint.",
+              "A tee that communicates inner security through outward simplicity.",
+              "Premium fabric with the confidence of understatement.",
+              "For men who have nothing to prove — and dress accordingly.",
+              "Clean design with premium construction — the stoic combination.",
+              "Composed premium for composed men.",
+              "No noise. Pure quality.",
+              "The Stoic. Premium for men who know."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-22",
+            "name": "Slate Premium Tee",
+            "descriptions": [
+              "Cool slate tones with premium cotton construction.",
+              "A neutral in a color with genuine character and depth.",
+              "Designed for men who want more from their neutrals.",
+              "Slate: the color between grey and something more interesting.",
+              "Premium fabric in a tone that communicates modern sophistication.",
+              "For men who choose their neutrals with as much care as their statement pieces.",
+              "Clean design in a color with subtle, cool authority.",
+              "A tee that makes the rest of the outfit look considered.",
+              "Slate cool. Premium construction.",
+              "The sophisticated neutral."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-23",
+            "name": "The Merchant Tee",
+            "descriptions": [
+              "Built for men who move through the world with purpose.",
+              "Premium cotton with a confident, capable aesthetic.",
+              "Designed for men who take every environment seriously.",
+              "A tee that communicates competence even in casual.",
+              "Premium fabric for men who are always doing something worth doing.",
+              "Clean design with the energy of a man who gets things done.",
+              "For the man whose casual is as purposeful as his professional.",
+              "Premium construction for a purposeful man.",
+              "Merchant energy. Premium fabric.",
+              "Built for the man who moves."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-24",
+            "name": "The Voyager Tee",
+            "descriptions": [
+              "Premium cotton built for the man in motion.",
+              "A tee designed for men who don't stand still.",
+              "Designed for men who go places — and look great doing it.",
+              "Premium fabric with performance-meets-luxury construction.",
+              "For the man whose life is one continuous adventure.",
+              "Clean design with the energy of perpetual forward motion.",
+              "Premium cotton that performs wherever you take it.",
+              "The tee for the man who is always somewhere interesting.",
+              "Voyager spirit. Premium execution.",
+              "Go further. Look better."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-25",
+            "name": "Ivory Authority Tee",
+            "descriptions": [
+              "Warm ivory tones in premium cotton construction.",
+              "A white that went to university and came back more interesting.",
+              "Designed for men who want white without white's limitations.",
+              "Premium fabric in a warm, sophisticated alternative to pure white.",
+              "Ivory: for the man who chooses the better version of everything.",
+              "Clean design in a tone that communicates warmth and quality.",
+              "For men who understand that ivory is the premium white.",
+              "Premium cotton in a color that photographs beautifully.",
+              "A tee that makes everything look elevated.",
+              "Ivory. The premium neutral."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-26",
+            "name": "The Centurion II Tee",
+            "descriptions": [
+              "The upgraded version of our most enduring tee.",
+              "Premium cotton with engineering improvements for the most demanding wear.",
+              "Designed for men who liked the original and wanted more.",
+              "Built with feedback from men who demand the best.",
+              "Premium construction, refined and elevated.",
+              "For the man who is never satisfied with good when great is possible.",
+              "Everything the original was, but better in every measurable way.",
+              "Premium upgrade for premium standards.",
+              "Better cotton. Better fit. Better result.",
+              "The sequel worth waiting for."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-27",
+            "name": "The Baron Tee",
+            "descriptions": [
+              "Premium casual for men who carry authority naturally.",
+              "A tee with the bearing of something more formal.",
+              "Designed for men who are in charge regardless of what they wear.",
+              "Premium fabric with a quiet authority built in.",
+              "Clean design with the bearing of a man who commands respect.",
+              "For the man whose wardrobe speaks before he does.",
+              "Premium cotton with an unmistakable air of distinction.",
+              "A tee that earns its name in every wear.",
+              "Baron-level casual. Baron-level quality.",
+              "Authority in every thread."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-28",
+            "name": "Graphite Luxe Tee",
+            "descriptions": [
+              "Deep graphite tones with premium, modern construction.",
+              "A neutral that outperforms every competitor.",
+              "Designed for men who prefer their dark neutrals with industrial sophistication.",
+              "Premium fabric in a color that communicates precision.",
+              "Graphite: the color of men who build things.",
+              "Clean design in a tone with genuine depth and character.",
+              "For men who understand that the right dark neutral changes everything.",
+              "Premium cotton in a color of quiet, industrial strength.",
+              "A tee that makes the rest look less precise.",
+              "Graphite precision. Premium execution."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-29",
+            "name": "The Kingmaker Tee",
+            "descriptions": [
+              "Not for kings. For the men who make them.",
+              "Premium cotton with strategic, minimal confidence.",
+              "Designed for men who operate behind the most important scenes.",
+              "A tee for men who understand real power.",
+              "Premium fabric for men who don't need to announce their significance.",
+              "Clean, minimal, premium — the combination of men who actually lead.",
+              "For the man whose casual communicates more than most men's formal.",
+              "Premium construction for a man of genuine consequence.",
+              "The Kingmaker: premium casual for men who know how power works.",
+              "Quiet premium. Real authority."
+            ]
+          },
+          {
+            "id": "maleWear-Premium T-Shirts-30",
+            "name": "The Stalwart Tee",
+            "descriptions": [
+              "Steady, reliable, and unmistakably premium.",
+              "Premium cotton built for men who show up consistently.",
+              "Designed for men who understand that consistency is strength.",
+              "A tee that performs perfectly every single time.",
+              "Premium fabric for the man who never has an off day.",
+              "Clean design with the reliability of something genuinely excellent.",
+              "For the man who is the person others depend on.",
+              "Premium construction built for men who never let quality slip.",
+              "Stalwart construction. Stalwart man.",
+              "Show up. Look perfect. Every time."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Corporate Shirts",
+        "items": [
+          {
+            "id": "maleWear-Corporate Shirts-1",
+            "name": "Executive Authority Shirt",
+            "descriptions": [
+              "Sharp tailoring for boardroom dominance.",
+              "Designed for leaders, not followers.",
+              "Crisp finish with premium structure.",
+              "Confidence stitched into every seam.",
+              "Luxury office wear with commanding presence.",
+              "Refined fit for executive impact.",
+              "Where precision meets prestige.",
+              "Elevate your professional wardrobe.",
+              "Polished. Powerful. Premium.",
+              "Dress like the decision-maker."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-2",
+            "name": "The Boardroom Shirt",
+            "descriptions": [
+              "Engineered for the room where decisions happen.",
+              "Premium cotton with boardroom-level precision tailoring.",
+              "Designed for men who run meetings, not attend them.",
+              "A shirt with authority sewn into every seam.",
+              "Sharp, structured, and unmistakably premium.",
+              "For the man who is always the most prepared person present.",
+              "Premium fabric for professional environments of consequence.",
+              "Clean collar, sharp cuffs, premium throughout.",
+              "The shirt that communicates readiness before the meeting begins.",
+              "Boardroom ready. Always."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-3",
+            "name": "Prestige Professional Shirt",
+            "descriptions": [
+              "Professional excellence in premium fabric.",
+              "Designed for men whose career reflects their standards.",
+              "Premium cotton with a fit that flatters and commands respect.",
+              "A shirt that works as hard as the man wearing it.",
+              "Clean design with professional-level premium construction.",
+              "For the executive who treats every day as an important one.",
+              "Premium tailoring for professional environments that matter.",
+              "A shirt that makes promotion feel inevitable.",
+              "Professional premium. Career-defining choice.",
+              "Wear the shirt that matches your ambition."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-4",
+            "name": "The Statesman Shirt",
+            "descriptions": [
+              "Designed for men who represent something larger than themselves.",
+              "Premium fabric with the gravity of genuine importance.",
+              "A shirt for professional moments of real consequence.",
+              "Tailored for men who speak for many.",
+              "Premium construction for professional occasions that define careers.",
+              "For the man who enters rooms and changes the energy.",
+              "Statesman tailoring in premium fabric.",
+              "A professional shirt with genuine weight and authority.",
+              "Clean, precise, and unmistakably significant.",
+              "Wear the shirt of men who matter."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-5",
+            "name": "Corporate Luxe Shirt",
+            "descriptions": [
+              "Luxury in a professional format.",
+              "Premium cotton with sophisticated corporate tailoring.",
+              "Designed for men who refuse to sacrifice quality for convention.",
+              "A shirt that says professional and premium simultaneously.",
+              "Luxury craftsmanship for the corporate man.",
+              "Premium fabric with the clean lines corporate environments demand.",
+              "For men who bring luxury standards to professional spaces.",
+              "A corporate shirt that doesn't feel like a uniform.",
+              "Premium professional. Always.",
+              "Bring your best to the office. Wear this."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-6",
+            "name": "The Diplomat Shirt",
+            "descriptions": [
+              "Smooth, refined, and authoritative in every environment.",
+              "Premium fabric for professional men of the world.",
+              "Designed for men who navigate complex environments with ease.",
+              "A shirt that works as hard in New York as in Lagos.",
+              "Premium tailoring with universal professional appeal.",
+              "For the professional who is at ease everywhere.",
+              "Clean design that communicates competence across borders.",
+              "Diplomatic professionalism in premium fabric.",
+              "A shirt for the globally aware professional.",
+              "Refined. Universal. Premium."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-7",
+            "name": "Power Structure Shirt",
+            "descriptions": [
+              "Engineered for the man who builds power through presence.",
+              "Premium cotton with a structure that communicates authority.",
+              "Designed for professionals who understand that power has an aesthetic.",
+              "A shirt that holds its structure as well as the man wearing it holds the room.",
+              "Premium fabric with precision engineering throughout.",
+              "For men who build their professional reputation on quality.",
+              "Clean lines, powerful structure, premium execution.",
+              "A professional shirt that pulls the room toward you.",
+              "Power in fabric form.",
+              "Structured premium. Authoritative result."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-8",
+            "name": "The Navigator Shirt",
+            "descriptions": [
+              "For professionals who chart the course for others.",
+              "Premium cotton with the confidence of someone who always knows where they're going.",
+              "Designed for men who lead without uncertainty.",
+              "A shirt for the professional who has a clear direction and a premium appearance.",
+              "Clean, confident, and premium throughout.",
+              "For the man who sets the agenda for everyone else.",
+              "Premium tailoring for professionals of genuine direction.",
+              "A shirt that communicates clarity and competence.",
+              "Navigate with confidence. Look premium doing it.",
+              "Direction. Premium. Authority."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-9",
+            "name": "Refined Corporate Shirt",
+            "descriptions": [
+              "Corporate excellence with refined sensibility.",
+              "Premium fabric for the professional who has taste as well as ambition.",
+              "Designed for men who don't sacrifice elegance for professionalism.",
+              "A shirt that is both appropriate and genuinely refined.",
+              "Premium cotton with sophisticated corporate construction.",
+              "For the professional who brings aesthetic intelligence to the office.",
+              "Clean design with the refinement that sets leaders apart.",
+              "Corporate premium with genuine taste.",
+              "Professional and refined. The rare combination.",
+              "Bring refinement to the boardroom."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-10",
+            "name": "The Chancellor Shirt",
+            "descriptions": [
+              "For men in charge of genuinely important things.",
+              "Premium fabric with academic authority.",
+              "Designed for professionals who carry the weight of consequence.",
+              "A shirt for men whose decisions affect others.",
+              "Premium tailoring for the highest professional occasions.",
+              "For the man who has earned the right to look this good.",
+              "Clean, authoritative, and unmistakably premium.",
+              "The Chancellor: a shirt for men of genuine authority.",
+              "Premium professional for positions of genuine responsibility.",
+              "Authority. Responsibility. Premium."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-11",
+            "name": "Heritage Corporate Shirt",
+            "descriptions": [
+              "Traditional professional tailoring elevated with premium fabric.",
+              "A shirt that honors the best of professional dressing.",
+              "Designed for men who respect the traditions that work.",
+              "Premium cotton with classic professional construction.",
+              "Heritage tailoring with premium modern materials.",
+              "For men who understand that some traditions are traditions for good reason.",
+              "Classic professional aesthetic in the finest available fabric.",
+              "A shirt that never looks dated because it never chased trends.",
+              "Timeless professional in premium execution.",
+              "Heritage standards. Premium fabric."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-12",
+            "name": "The Founder Shirt",
+            "descriptions": [
+              "For men building something that will outlast them.",
+              "Premium fabric for the professional who is playing a long game.",
+              "Designed for the man who is creating the institution others will join.",
+              "A shirt for the professional who sets the culture.",
+              "Premium construction for men who are building something real.",
+              "For the founder who understands that standards start at the top.",
+              "Clean, commanding, and premium throughout.",
+              "The Founder: a shirt for men who build.",
+              "Premium professional for men creating the future.",
+              "Build. Lead. Look premium doing both."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-13",
+            "name": "Summit Corporate Shirt",
+            "descriptions": [
+              "For professionals who operate at the highest levels.",
+              "Premium fabric for men who have reached the summit of their field.",
+              "Designed for the professional whose standards have no ceiling.",
+              "A shirt for men at the top — and those who are getting there.",
+              "Premium tailoring for professional pinnacles.",
+              "For the man who measures success in achievements, not opinions.",
+              "Clean, peak-level, and unmistakably premium.",
+              "Summit standards in premium professional fabric.",
+              "The top is a standard, not a destination.",
+              "Premium. Peak. Professional."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-14",
+            "name": "The Industrialist Shirt",
+            "descriptions": [
+              "For men who build industries, not just careers.",
+              "Premium fabric with the weight of serious professional intent.",
+              "Designed for professionals who think on a large scale.",
+              "A shirt for the man whose ambitions are industrial in scope.",
+              "Premium cotton with the seriousness of genuine enterprise.",
+              "For the professional who is building something of scale.",
+              "Clean design with premium construction for large-scale achievers.",
+              "Industrial ambition. Premium professional appearance.",
+              "The Industrialist: a shirt for serious professional men.",
+              "Think big. Dress premium."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-15",
+            "name": "Precision Tailored Shirt",
+            "descriptions": [
+              "Tailored with an almost obsessive precision.",
+              "Premium cotton shaped for the man who notices imperfection.",
+              "Designed for professionals for whom fit is non-negotiable.",
+              "A shirt where the tailoring is the primary luxury.",
+              "Premium fabric cut with professional-grade precision.",
+              "For the man who knows when the collar is off by a millimeter.",
+              "Clean design, precise tailoring, premium result.",
+              "Precision as a luxury value in professional wear.",
+              "Every seam placed exactly where it must be.",
+              "Precision. Premium. Perfect fit."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-16",
+            "name": "The Architect Shirt",
+            "descriptions": [
+              "Designed with structural precision and aesthetic intelligence.",
+              "Premium cotton for the professional who approaches dressing as design.",
+              "Designed for men who see structure in everything.",
+              "A shirt that is itself an exercise in considered design.",
+              "Premium fabric with construction that rewards close attention.",
+              "For the man who treats his wardrobe as a design challenge.",
+              "Clean lines, architectural structure, premium fabric.",
+              "An object of considered professional design.",
+              "Built with the precision of someone who builds things.",
+              "Structural premium. Professional design."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-17",
+            "name": "The Senator Shirt",
+            "descriptions": [
+              "For men who have earned a platform.",
+              "Premium fabric with the bearing of genuine public presence.",
+              "Designed for professionals who represent and are seen.",
+              "A shirt for the man whose appearance affects others' perceptions of consequence.",
+              "Premium cotton with the gravity of public responsibility.",
+              "For the professional who represents something larger than himself.",
+              "Clean, authoritative, and premium in every detail.",
+              "Senator-level professional in premium fabric.",
+              "Represent with authority. Dress with premium.",
+              "Platform presence. Premium execution."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-18",
+            "name": "Crisp Authority Shirt",
+            "descriptions": [
+              "Crisp lines that communicate authority without effort.",
+              "Premium cotton with a crispness that holds all day.",
+              "Designed for professionals who need to look as good at 6pm as at 8am.",
+              "A shirt that maintains its authority throughout the longest professional days.",
+              "Premium fabric engineered for all-day crispness.",
+              "For the man who never looks like he's been at work for twelve hours.",
+              "Clean, crisp, authoritative, and premium throughout.",
+              "Authority that doesn't wilt with the day.",
+              "Crisp from first meeting to last handshake.",
+              "Premium professional. All day authority."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-19",
+            "name": "The Exchequer Shirt",
+            "descriptions": [
+              "For professionals in charge of what matters most.",
+              "Premium fabric with the confidence of a man who controls resources.",
+              "Designed for professionals whose decisions have financial weight.",
+              "A shirt for the man who understands value in every dimension.",
+              "Premium cotton for the professional who makes the numbers work.",
+              "For men at the top of the financial professional world.",
+              "Clean, precise, and unmistakably premium throughout.",
+              "The Exchequer: premium professional for consequential roles.",
+              "Control the room. Control the numbers. Control the premium.",
+              "Premium professional authority."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-20",
+            "name": "The Pinnacle Shirt",
+            "descriptions": [
+              "For men who have defined what the top looks like.",
+              "Premium fabric at the pinnacle of professional tailoring.",
+              "Designed for professionals who have arrived and know it.",
+              "A shirt for the man who defines the standard, not meets it.",
+              "Premium cotton at the highest point of professional construction.",
+              "For the man who inspires what others aspire to.",
+              "Clean, authoritative, and premium at every single point.",
+              "Pinnacle standards. Pinnacle professional presence.",
+              "The highest point of professional dressing.",
+              "You've arrived. Dress accordingly."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-21",
+            "name": "The Patriarch Shirt",
+            "descriptions": [
+              "For men who have built something others inherit.",
+              "Premium fabric for the professional man of lasting consequence.",
+              "Designed for men whose professional legacy is already established.",
+              "A shirt for the man who has been the standard for others.",
+              "Premium cotton for the professional who endures.",
+              "For men who have built institutions and lead them still.",
+              "Clean, commanding, and premium in the deepest sense.",
+              "Patriarch-level professional in premium fabric.",
+              "The shirt for the man whose influence spans decades.",
+              "Build. Lead. Endure. Premium."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-22",
+            "name": "Linen Prestige Shirt",
+            "descriptions": [
+              "Premium linen construction for warm-climate professionals.",
+              "A professional shirt that performs beautifully in heat.",
+              "Designed for the executive who doesn't let climate compromise quality.",
+              "Premium linen for the professional who travels warm environments.",
+              "Clean design in the finest available linen construction.",
+              "For the professional in warmer climates who refuses to sacrifice standards.",
+              "Linen luxury with professional tailoring precision.",
+              "A warm-weather professional shirt with genuine premium credentials.",
+              "Premium linen. Professional authority. Climate mastered.",
+              "Look premium. Stay cool."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-23",
+            "name": "The Commandant Shirt",
+            "descriptions": [
+              "For men who command rather than request.",
+              "Premium fabric with the natural authority of genuine leadership.",
+              "Designed for professionals who lead by standing at the front.",
+              "A shirt that fits a man in command — and no one else.",
+              "Premium cotton for the man who other men follow.",
+              "For the professional who is the point person for everything important.",
+              "Clean, structured, authoritative, and premium throughout.",
+              "Commandant-level professional in premium tailoring.",
+              "Lead from the front. Dress from the top.",
+              "Premium command. Professional authority."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-24",
+            "name": "The Vanguard Shirt",
+            "descriptions": [
+              "For professionals at the forefront of everything.",
+              "Premium fabric for the man who is always ahead of the development.",
+              "Designed for professionals who define the direction others follow.",
+              "A shirt for the man who makes the future happen first.",
+              "Premium cotton for the professional who leads every initiative.",
+              "For the man who is always in the vanguard, never in the rear.",
+              "Clean, forward-thinking, and premium throughout.",
+              "Vanguard professional in premium construction.",
+              "At the front. Looking premium.",
+              "Lead the way. Dress the part."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-25",
+            "name": "The Curator Shirt",
+            "descriptions": [
+              "For professionals with impeccable, curatorial taste.",
+              "Premium fabric selected with the same care as the finest collections.",
+              "Designed for men who choose everything deliberately.",
+              "A shirt for the professional who has curated a life of excellence.",
+              "Premium cotton selected for men with genuine aesthetic intelligence.",
+              "For the professional who treats his wardrobe as a curated exhibition.",
+              "Clean design with the precision of curatorial intent.",
+              "Premium construction for the man who curates excellence in everything.",
+              "Curated premium. Professional excellence.",
+              "Choose well. Wear the best."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-26",
+            "name": "The Magnate Shirt",
+            "descriptions": [
+              "For men who have accumulated the right to demand the finest.",
+              "Premium fabric for the professional at the highest level of industry.",
+              "Designed for men whose professional achievement is industry-defining.",
+              "A shirt for the magnate who built the industry others work in.",
+              "Premium cotton for the professional of truly significant achievement.",
+              "For the man who doesn't aspire — he defines.",
+              "Clean, powerful, and premium throughout.",
+              "Magnate-level professional in premium fabric.",
+              "Industry-defining professional. Industry-defining shirt.",
+              "Achievement. Power. Premium."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-27",
+            "name": "The Rector Shirt",
+            "descriptions": [
+              "For professionals who lead institutions.",
+              "Premium fabric with the bearing of institutional authority.",
+              "Designed for men whose professional role shapes others.",
+              "A shirt for the man who leads with wisdom and authority.",
+              "Premium cotton for the professional who is the institution.",
+              "For the man whose professional legacy is educational and formative.",
+              "Clean, authoritative, and premium at the highest academic level.",
+              "Rector-level professional. Premium construction.",
+              "Lead the institution. Dress the part.",
+              "Wisdom. Authority. Premium."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-28",
+            "name": "Flagship Professional Shirt",
+            "descriptions": [
+              "The leading shirt in our professional collection.",
+              "Premium fabric at the flagship level of our construction.",
+              "Designed to be the best professional shirt we make — and it is.",
+              "Our most premium professional construction available.",
+              "A flagship piece that leads every other shirt in our range.",
+              "For the professional who deserves the best we offer.",
+              "Clean design, premium fabric, flagship construction.",
+              "The one that sets the standard for all the others.",
+              "Flagship premium. Professional excellence.",
+              "Our best. For your most important days."
+            ]
+          },
+          {
+            "id": "maleWear-Corporate Shirts-29",
+            "name": "The Tribune Shirt",
+            "descriptions": [
+              "For professionals who speak for others.",
+              "Premium fabric for the man whose professional voice carries weight.",
+              "Designed for professionals who represent and advocate.",
+              "A shirt for the man whose words affect decisions.",
+              "Premium cotton for the professional who is heard.",
+              "For the man whose professional presence inspires confidence in others.",
+              "Clean, authoritative, and premium for the man who speaks truth.",
+              "Tribune-level professional in premium construction.",
+              "Speak. Be heard. Look premium.",
+              "Premium professional for men of consequence."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Luxury Native/Traditional",
+        "items": [
+          {
+            "id": "maleWear-Luxury Native/Traditional-1",
+            "name": "The Monarch Agbada",
+            "descriptions": [
+              "Royal heritage crafted in modern luxury.",
+              "Bold cultural elegance for grand occasions.",
+              "Premium embroidery with commanding presence.",
+              "Tradition elevated to elite status.",
+              "Designed for kings and dignitaries.",
+              "Luxury native wear redefined.",
+              "Stand tall in cultural prestige.",
+              "Rich fabric with powerful structure.",
+              "Grand design for unforgettable moments.",
+              "Own every room you enter."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-2",
+            "name": "The Oyo Emperor Agbada",
+            "descriptions": [
+              "Named for the great empire that gave Agbada its global prestige.",
+              "Premium Aso-Oke construction with elaborate embroidery.",
+              "A set that honors centuries of Yoruba sartorial tradition.",
+              "Grand, flowing, and unmistakably regal.",
+              "Designed for men who carry cultural heritage with pride.",
+              "The finest interpretation of a timeless cultural masterpiece.",
+              "For traditional occasions of genuine consequence.",
+              "Rich fabric with embroidery that tells a story.",
+              "Wear the empire. Honor the tradition.",
+              "The emperor's choice in modern premium."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-3",
+            "name": "Ife Heritage Set",
+            "descriptions": [
+              "Rooted in the ancient cradle of Yoruba civilization.",
+              "Premium cultural construction with deep historical resonance.",
+              "A set for men who understand the weight of cultural origin.",
+              "Traditional wear with the sophistication of ancient prestige.",
+              "Named for the city where Yoruba culture was born.",
+              "Premium fabric with embroidery inspired by ancient artistic tradition.",
+              "For men who wear culture as identity, not costume.",
+              "Grand, traditional, and genuinely premium.",
+              "Ancient origin. Modern premium execution.",
+              "Wear your roots. Own your heritage."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-4",
+            "name": "The Sovereign Kaftan",
+            "descriptions": [
+              "Sovereign authority in native construction.",
+              "Premium fabric with the flowing elegance of Yoruba tradition.",
+              "Designed for men who command respect in any cultural setting.",
+              "Rich embroidery with genuinely commanding presence.",
+              "A kaftan built for the most important traditional occasions.",
+              "Premium construction that honors the cultural form.",
+              "For the man who carries his heritage with dignity.",
+              "Grand traditional elegance in premium fabric.",
+              "Sovereign presence in cultural format.",
+              "Lead in tradition. Look premium doing it."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-5",
+            "name": "Benin Royale Agbada",
+            "descriptions": [
+              "Inspired by the royal court tradition of Benin Kingdom.",
+              "Premium construction with regal, ancient Nigerian cultural resonance.",
+              "A set for men who represent the depth of Nigerian heritage.",
+              "Rich, grand, and unmistakably premium in cultural form.",
+              "Named for one of West Africa's greatest kingdoms.",
+              "Embroidery and fabric that honor a centuries-old royal tradition.",
+              "For men who wear cultural heritage with genuine dignity.",
+              "Grand construction for grand traditional occasions.",
+              "Royal Nigerian heritage. Premium modern construction.",
+              "Benin royalty. Yours to wear."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-6",
+            "name": "The Asooke Prestige Set",
+            "descriptions": [
+              "Hand-woven Aso-Oke in the finest traditional construction.",
+              "Premium native wear in the fabric of Yoruba celebration.",
+              "Designed for the most significant traditional occasions.",
+              "A set that announces cultural sophistication immediately.",
+              "Aso-Oke elevated to genuine premium status.",
+              "For men who understand the language of traditional fabric.",
+              "Rich, hand-crafted, and unmistakably premium.",
+              "The traditional fabric of kings in a king's construction.",
+              "Wear the hand-woven premium of Yoruba tradition.",
+              "Cultural premium in its truest form."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-7",
+            "name": "Celestial Damask Agbada",
+            "descriptions": [
+              "Premium damask fabric in grand traditional construction.",
+              "Rich, shimmering fabric with regal cultural presence.",
+              "Designed for traditional occasions of the highest significance.",
+              "A set that catches light and commands attention simultaneously.",
+              "Damask luxury in traditional Yoruba construction.",
+              "For the man who wants his cultural wear to be genuinely spectacular.",
+              "Premium fabric with the shimmer of celebration.",
+              "Grand traditional construction in celebratory fabric.",
+              "Celestial in fabric. Royal in construction.",
+              "Shine in tradition."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-8",
+            "name": "The Alaafin Collection",
+            "descriptions": [
+              "Named for the paramount ruler of the Oyo Empire.",
+              "Premium construction fit for the highest traditional authority.",
+              "A set that carries the name of Yoruba's greatest traditional office.",
+              "Grand, commanding, and genuinely premium throughout.",
+              "Named for the king above kings in Yoruba tradition.",
+              "For men who honor the pinnacle of traditional leadership.",
+              "Rich embroidery with the weight of historical significance.",
+              "Premium fabric in traditional construction of the highest order.",
+              "The Alaafin: premium traditional for exceptional men.",
+              "Wear the name of the highest authority."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-9",
+            "name": "Midnight Brocade Agbada",
+            "descriptions": [
+              "Deep midnight tones in premium brocade traditional construction.",
+              "A set that combines cultural form with dramatic color depth.",
+              "Designed for traditional occasions that happen under the stars.",
+              "Rich dark tones with elaborate, premium embroidery.",
+              "Midnight brocade: the most dramatic traditional luxury.",
+              "For the man who makes nighttime traditional occasions his domain.",
+              "Grand construction in a fabric of commanding depth.",
+              "Dark, rich, and unmistakably premium in cultural form.",
+              "Wear the midnight. Own the celebration.",
+              "Cultural luxury at its most dramatic."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-10",
+            "name": "The Obafemi Prestige Set",
+            "descriptions": [
+              "Named for dignity and wisdom in Yoruba tradition.",
+              "Premium construction with the bearing of genuine cultural wisdom.",
+              "A set for men who lead their communities with grace.",
+              "Traditional wear that communicates respect and authority.",
+              "For the man who is looked to in traditional settings.",
+              "Premium fabric with embroidery of cultural significance.",
+              "Grand, wise, and unmistakably premium.",
+              "The Obafemi: premium traditional for men of standing.",
+              "Community leadership in premium traditional construction.",
+              "Lead your community. Dress with distinction."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-11",
+            "name": "Gold Thread Imperial Agbada",
+            "descriptions": [
+              "Gold thread embroidery on premium traditional fabric.",
+              "The most celebratory interpretation of the Agbada form.",
+              "Designed for traditional occasions that demand the finest.",
+              "A set that gleams with the prestige of gold.",
+              "Gold thread luxury for the man who celebrates in style.",
+              "Premium fabric with embroidery of genuine opulence.",
+              "For weddings, coronations, and occasions of the highest importance.",
+              "Grand, golden, and unmistakably premium.",
+              "Wear gold. Command every traditional occasion.",
+              "Gold prestige in cultural form."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-12",
+            "name": "The Durbar Agbada",
+            "descriptions": [
+              "Inspired by the grand Durbar celebrations of Northern Nigeria.",
+              "Premium construction that bridges Yoruba and Hausa-Fulani traditions.",
+              "A set for Nigerian men who honor the full breadth of their country's heritage.",
+              "Grand traditional construction with pan-Nigerian cultural resonance.",
+              "For men who see all of Nigerian heritage as their own.",
+              "Rich embroidery with cross-cultural traditional significance.",
+              "Premium fabric for occasions of national cultural importance.",
+              "Grand, inclusive, and genuinely premium in cultural form.",
+              "Honor all of Nigeria. Wear the Durbar.",
+              "Cultural unity in premium traditional wear."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-13",
+            "name": "Satin Royale Kaftan",
+            "descriptions": [
+              "Premium satin construction in traditional kaftan format.",
+              "A kaftan that brings luxury fabric to cultural form.",
+              "Designed for the man who wants premium fabric in traditional wear.",
+              "Satin luxury in a culturally authentic construction.",
+              "For men who believe traditional occasions deserve the finest fabrics.",
+              "Rich, smooth, and unmistakably premium in kaftan form.",
+              "Grand traditional construction in satin luxury.",
+              "Wear the smoothest traditional luxury available.",
+              "Satin prestige in cultural format.",
+              "Cultural premium in satin form."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-14",
+            "name": "The Okoya Agbada",
+            "descriptions": [
+              "Named for legendary Nigerian business and traditional excellence.",
+              "Premium construction for men who combine modern achievement with traditional pride.",
+              "A set that honors the tradition of successful, dignified Nigerian men.",
+              "For the achiever who dresses his cultural occasions as well as his business ones.",
+              "Traditional premium for the modern Nigerian man of consequence.",
+              "Grand embroidery with the bearing of business and cultural success.",
+              "Premium fabric for the man who wins in every arena.",
+              "The Okoya: traditional premium for successful, dignified men.",
+              "Achievement and tradition. Premium construction.",
+              "Succeed traditionally. Succeed professionally."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-15",
+            "name": "Indigo Prestige Agbada",
+            "descriptions": [
+              "Deep indigo tones in premium traditional construction.",
+              "A set in the color of ancient African dyeing tradition.",
+              "Designed for men who honor the heritage of traditional African fabric craft.",
+              "Rich indigo with embroidery of cultural significance.",
+              "Indigo: the color of traditional African prestige.",
+              "Premium fabric in a color with centuries of cultural history.",
+              "For men who wear cultural color with historical awareness.",
+              "Grand, deeply colored, and unmistakably premium.",
+              "Indigo prestige in traditional form.",
+              "Color with history. Premium with tradition."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-16",
+            "name": "The Awujale Agbada",
+            "descriptions": [
+              "Named for the paramount ruler of Ijebuland.",
+              "Premium traditional construction for men of Ijebu heritage and beyond.",
+              "A set that honors one of Yorubaland's most significant traditional offices.",
+              "Grand, royal, and unmistakably premium in cultural form.",
+              "For the man who honors Ijebu tradition in the finest way.",
+              "Premium fabric with embroidery appropriate for the highest traditional offices.",
+              "Named for authority that has lasted centuries.",
+              "The Awujale: premium traditional for men of heritage.",
+              "Honor the traditional office. Wear the premium.",
+              "Ijebu heritage in premium traditional form."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-17",
+            "name": "Copper Thread Agbada",
+            "descriptions": [
+              "Warm copper thread embroidery on premium traditional fabric.",
+              "A set with the warmth and richness of metallic tradition.",
+              "Designed for men who want metallic luxury in cultural form.",
+              "Copper thread that catches light with warm, celebratory brilliance.",
+              "Warm metallic luxury in traditional construction.",
+              "For the man who celebrates with warmth and distinction.",
+              "Premium fabric with copper embroidery of genuine opulence.",
+              "Grand, warm, and unmistakably premium.",
+              "Copper warmth in cultural luxury.",
+              "Celebrate warmly. Dress with distinction."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-18",
+            "name": "The Oni Set",
+            "descriptions": [
+              "Named for the sacred paramount ruler of Ile-Ife.",
+              "Premium construction of the highest cultural and spiritual significance.",
+              "A set that carries the name of the most sacred traditional office in Yorubaland.",
+              "Grand, profound, and genuinely premium in every dimension.",
+              "For the man who honors the deepest traditions of Yoruba heritage.",
+              "Rich embroidery with the spiritual weight of Ife tradition.",
+              "Premium fabric for occasions of genuine cultural and spiritual significance.",
+              "The Oni: premium traditional for men who honor the sacred and the royal.",
+              "Sacred heritage in premium traditional form.",
+              "Wear the divine. Honor the tradition."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-19",
+            "name": "Silver Prestige Agbada",
+            "descriptions": [
+              "Silver-toned fabric with premium traditional construction.",
+              "A set that brings metallic elegance to cultural form.",
+              "Designed for the man who wants distinguished restraint in his traditional wear.",
+              "Silver luxury in traditional Agbada construction.",
+              "For men who prefer silver's dignity to gold's ostentation.",
+              "Premium fabric with silver embroidery of sophisticated restraint.",
+              "Grand, restrained, and unmistakably premium.",
+              "Silver dignity in traditional construction.",
+              "Restrained metallic luxury in cultural form.",
+              "Silver restraint. Premium tradition."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-20",
+            "name": "The Timi Collection",
+            "descriptions": [
+              "Named for the paramount traditional ruler of Ede.",
+              "Premium construction for men who honor Osun State heritage.",
+              "A set that acknowledges the diversity and richness of Yoruba traditional leadership.",
+              "Grand traditional construction with Ede cultural resonance.",
+              "For the man who knows the full landscape of Yoruba traditional governance.",
+              "Premium fabric with embroidery that honors regional traditional authority.",
+              "Rich, grand, and unmistakably premium in cultural form.",
+              "The Timi: premium traditional for men of deep cultural knowledge.",
+              "Regional heritage in premium traditional form.",
+              "Know your heritage. Dress its premium."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-21",
+            "name": "Crushed Velvet Agbada",
+            "descriptions": [
+              "Crushed velvet luxury in traditional Agbada construction.",
+              "A set that brings the most opulent fabric to cultural form.",
+              "Designed for traditional occasions of maximum festivity.",
+              "Rich velvet with embroidery of genuine celebration.",
+              "Velvet luxury in a culturally authentic construction.",
+              "For the man who believes traditional occasions deserve velvet.",
+              "Premium fabric with the texture of genuine luxury.",
+              "Grand, plush, and unmistakably premium in cultural form.",
+              "Velvet tradition. Premium celebration.",
+              "The most textured luxury in cultural form."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-22",
+            "name": "The Laoye Agbada",
+            "descriptions": [
+              "Named for the legendary musician who elevated traditional culture.",
+              "Premium construction for men who honor cultural artistry.",
+              "A set that celebrates the intersection of tradition and artistic excellence.",
+              "Grand, culturally resonant, and unmistakably premium.",
+              "For men who see traditional wear as an art form.",
+              "Premium fabric with embroidery of artistic and cultural significance.",
+              "The Laoye: premium traditional for men of cultural depth.",
+              "Honor the art of tradition. Dress its premium.",
+              "Cultural artistry in traditional form.",
+              "Art. Heritage. Premium."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-23",
+            "name": "The Esu Premium Set",
+            "descriptions": [
+              "Named with the energy and dynamism of Yoruba tradition.",
+              "Premium construction with the vitality of genuine cultural power.",
+              "A set that brings the energy of tradition into its construction.",
+              "Grand, dynamic, and unmistakably premium.",
+              "For the man who wears his culture with vitality.",
+              "Premium fabric with embroidery of cultural energy.",
+              "Rich, vibrant, and genuinely premium in traditional form.",
+              "The energy of culture in premium construction.",
+              "Dynamic tradition. Premium energy.",
+              "Wear culture alive."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-24",
+            "name": "Crimson Heritage Agbada",
+            "descriptions": [
+              "Deep crimson tones in premium traditional Agbada construction.",
+              "A set in the color of traditional authority and celebration.",
+              "Designed for the most significant traditional occasions.",
+              "Rich crimson with embroidery of cultural prestige.",
+              "Crimson: the color of traditional power in Yoruba culture.",
+              "Premium fabric in a color of genuine cultural significance.",
+              "For the man who wears traditional authority in the most powerful tone.",
+              "Grand, crimson, and unmistakably premium.",
+              "Traditional authority in crimson luxury.",
+              "Wear the color of traditional power."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-25",
+            "name": "The Oba's Choice",
+            "descriptions": [
+              "The traditional wear chosen by traditional rulers.",
+              "Premium construction at the level demanded by the highest traditional offices.",
+              "A set fit for the king — available for the worthy.",
+              "Grand, royal, and unmistakably the finest traditional construction.",
+              "What traditional rulers wear when standards are non-negotiable.",
+              "Premium fabric with embroidery that communicates royal status.",
+              "For the man who is king in his own right.",
+              "The Oba's standard in premium traditional form.",
+              "Royal choice. Premium construction. Traditional authority.",
+              "If it's good enough for the Oba, it's good enough for you."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-26",
+            "name": "Champagne Luxe Agbada",
+            "descriptions": [
+              "Warm champagne tones in premium traditional construction.",
+              "A set that brings celebratory warmth to cultural form.",
+              "Designed for traditional occasions of genuine celebration.",
+              "Rich, warm, and unmistakably premium in cultural construction.",
+              "Champagne tones for the grandest traditional celebrations.",
+              "Premium fabric with the warmth of genuine festivity.",
+              "For the man who celebrates tradition in the finest way.",
+              "Grand, warm, and genuinely premium.",
+              "Celebrate in champagne. Celebrate in tradition.",
+              "Traditional celebration at its most premium."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-27",
+            "name": "The Sango Collection",
+            "descriptions": [
+              "Named for the Yoruba deity of thunder and lightning.",
+              "Premium construction with the energy and power of elemental force.",
+              "A set that channels the boldest energy in Yoruba tradition.",
+              "Grand, powerful, and unmistakably premium in cultural form.",
+              "For the man who brings an electric presence to traditional occasions.",
+              "Premium fabric with embroidery that channels cultural power.",
+              "Rich, bold, and genuinely premium.",
+              "The Sango: premium traditional for men of commanding presence.",
+              "Thunder and lightning in traditional form.",
+              "Bring the storm. Look premium."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-28",
+            "name": "Royal Atiku Agbada",
+            "descriptions": [
+              "Premium Atiku fabric in the grandest traditional Agbada construction.",
+              "The finest traditional fabric in its most magnificent format.",
+              "Designed for men who know Atiku and demand the best of it.",
+              "Grand Agbada construction in premium Atiku fabric.",
+              "For the connoisseur of traditional Nigerian fabric.",
+              "Premium Atiku with embroidery of exceptional quality.",
+              "Rich, flowing, and unmistakably premium.",
+              "The best fabric in the best traditional construction.",
+              "Atiku premium. Grand traditional result.",
+              "The connoisseur's traditional choice."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-29",
+            "name": "The Ibadan Prestige Set",
+            "descriptions": [
+              "Named for the city of traditional and modern Nigerian significance.",
+              "Premium construction that honors Oyo State's cultural depth.",
+              "A set for men who carry Ibadan's grand traditional heritage.",
+              "Grand, significant, and unmistakably premium.",
+              "For the man who honors one of West Africa's great cities.",
+              "Premium fabric with embroidery of Ibadan cultural resonance.",
+              "Rich traditional construction with deep cultural rootedness.",
+              "The Ibadan: premium traditional for men of cultural pride.",
+              "Carry the city's heritage in premium traditional form.",
+              "Cultural pride. Premium execution."
+            ]
+          },
+          {
+            "id": "maleWear-Luxury Native/Traditional-30",
+            "name": "The Egungun Set",
+            "descriptions": [
+              "Named with the reverence of ancestral tradition.",
+              "Premium construction that honors the deepest Yoruba spiritual and cultural heritage.",
+              "A set for men who understand the profound depth of traditional culture.",
+              "Grand, reverential, and unmistakably premium in cultural form.",
+              "For the man who honors the tradition of ancestors with the highest respect.",
+              "Premium fabric with embroidery of cultural and spiritual significance.",
+              "Rich, deep, and genuinely premium.",
+              "The Egungun: premium traditional for men of spiritual cultural depth.",
+              "Honor the ancestors. Dress their heritage's premium.",
+              "Ancestral tradition in premium modern form."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

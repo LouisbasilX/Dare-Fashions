@@ -1,7 +1,7 @@
-// app/layout.tsx
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
+import { BotIdClient } from 'botid/client'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -27,6 +27,9 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        {/* Use type assertion to bypass the strict type check */}
+        <BotIdClient protect={ [ { path: '/', method: 'POST' },
+  { path: '/about', method: 'POST' }, { path: '/faq', method: 'POST' }, { path: '/contact', method: 'POST' }, { path: '/shop', method: 'POST' }]} />
       </body>
     </html>
   )

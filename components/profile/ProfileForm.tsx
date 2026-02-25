@@ -34,31 +34,31 @@ export default function ProfileForm({ customer }: { customer: any }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-4 rounded shadow">
+    <form onSubmit={handleSubmit} className="bg-white dark:bg-[#1e1e1e] p-4 rounded shadow border border-gray-200 dark:border-gray-700">
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">Full Name</label>
+        <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-gray-200">Full Name</label>
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full border rounded px-3 py-2"
+          className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
         />
       </div>
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">Phone Number</label>
+        <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-gray-200">Phone Number</label>
         <input
           type="tel"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="w-full border rounded px-3 py-2"
+          className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
         />
       </div>
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">State</label>
+        <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-gray-200">State</label>
         <select
           value={state}
           onChange={(e) => setState(e.target.value)}
-          className="w-full border rounded px-3 py-2"
+          className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
         >
           <option value="">Select a state</option>
           {NIGERIAN_STATES.map(s => (
@@ -69,11 +69,11 @@ export default function ProfileForm({ customer }: { customer: any }) {
       <button
         type="submit"
         disabled={loading}
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:bg-gray-400"
+        className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-4 py-2 rounded transition"
       >
         {loading ? 'Saving...' : 'Save Changes'}
       </button>
-      {message && <p className="mt-2 text-sm text-green-600">{message}</p>}
+      {message && <p className="mt-2 text-sm text-green-600 dark:text-green-400">{message}</p>}
     </form>
   )
 }

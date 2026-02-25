@@ -29,34 +29,58 @@ export default async function ProductPage({
       <nav className="text-sm text-gray-500 dark:text-gray-400 mb-4">
         <Link href="/" className="hover:underline">Home</Link>
         <span className="mx-2">›</span>
+        <Link href="/shop" className="hover:underline">Shop</Link>
+        <span className="mx-2">›</span>
         <span className="text-gray-700 dark:text-gray-300">{product.name}</span>
       </nav>
 
       <div className="grid md:grid-cols-2 gap-8">
-        {/* Image */}
-        <div className="bg-white dark:bg-[#1e1e1e] p-4 rounded-lg shadow">
-          {product.image_url ? (
-            <Image
-              src={product.image_url}
-              alt={product.name}
-              width={600}
-              height={600}
-              className="w-full h-auto object-contain rounded"
-              priority
-            />
-          ) : (
-            <div className="w-full h-96 bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 dark:text-gray-400">
-              No image available
+        {/* Left Column: Media (image and/or video) */}
+        <div className="space-y-4">
+          {/* Image - only if exists */}
+          {product.image_url && (
+            <div className="bg-white dark:bg-[#1e1e1e] p-4 rounded-lg shadow">
+              <Image
+                src={product.image_url}
+                alt={product.name}
+                width={600}
+                height={600}
+                className="w-full h-auto object-contain rounded"
+                priority
+              />
+            </div>
+          )}
+
+          {/* Video - only if exists */}
+          {product.video_url && (
+            <div className="bg-white dark:bg-[#1e1e1e] p-4 rounded-lg shadow">
+              <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Product Video</h3>
+              <video
+                src={product.video_url}
+                controls
+                className="w-full rounded"
+                poster={product.image_url || undefined}
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )}
+
+          {/* Fallback if no media at all (shouldn't happen with form validation) */}
+          {!product.image_url && !product.video_url && (
+            <div className="bg-white dark:bg-[#1e1e1e] p-4 rounded-lg shadow">
+              <div className="w-full h-96 bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 dark:text-gray-400">
+                No media available
+              </div>
             </div>
           )}
         </div>
 
-        {/* Details */}
+        {/* Right Column: Details (unchanged) */}
         <div>
           <h1 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
             {product.name}
           </h1>
-          {/* Price with high contrast */}
           <p className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-4">
             {formatCurrency(product.price)}
           </p>

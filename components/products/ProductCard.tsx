@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { createBasket } from '@/actions/basket'
 import { ShoppingCart, Eye } from 'lucide-react'
+import { isProductNew } from '@/lib/utils'
 
 export default function ProductCard({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1)
@@ -26,19 +27,31 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <div
-      className="card group relative overflow-hidden rounded-xl bg-white dark:bg-[#1e1e1e] border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl"
+      className="card group relative overflow-hidden rounded-xl bg-white dark:bg-[#1e1e1e] border border-gray-200 dark:border-gray-800 hover:border-[#D4AF37] dark:hover:border-[#E3B347] transition-all duration-300 hover:shadow-xl"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Image Container */}
+      {/* Media Container */}
       <Link href={`/product/${product.id}`} className="block relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
         {product.image_url ? (
+          // Show image if available
           <Image
             src={product.image_url}
             alt={product.name}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-110"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : product.video_url ? (
+          // Show video if no image but video exists
+          <video
+            src={product.video_url}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls={false}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-gray-400">
@@ -50,6 +63,13 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className={`absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
           <Eye className="w-8 h-8 text-white" />
         </div>
+        
+        {/* New Badge */}
+        {isProductNew(product.created_at) && (
+          <div className="absolute top-2 left-2 bg-[#7A1E2C] text-white text-xs font-bold px-2 py-1 rounded z-10">
+            NEW
+          </div>
+        )}
 
         {/* Availability Badge */}
         {product.available <= 5 && product.available > 0 && (
@@ -67,7 +87,7 @@ export default function ProductCard({ product }: { product: Product }) {
       {/* Content */}
       <div className="p-4">
         <Link href={`/product/${product.id}`}>
-          <h3 className="font-semibold text-lg mb-1 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition">
+          <h3 className="font-semibold text-lg mb-1 text-gray-900 dark:text-white hover:text-[#D4AF37] dark:hover:text-[#E3B347] transition">
             {product.name}
           </h3>
         </Link>
@@ -89,7 +109,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <button
             onClick={handleAddToBasket}
             disabled={loading || product.available === 0}
-            className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white p-3 rounded-full transition-all transform hover:scale-110 disabled:hover:scale-100"
+            className="bg-[#D4AF37] hover:bg-[#B8960F] disabled:bg-gray-400 text-white p-3 rounded-full transition-all transform hover:scale-110 disabled:hover:scale-100"
             title="Add to basket"
           >
             <ShoppingCart className="w-5 h-5" />

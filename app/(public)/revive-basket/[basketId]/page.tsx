@@ -7,13 +7,19 @@ import { formatCurrency } from '@/lib/utils'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
-export default async function BasketPage({ params }: { params: Promise<{ basketId: string }> }) {
-  const { basketId } = await params
-  const cookieStore = await cookies()
-  const userBasketId = cookieStore.get('basketId')?.value
-  const guestSessionId = cookieStore.get('guest_session_id')?.value
+interface Props {
+  params: Promise<{ basketId: string }>
+  searchParams: Promise<{ guestId?: string; customerId?: string }>
+}
 
-  const supabase = await createClient()
+export default async function ReviveBasketPage({ params, searchParams }: Props) {
+  const { basketId } = await params
+  const { guestId, customerId } = await searchParams
+
+// Use whichever identifier is present
+const identifier = guestId || customerId
+const supabase = await createClient(identifier)
+
   const { data: { user } } = await supabase.auth.getUser()
 
   const { data: basket, error } = await supabase
@@ -30,12 +36,6 @@ export default async function BasketPage({ params }: { params: Promise<{ basketI
 
   if (error || !basket) notFound()
 
-  const isOwner =
-    (user && basket.customer_id === user.id) ||
-    (!user && basket.guest_session_id === guestSessionId) ||
-    basket.id === userBasketId
-
-  if (!isOwner) notFound()
 
   const isValid = basket.status !== 'invalid'
   const isPaid = basket.status === 'paid'
@@ -51,12 +51,15 @@ export default async function BasketPage({ params }: { params: Promise<{ basketI
       </Link>
 
       <div className="bg-white dark:bg-[#1e1e1e] rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-800">
-        {/* Header */}
         <div className="p-6 border-b border-gray-200 dark:border-gray-800">
           <h1 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
             Basket #{basketId.slice(0, 8)}
           </h1>
-          
+
+          <div className="mb-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-400 px-4 py-3 rounded-lg">
+            🔁 You are viewing a shared basket link. Add items to your cart or proceed to checkout.
+          </div>
+
           {isPaid && (
             <div className="bg-green-100 dark:bg-green-900/30 border border-green-400 dark:border-green-700 text-green-700 dark:text-green-400 px-4 py-3 rounded-lg">
               ✅ This basket has been paid. Thank you! You can no longer edit it.
@@ -70,22 +73,17 @@ export default async function BasketPage({ params }: { params: Promise<{ basketI
           )}
         </div>
 
-        {/* Items */}
         <div className="p-6">
           <BasketItemList basket={basket} isEditable={!isPaid} />
         </div>
 
-        {/* Footer */}
         <div className="p-6 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#151515]">
           <div className="flex justify-between items-center">
-            <span className="text-xl font-semibold text-gray-900 dark:text-white">
-              Total:
-            </span>
+            <span className="text-xl font-semibold text-gray-900 dark:text-white">Total:</span>
             <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
               {formatCurrency(total)}
             </span>
           </div>
-
           {!isPaid && (
             <div className="mt-4">
               <BasketActions basket={basket} total={total} isValid={isValid} />

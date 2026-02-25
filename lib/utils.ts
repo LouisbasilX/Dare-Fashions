@@ -26,3 +26,9 @@ export const formatDate = (dateString: string) => {
     day: 'numeric',
   })
 }
+
+export const isProductNew = (createdAt: string): boolean => {
+  const threeDaysAgo = new Date()
+  threeDaysAgo.setDate(threeDaysAgo.getDate() - 3)
+  return new Date(createdAt) >= threeDaysAgo
+}

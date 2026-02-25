@@ -70,7 +70,7 @@ export default function OrdersFilter() {
         <div className="flex gap-2">
           <button
             onClick={applyFilters}
-            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition"
+            className="flex-1 bg-(--gold-dark) hover:bg-(--gold) text-white px-4 py-2 rounded transition"
           >
             Apply
           </button>

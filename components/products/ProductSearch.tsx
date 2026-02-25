@@ -13,7 +13,7 @@ export default function ProductSearch() {
     const params = new URLSearchParams(searchParams)
     if (query) params.set('q', query)
     else params.delete('q')
-    router.push(`/?${params.toString()}`)
+    router.push(`/shop?${params.toString()}`)
   }
 
   return (

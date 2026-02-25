@@ -1,9 +1,9 @@
 import { createAdminClient } from '@/lib/supabase/admin'
 import Link from 'next/link'
+import NewsletterSection from '@/components/admin/NewsLetterSection'
 
 export default async function AdminDashboard() {
   const supabase = createAdminClient()
-
   const [
     { count: pendingBaskets },
     { count: paidBaskets },
@@ -28,6 +28,7 @@ export default async function AdminDashboard() {
         <StatCard title="Orders to Deliver" count={pendingOrders ?? 0} href="/admin/orders?delivered=false" />
         <StatCard title="Delivered Orders" count={deliveredOrders ?? 0} href="/admin/orders?delivered=true" />
       </div>
+      <NewsletterSection />
     </div>
   )
 }
