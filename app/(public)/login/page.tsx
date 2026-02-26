@@ -25,40 +25,46 @@ export default function LoginPage() {
   }, [router, supabase])
 
   const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError(null)
+  e.preventDefault()
+  setLoading(true)
+  setError(null)
 
-    try {
-      await verifyBot()
-      const { data, error } = await supabase.auth.signInWithPassword({ email, password })
-      if (error) throw error
-
-      if (data.user) {
-        // Check for guest basket
-        const guestId = document.cookie.split('; ').find(row => row.startsWith('guest_session_id='))?.split('=')[1]
-        if (guestId) {
-          const { data: basket } = await supabase
-            .from('baskets')
-            .select('id')
-            .eq('guest_session_id', guestId)
-            .in('status', ['pending', 'invalid'])
-            .maybeSingle()
-          if (basket) {
-            setShowModal(true)
-            setLoading(false)
-            return
-          }
-        }
-        // No guest basket: merge user's own baskets and redirect
-        await mergeGuestBasket(false) // false will just consolidate (no guest)
-        router.push('/shop')
-      }
-    } catch (err: any) {
-      setError(err.message)
+  try {
+    // 1. Verify bot first
+    const botResult = await verifyBot()
+    if (!botResult.success) {
+      setError(botResult.error)
       setLoading(false)
+      return
     }
+
+    // 2. Proceed with login
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error) throw error
+
+    if (data.user) {
+      const guestId = document.cookie.split('; ').find(row => row.startsWith('guest_session_id='))?.split('=')[1]
+      if (guestId) {
+        const { data: basket } = await supabase
+          .from('baskets')
+          .select('id')
+          .eq('guest_session_id', guestId)
+          .in('status', ['pending', 'invalid'])
+          .maybeSingle()
+        if (basket) {
+          setShowModal(true)
+          setLoading(false)
+          return
+        }
+      }
+      await mergeGuestBasket(false)
+      router.push('/shop')
+    }
+  } catch (err: any) {
+    setError(err.message)
+    setLoading(false)
   }
+}
 
   const handleMerge = async (consent: boolean) => {
     setLoading(true)
