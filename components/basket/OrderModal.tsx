@@ -55,11 +55,20 @@ export default function OrderModal({ basket, total, isOpen, onClose }: OrderModa
     setError(null)
 
     try {
-      await updateBasketDetails(basket.id, {
-        customer_name: customerName,
-        phone: customerPhone,
-        state: customerState,
-      })
+       // Save customer details – returns { success, error }
+    const saveResult = await updateBasketDetails(basket.id, {
+      customer_name: customerName,
+      phone: customerPhone,
+      state: customerState,
+    })
+
+    if (!saveResult.success) {
+      setError(saveResult.error || 'Failed to save details')
+      setIsSubmitting(false)
+      return
+    }
+
+     
 
       // ✅ await inside async function — works correctly now
       const phone = await getAdminNumber()

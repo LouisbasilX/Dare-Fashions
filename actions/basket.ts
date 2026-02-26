@@ -168,24 +168,31 @@ export async function updateBasketDetails(
     phone: string
     state: string
   }
-) {
-  const verification = await checkBotId();
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    const verification = await checkBotId();
     if (verification.isBot) {
       return { success: false, error: 'Suspicious activity detected' };
     }
-  const supabase = await createClient()
+    const supabase = await createClient();
+    const { error } = await supabase
+      .from('baskets')
+      .update({
+        customer_name: details.customer_name,
+        phone: details.phone,
+        state: details.state,
+      })
+      .eq('id', basketId);
 
-  const { error } = await supabase
-    .from('baskets')
-    .update({
-      customer_name: details.customer_name,
-      phone: details.phone,
-      state: details.state,
-    })
-    .eq('id', basketId)
-
-  if (error) throw new Error('Failed to save customer details')
-  revalidatePath(`/basket/${basketId}`)
+    if (error) {
+      return { success: false, error: error.message };
+    }
+    revalidatePath(`/basket/${basketId}`);
+    return { success: true };
+  } catch (err: any) {
+    console.error('updateBasketDetails error:', err);
+    return { success: false, error: err.message || 'Failed to save customer details' };
+  }
 }
 
 // ------------------------------------------------------------------
