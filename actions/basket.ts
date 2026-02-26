@@ -391,3 +391,19 @@ export async function mergeGuestBasket(consent: boolean) {
   revalidatePath('/baskets')
   return { targetBasketId }
 }
+
+export async function getAdminNumber(): Promise<string> {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from('global_settings')
+    .select('admin_whatsapp_number')
+    .eq('id', 1)
+    .single()
+
+  if (error) {
+    console.error('Failed to fetch admin number:', error)
+    return '+2349019267148'
+  }
+
+  return data?.admin_whatsapp_number ?? '+2349019267148'
+}

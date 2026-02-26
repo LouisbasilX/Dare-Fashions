@@ -256,3 +256,16 @@ export async function deleteCloudinaryFile(fileUrl: string) {
     return false
   }
 }
+
+export async function updateAdminWhatsAppNumber(number: string) {
+  await verifyAdmin()
+  const adminClient = createAdminClient()
+
+  const { error } = await adminClient
+    .from('global_settings')
+    .update({ admin_whatsapp_number: number })
+    .eq('id', 1)
+
+  if (error) throw error
+  revalidatePath('/admin/baskets')
+}

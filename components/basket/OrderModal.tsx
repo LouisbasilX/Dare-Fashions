@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import { BasketWithItems } from '@/lib/types'
-import { updateBasketDetails } from '@/actions/basket'
+import { updateBasketDetails, getAdminNumber } from '@/actions/basket'
 import { createClient } from '@/lib/supabase/client'
 import { NIGERIAN_STATES } from '@/lib/constants'
-import { shortenUrl } from '@/actions/links'
 
 interface OrderModalProps {
   basket: BasketWithItems
@@ -22,7 +21,6 @@ export default function OrderModal({ basket, total, isOpen, onClose }: OrderModa
   const [error, setError] = useState<string | null>(null)
   const supabase = createClient()
 
-  // Load saved customer details if logged in
   useEffect(() => {
     const loadCustomerData = async () => {
       if (!isOpen) return
@@ -39,11 +37,9 @@ export default function OrderModal({ basket, total, isOpen, onClose }: OrderModa
           setCustomerState(data.state || '')
         }
       } else {
-        // Reset for guest
         setCustomerName('')
         setCustomerPhone('')
         setCustomerState('')
-   
       }
     }
     loadCustomerData()
@@ -52,34 +48,6 @@ export default function OrderModal({ basket, total, isOpen, onClose }: OrderModa
   if (!isOpen) return null
 
   const isValid = customerName.trim() && customerPhone.trim() && customerState.trim()
-
-  const generateWhatsAppLink = () => {
-    const basketId = basket.id
-    const phone = '2348127856114' // Your sister's number
-    
-    const message = 
-      `🛒 *NEW ORDER RECEIVED*\n\n` +
-      `📌 Basket ID: ${basketId}\n\n` +
-      `👤 CUSTOMER DETAILS\n` +
-      `Name: ${customerName}\n` +
-      `Phone: ${customerPhone}\n` +
-      `State: ${customerState}\n` +
-      `📦 ORDER ITEMS\n` +
-      basket.items.map((item, index) =>
-        `${index + 1}. ${item.product.name}\n` +
-        `   Qty: ${item.quantity}\n` +
-        `   Unit Price: ₦${item.product.price}\n` +
-        `   Subtotal: ₦${item.quantity * item.product.price}\n`
-      ).join('\n') +
-      `\n💰 TOTAL: ₦${total}\n\n` +
-      `🕒 Order Date: ${new Date().toLocaleString()}\n` +
-      `🔗 Admin Link:\n${process.env.NEXT_PUBLIC_SITE_URL}/admin/baskets/${basketId}\n\n` +
-      `Thank you 🙏`
-
-    const baseUrl = 'https://api.whatsapp.com/send'
-    const params = new URLSearchParams({ phone, text: message })
-    return `${baseUrl}?${params.toString()}`
-  }
 
   const handleContinue = async () => {
     if (!isValid) return
@@ -92,8 +60,31 @@ export default function OrderModal({ basket, total, isOpen, onClose }: OrderModa
         phone: customerPhone,
         state: customerState,
       })
-      const link = generateWhatsAppLink()
-      window.open(link, '_blank')
+
+      // ✅ await inside async function — works correctly now
+      const phone = await getAdminNumber()
+
+      const message =
+        `🛒 *NEW ORDER RECEIVED*\n\n` +
+        `📌 Basket ID: ${basket.id}\n\n` +
+        `👤 CUSTOMER DETAILS\n` +
+        `Name: ${customerName}\n` +
+        `Phone: ${customerPhone}\n` +
+        `State: ${customerState}\n\n` +
+        `📦 ORDER ITEMS\n` +
+        basket.items.map((item, index) =>
+          `${index + 1}. ${item.product.name}\n` +
+          `   Qty: ${item.quantity}\n` +
+          `   Unit Price: ₦${item.product.price}\n` +
+          `   Subtotal: ₦${item.quantity * item.product.price}\n`
+        ).join('\n') +
+        `\n💰 TOTAL: ₦${total}\n\n` +
+        `🕒 Order Date: ${new Date().toLocaleString()}\n` +
+        `🔗 Admin Link:\n${process.env.NEXT_PUBLIC_SITE_URL}/admin/baskets/${basket.id}\n\n` +
+        `Thank you 🙏`
+
+      const params = new URLSearchParams({ phone, text: message })
+      window.open(`https://api.whatsapp.com/send?${params.toString()}`, '_blank')
       onClose()
     } catch (err: any) {
       setError(err.message || 'Failed to save details. Please try again.')

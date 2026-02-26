@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { Toaster, toast } from 'react-hot-toast'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import ScrollToTopButton from '@/components/ui/ScrollToTopButton'
 
 export default function PublicLayout({ children }: { children: ReactNode }) {
   const router = useRouter()
@@ -132,8 +133,9 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
       <Header />
       <main>{children}</main>
       <Toaster position="top-right" />
-      
+      <ScrollToTopButton />
       <Footer />
+      
     </>
   )
 }

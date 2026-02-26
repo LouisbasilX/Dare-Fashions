@@ -1,3 +1,4 @@
+
 export type Json =
   | string
   | number
@@ -137,6 +138,21 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      global_settings: {
+        Row: {
+          admin_whatsapp_number: string
+          id: number
+        }
+        Insert: {
+          admin_whatsapp_number: string
+          id?: number
+        }
+        Update: {
+          admin_whatsapp_number?: string
+          id?: number
+        }
+        Relationships: []
       }
       order_items: {
         Row: {

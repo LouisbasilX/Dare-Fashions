@@ -1,9 +1,13 @@
+'use client'
+
 import Link from 'next/link'
 import { Facebook, Instagram, Twitter, Mail, Phone, X} from 'lucide-react'
+import { getAdminNumber } from '@/actions/basket';
+import { useState, useEffect } from 'react'
 
-export default function Footer() {
-  interface IconProps {
-  className?: string; // The '?' means it is optional
+// Move TikTokIcon outside component to avoid re-creation
+interface IconProps {
+  className?: string;
 }
 
 const TikTokIcon = ({ className }: IconProps) => (
@@ -15,6 +19,25 @@ const TikTokIcon = ({ className }: IconProps) => (
     <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47-.13 3.44-.3 6.88-.45 10.32-.13 2.13-1.13 4.23-2.94 5.37-2.02 1.34-4.87 1.4-6.91.12-2.12-1.21-3.32-3.7-3.08-6.12.18-2.13 1.54-4.08 3.53-4.87.53-.22 1.1-.34 1.67-.4V17c-.88.13-1.74.55-2.28 1.25-.56.7-.76 1.64-.53 2.51.22.88.88 1.6 1.72 1.95 1.12.49 2.5.29 3.42-.48.86-.68 1.25-1.76 1.23-2.83-.11-4.03-.26-8.05-.39-12.08l.05-8.3Z" />
   </svg>
 );
+
+export default function Footer() {
+  const [adminNumber, setAdminNumber] = useState<string>('')
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchNumber() {
+      try {
+        const number = await getAdminNumber()
+        setAdminNumber(number)
+      } catch (error) {
+        console.error('Failed to fetch admin number:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchNumber()
+  }, [])
+
   return (
     <footer className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-4 py-8">
@@ -45,7 +68,7 @@ const TikTokIcon = ({ className }: IconProps) => (
             <ul className="space-y-2">
               <li className="flex items-center justify-center md:justify-start gap-2 text-sm text-gray-600 dark:text-gray-400">
                 <Phone className="w-4 h-4" />
-                <span>+234 812 785 6114</span>
+                <span>{loading ? 'Loading...' : adminNumber}</span>
               </li>
               <li className="flex items-center justify-center md:justify-start gap-2 text-sm text-gray-600 dark:text-gray-400">
                 <Mail className="w-4 h-4" />

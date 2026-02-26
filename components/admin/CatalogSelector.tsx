@@ -18,6 +18,7 @@ interface Subcategory {
 interface Catalog {
   femaleWear: { category: string; subcategories: Subcategory[] }
   maleWear: { category: string; subcategories: Subcategory[] }
+  unisexWear : { category: string; subcategories: Subcategory[] }
 }
 
 const catalog = catalogData as Catalog
@@ -30,7 +31,7 @@ interface Props {
 
 export default function CatalogSelector({ isOpen, onClose, onSelect }: Props) {
   const [search, setSearch] = useState('')
-  const [selectedCategory, setSelectedCategory] = useState<'femaleWear' | 'maleWear' | 'all'>('all')
+  const [selectedCategory, setSelectedCategory] = useState<'femaleWear' | 'maleWear' |'unisexWear'| 'all'>('all')
   const [filteredItems, setFilteredItems] = useState<CatalogItem[]>([])
 
   useEffect(() => {
@@ -44,6 +45,11 @@ export default function CatalogSelector({ isOpen, onClose, onSelect }: Props) {
     }
     if (selectedCategory === 'all' || selectedCategory === 'maleWear') {
       catalog.maleWear.subcategories.forEach(sub =>
+        sub.items.forEach(item => allItems.push(item))
+      )
+    }
+     if (selectedCategory === 'all' || selectedCategory === 'unisexWear') {
+      catalog.unisexWear.subcategories.forEach(sub =>
         sub.items.forEach(item => allItems.push(item))
       )
     }
@@ -110,6 +116,16 @@ export default function CatalogSelector({ isOpen, onClose, onSelect }: Props) {
               }`}
             >
               Male Wear
+            </button>
+             <button
+              onClick={() => setSelectedCategory('unisexWear')}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
+                selectedCategory === 'unisexWear'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+              }`}
+            >
+              Unisex Wear
             </button>
           </div>
         </div>

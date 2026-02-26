@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
+import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,7 +13,9 @@ export default async function ProductPage({
 }) {
   const { productId } = await params
   const supabase = await createClient()
+  const cookieStore = await cookies()
 
+  // Fetch product details
   const { data: product, error } = await supabase
     .from('products')
     .select('*')
@@ -23,8 +26,38 @@ export default async function ProductPage({
     notFound()
   }
 
+  // Get current user and guest session
+  const { data: { user } } = await supabase.auth.getUser()
+  const guestSessionId = cookieStore.get('guest_session_id')?.value
+
+  let initialQuantity = 1
+  let isInBasket = false
+
+  // Only attempt to fetch basket if we have a user or guest session
+  if (user || guestSessionId) {
+    let basketQuery = supabase
+      .from('baskets')
+      .select('items:basket_items(product_id, quantity)')
+      .eq('status', 'pending')
+
+    if (user) {
+      basketQuery = basketQuery.eq('customer_id', user.id)
+    } else if (guestSessionId) {
+      basketQuery = basketQuery.eq('guest_session_id', guestSessionId)
+    }
+
+    const { data: basket } = await basketQuery.maybeSingle()
+    if (basket?.items) {
+      const found = basket.items.find((item: any) => item.product_id === productId)
+      if (found) {
+        isInBasket = true
+        initialQuantity = found.quantity
+      }
+    }
+  }
+
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 page-content">
       {/* Breadcrumb */}
       <nav className="text-sm text-gray-500 dark:text-gray-400 mb-4">
         <Link href="/" className="hover:underline">Home</Link>
@@ -35,9 +68,8 @@ export default async function ProductPage({
       </nav>
 
       <div className="grid md:grid-cols-2 gap-8">
-        {/* Left Column: Media (image and/or video) */}
+        {/* Left Column: Media (unchanged) */}
         <div className="space-y-4">
-          {/* Image - only if exists */}
           {product.image_url && (
             <div className="bg-white dark:bg-[#1e1e1e] p-4 rounded-lg shadow">
               <Image
@@ -51,7 +83,6 @@ export default async function ProductPage({
             </div>
           )}
 
-          {/* Video - only if exists */}
           {product.video_url && (
             <div className="bg-white dark:bg-[#1e1e1e] p-4 rounded-lg shadow">
               <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Product Video</h3>
@@ -66,7 +97,6 @@ export default async function ProductPage({
             </div>
           )}
 
-          {/* Fallback if no media at all (shouldn't happen with form validation) */}
           {!product.image_url && !product.video_url && (
             <div className="bg-white dark:bg-[#1e1e1e] p-4 rounded-lg shadow">
               <div className="w-full h-96 bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 dark:text-gray-400">
@@ -76,7 +106,7 @@ export default async function ProductPage({
           )}
         </div>
 
-        {/* Right Column: Details (unchanged) */}
+        {/* Right Column: Details */}
         <div>
           <h1 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
             {product.name}
@@ -103,7 +133,12 @@ export default async function ProductPage({
             </p>
           </div>
 
-          <AddToBasketButton productId={product.id} maxAvailable={product.available} />
+          <AddToBasketButton
+            productId={product.id}
+            maxAvailable={product.available}
+            initialQuantity={initialQuantity}
+            isInBasket={isInBasket}
+          />
         </div>
       </div>
     </div>
