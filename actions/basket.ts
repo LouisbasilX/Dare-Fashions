@@ -123,10 +123,6 @@ export async function createBasket(productId: string, quantity: number) {
 // Update (or delete) an item in a basket
 // ------------------------------------------------------------------
 export async function updateBasketItem(basketId: string, productId: string, quantity: number) {
-   const verification = await checkBotId();
-  if (verification.isBot) {
-    throw new Error('Suspicious activity detected');
-  }
   const supabase = await createClient()
 
   if (quantity <= 0) {
