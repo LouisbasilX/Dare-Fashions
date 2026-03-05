@@ -20,9 +20,18 @@ export default function Header() {
   const supabase = createClient()
   const router = useRouter()
   const { navigate, Overlay } = useNavTransition()
-
+ 
   const isAdminRoute = pathname?.startsWith('/admin')
+const [isMobileMenuMounted, setIsMobileMenuMounted] = useState(false)
 
+useEffect(() => {
+  if (isMobileMenuOpen) {
+    setIsMobileMenuMounted(true)
+  } else {
+    const t = setTimeout(() => setIsMobileMenuMounted(false), 500)
+    return () => clearTimeout(t)
+  }
+}, [isMobileMenuOpen])
   useEffect(() => {
     const fetchUserAndRole = async () => {
       const { data: { user } } = await supabase.auth.getUser()
@@ -116,29 +125,51 @@ export default function Header() {
           transform: scale(1.04);
           filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
         }
-        @keyframes rp-dropin {
-          from { opacity: 0; transform: perspective(500px) rotateX(-6deg) translateY(-10px); }
-          to   { opacity: 1; transform: perspective(500px) rotateX(0deg)  translateY(0px); }
-        }
-        .rp-mobile-menu { animation: rp-dropin 0.35s cubic-bezier(0.4,0,0.2,1) forwards; transform-origin: top center; }
-        @keyframes rp-slidein {
-          from { opacity: 0; transform: translateX(14px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        .rp-mob-link { opacity: 0; animation: rp-slidein 0.25s ease forwards; transition: color 0.18s ease, padding-left 0.18s ease; }
-        .rp-mob-link:nth-child(1)  { animation-delay: 0.04s; }
-        .rp-mob-link:nth-child(2)  { animation-delay: 0.08s; }
-        .rp-mob-link:nth-child(3)  { animation-delay: 0.12s; }
-        .rp-mob-link:nth-child(4)  { animation-delay: 0.16s; }
-        .rp-mob-link:nth-child(5)  { animation-delay: 0.20s; }
-        .rp-mob-link:nth-child(6)  { animation-delay: 0.24s; }
-        .rp-mob-link:nth-child(7)  { animation-delay: 0.28s; }
-        .rp-mob-link:nth-child(8)  { animation-delay: 0.32s; }
-        .rp-mob-link:nth-child(9)  { animation-delay: 0.36s; }
-        .rp-mob-link:nth-child(10) { animation-delay: 0.40s; }
-        .rp-mob-link:hover { color: #B8860B !important; padding-left: 4px; }
-        .rp-mob-active     { color: #B8860B !important; font-weight: 600; }
-      `}</style>
+   @keyframes rp-dropin {
+  0%   { opacity: 0; transform: perspective(800px) rotateX(-15deg) translateY(-20px) scale(0.96); }
+  60%  { opacity: 1; transform: perspective(800px) rotateX(4deg)   translateY(4px)   scale(1.01); }
+  100% { opacity: 1; transform: perspective(800px) rotateX(0deg)   translateY(0px)   scale(1);    }
+}
+@keyframes rp-dropout {
+  0%   { opacity: 1;   transform: perspective(800px) rotateX(0deg)   translateY(0px)   scale(1);    }
+  30%  { opacity: 0.9; transform: perspective(800px) rotateX(-4deg)  translateY(4px)   scale(1.01); }
+  100% { opacity: 0;   transform: perspective(800px) rotateX(25deg)  translateY(-30px) scale(0.93); }
+}
+.rp-mobile-menu-enter {
+  animation: rp-dropin 0.45s cubic-bezier(0.16,1,0.3,1) forwards;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+.rp-mobile-menu-exit {
+  animation: rp-dropout 0.42s cubic-bezier(0.55,0,1,0.45) forwards;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+@keyframes rp-slidein {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes rp-slideout {
+  from { opacity: 1; transform: translateX(0)     scale(1);    }
+  to   { opacity: 0; transform: translateX(-14px) scale(0.96); }
+}
+.rp-mob-link { opacity: 0; animation: rp-slidein 0.25s ease forwards; transition: color 0.18s ease, padding-left 0.18s ease; }
+.rp-mobile-menu-exit .rp-mob-link { animation: rp-slideout 0.28s ease forwards !important; opacity: 1; }
+.rp-mob-link:nth-child(1)  { animation-delay: 0.04s; }
+.rp-mob-link:nth-child(2)  { animation-delay: 0.08s; }
+.rp-mob-link:nth-child(3)  { animation-delay: 0.12s; }
+.rp-mob-link:nth-child(4)  { animation-delay: 0.16s; }
+.rp-mob-link:nth-child(5)  { animation-delay: 0.20s; }
+.rp-mob-link:nth-child(6)  { animation-delay: 0.24s; }
+.rp-mob-link:nth-child(7)  { animation-delay: 0.28s; }
+.rp-mob-link:nth-child(8)  { animation-delay: 0.32s; }
+.rp-mob-link:nth-child(9)  { animation-delay: 0.36s; }
+.rp-mob-link:nth-child(10) { animation-delay: 0.40s; }
+.rp-mob-link:hover { color: #B8860B !important; padding-left: 4px; }
+.rp-mob-active     { color: #B8860B !important; font-weight: 600; }`}</style>
 
       <header className="bg-white dark:bg-[#121212] border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 transition-colors">
         <div className="container mx-auto px-4 py-3">
@@ -246,72 +277,76 @@ export default function Header() {
           </div>
 
           {/* Mobile menu */}
-          {isMobileMenuOpen && (
-            <div className="md:hidden mt-3 rp-mobile-menu">
-              <div
-                className="rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden"
-                style={{
-                  background: 'rgba(255,253,250,0.95)',
-                  backdropFilter: 'blur(18px) saturate(150%)',
-                  WebkitBackdropFilter: 'blur(18px) saturate(150%)',
-                }}
-              >
-                <div style={{ height: '2px', background: 'linear-gradient(90deg,#B8860B,#D4AF37,#E3B347,transparent)' }} />
-                <nav className="flex flex-col space-y-0 px-4 py-2 dark:bg-[#161616]/95">
-                  {navLinks.map(({ href, label, active }) => (
-                    <button
-                      key={href}
-                      onClick={() => handleNav(href)}
-                      className={`rp-mob-link w-full text-left text-sm font-medium py-3 border-b border-gray-100 dark:border-gray-800 ${
-                        active ? 'rp-mob-active' : 'text-gray-800 dark:text-gray-200'
-                      }`}
-                    >
-                      {label}
-                    </button>
-                  ))}
+  {/* Mobile menu */}
+{isMobileMenuMounted && (
+  <div style={{ perspective: '800px', perspectiveOrigin: 'top center' }}
+    className="md:hidden mt-3">
+    <div className={isMobileMenuOpen ? 'rp-mobile-menu-enter' : 'rp-mobile-menu-exit'}>
+      <div
+        className="rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+        style={{
+          background: 'rgba(255,253,250,0.95)',
+          backdropFilter: 'blur(18px) saturate(150%)',
+          WebkitBackdropFilter: 'blur(18px) saturate(150%)',
+        }}
+      >
+        <div style={{ height: '2px', background: 'linear-gradient(90deg,#B8860B,#D4AF37,#E3B347,transparent)' }} />
+        <nav className="flex flex-col space-y-0 px-4 py-2 dark:bg-[#161616]/95">
+          {navLinks.map(({ href, label, active }) => (
+            <button
+              key={href}
+              onClick={() => handleNav(href)}
+              className={`rp-mob-link w-full text-left text-sm font-medium py-3 border-b border-gray-100 dark:border-gray-800 ${
+                active ? 'rp-mob-active' : 'text-gray-800 dark:text-gray-200'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
 
-                  {user ? (
-                    <div className="rp-mob-link pt-3 border-t border-gray-200 dark:border-gray-700 mt-1">
-                      <p className="text-xs text-gray-500 dark:text-gray-400 pb-2">
-                        Logged in as: {user.email}
-                      </p>
-                      <button onClick={() => handleNav('/profile')}
-                        className="block w-full text-left text-sm font-medium text-gray-800 dark:text-gray-200 hover:text-[#B8860B] py-2 transition">
-                        Profile
-                      </button>
-                      {userRole === 'admin' && !isAdminRoute && (
-                        <button onClick={() => handleNav('/admin')}
-                          className="block w-full text-left text-sm font-medium text-purple-600 dark:text-purple-400 hover:text-purple-700 py-2 transition">
-                          Admin Dashboard
-                        </button>
-                      )}
-                      {isAdminRoute && (
-                        <button onClick={() => handleNav('/shop')}
-                          className="block w-full text-left text-sm font-medium text-[#B8860B] hover:text-[#D4AF37] py-2 transition">
-                          Back to Store
-                        </button>
-                      )}
-                      <button onClick={handleLogout}
-                        className="block w-full text-left text-sm font-medium text-red-600 dark:text-red-400 hover:text-red-700 py-2 transition">
-                        Logout
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="rp-mob-link flex flex-col space-y-2 pt-3 pb-1">
-                      <button onClick={() => handleNav('/login')}
-                        className="text-sm font-semibold text-center py-2.5 rounded-lg border-2 border-[#D4AF37] text-[#B8860B] hover:bg-[#D4AF37]/10 transition">
-                        Login
-                      </button>
-                      <button onClick={() => handleNav('/register')}
-                        className="text-sm font-semibold text-center bg-[#1B5E20] text-white px-3 py-2.5 rounded-lg hover:bg-[#2E7D32] transition">
-                        Sign up
-                      </button>
-                    </div>
-                  )}
-                </nav>
-              </div>
+          {user ? (
+            <div className="rp-mob-link pt-3 border-t border-gray-200 dark:border-gray-700 mt-1">
+              <p className="text-xs text-gray-500 dark:text-gray-400 pb-2">
+                Logged in as: {user.email}
+              </p>
+              <button onClick={() => handleNav('/profile')}
+                className="block w-full text-left text-sm font-medium text-gray-800 dark:text-gray-200 hover:text-[#B8860B] py-2 transition">
+                Profile
+              </button>
+              {userRole === 'admin' && !isAdminRoute && (
+                <button onClick={() => handleNav('/admin')}
+                  className="block w-full text-left text-sm font-medium text-purple-600 dark:text-purple-400 hover:text-purple-700 py-2 transition">
+                  Admin Dashboard
+                </button>
+              )}
+              {isAdminRoute && (
+                <button onClick={() => handleNav('/shop')}
+                  className="block w-full text-left text-sm font-medium text-[#B8860B] hover:text-[#D4AF37] py-2 transition">
+                  Back to Store
+                </button>
+              )}
+              <button onClick={handleLogout}
+                className="block w-full text-left text-sm font-medium text-red-600 dark:text-red-400 hover:text-red-700 py-2 transition">
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="rp-mob-link flex flex-col space-y-2 pt-3 pb-1">
+              <button onClick={() => handleNav('/login')}
+                className="text-sm font-semibold text-center py-2.5 rounded-lg border-2 border-[#D4AF37] text-[#B8860B] hover:bg-[#D4AF37]/10 transition">
+                Login
+              </button>
+              <button onClick={() => handleNav('/register')}
+                className="text-sm font-semibold text-center bg-[#1B5E20] text-white px-3 py-2.5 rounded-lg hover:bg-[#2E7D32] transition">
+                Sign up
+              </button>
             </div>
           )}
+        </nav>
+      </div>
+    </div>
+  </div>
+)}
         </div>
       </header>
     </>

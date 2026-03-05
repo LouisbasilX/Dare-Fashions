@@ -5,9 +5,11 @@ import { createClient } from '@/lib/supabase/server'
 export async function vectorSearch(query: string) {
   const supabase = await createClient()
 
-  // Get embedding from edge function instead of @xenova/transformers
   const { data, error: embedError } = await supabase.functions.invoke('smooth-action', {
     body: { query },
+    headers: {
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!}`,
+    },
   })
 
   if (embedError) throw embedError
@@ -15,8 +17,6 @@ export async function vectorSearch(query: string) {
   const queryEmbedding: number[] = data.embedding
   const embeddingString = `[${queryEmbedding.join(',')}]`
 
-  // 0.5 — tight enough to exclude noise, loose enough for near-synonyms
-  // (gown≈dress, cocktail≈formal, crimson≈red)
   const { data: matches, error } = await supabase.rpc('match_products', {
     query_embedding: embeddingString,
     match_threshold: 0.5,

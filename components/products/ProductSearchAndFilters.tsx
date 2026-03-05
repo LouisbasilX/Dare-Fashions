@@ -448,7 +448,7 @@ export default function ProductSearchAndFilters({ filterOptions = {} }: ProductS
 
           {/* Floating pill — LEFT side, appears when main button scrolls out */}
           <div className={`
-            fixed top-[72px] left-5 z-50
+            fixed top-[72px] left-5 z-49
             transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
             ${isFloating
               ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto'
