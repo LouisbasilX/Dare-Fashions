@@ -16,6 +16,7 @@ const protectedRoutes = [
   // Add any other pages that trigger server actions
   { path: '/baskets', method: 'POST' },
   { path: '/login', method: 'POST' },
+  { path: '/', method: 'POST' },
 ];
 export const metadata: Metadata = {
   title: 'RP Apparels',
