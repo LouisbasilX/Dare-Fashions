@@ -19,7 +19,7 @@ const protectedRoutes = [
   { path: '/', method: 'POST' },
 ];
 export const metadata: Metadata = {
-  title: 'RP Apparels',
+  title: 'Dare Fashions',
   description: 'Premium fashion for the modern individual',
 }
 
