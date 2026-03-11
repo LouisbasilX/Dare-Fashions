@@ -279,7 +279,7 @@ export default function HeroSection() {
             </Link>
 
             <Link
-              href="/collections"
+              href="/collection"
               className="px-10 py-4 border border-white/20 text-white font-bold uppercase tracking-[0.2em] text-[10px] backdrop-blur-md hover:bg-white hover:text-black transition-all duration-500 active:scale-95"
             >
               Explore Collection
