@@ -36,13 +36,13 @@ export default function LoadingSpinner() {
           animation: 'ls-spin 1.1s cubic-bezier(0.4,0,0.2,1) infinite',
         }} />
 
-        {/* Crimson counter-arc */}
+        {/* Emerald counter-arc — replaces crimson */}
         <div className="absolute" style={{
           inset: 16, borderRadius: '50%',
           border: '2px solid transparent',
-          borderBottomColor: '#9A2E40',
-          borderLeftColor: 'rgba(154,46,64,0.25)',
-          filter: 'drop-shadow(0 0 5px rgba(122,30,44,0.6))',
+          borderBottomColor: '#1A5C45',
+          borderLeftColor: 'rgba(26,92,69,0.25)',
+          filter: 'drop-shadow(0 0 5px rgba(26,92,69,0.55))',
           animation: 'ls-spin 0.75s linear infinite reverse',
         }} />
 

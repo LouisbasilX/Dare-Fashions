@@ -254,9 +254,6 @@ export default function ProductCard({
             </h3>
           </Link>
 
-          <p className="text-[13px] text-gray-500 dark:text-gray-500 line-clamp-2 leading-relaxed mb-3">
-            {product.description}
-          </p>
 
           <div className="flex items-center justify-between mt-4">
             <div className="flex flex-col">

@@ -30,11 +30,11 @@ export default function EmailSubscription() {
   }
 
   return (
-    <section className="py-16 bg-[#7A1E2C] dark:bg-[#4A2C2A] text-white">
+    <section className="py-16 text-white" style={{ backgroundColor: 'var(--emerald)' }}>
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-3">Be First to Know</h2>
         <p className="mb-6 opacity-90">Get exclusive updates on new drops, restocks and special offers.</p>
-        
+
         {success ? (
           <p className="text-lg">Thank you for subscribing! 🎉</p>
         ) : (
@@ -52,12 +52,17 @@ export default function EmailSubscription() {
                 placeholder="Enter your email"
                 required
                 disabled={loading}
-                className="flex-1 px-4 py-3 rounded bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#F2C6C2] disabled:opacity-50"
+                className="flex-1 px-4 py-3 rounded bg-white text-gray-900 placeholder-gray-500 focus:outline-none disabled:opacity-50"
+                style={{ '--tw-ring-color': 'var(--gold)' } as React.CSSProperties}
               />
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-[#F2C6C2] text-[#7A1E2C] font-semibold px-6 py-3 rounded hover:bg-[#E0AFA8] transition disabled:opacity-50"
+                className="font-semibold px-6 py-3 rounded transition disabled:opacity-50"
+                style={{
+                  backgroundColor: 'var(--gold)',
+                  color: 'var(--emerald-dark)',
+                }}
               >
                 {loading ? 'Submitting...' : 'JOIN THE VIP LIST'}
               </button>

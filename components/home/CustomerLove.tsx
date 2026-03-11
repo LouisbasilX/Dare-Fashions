@@ -2,7 +2,7 @@ import { Star } from 'lucide-react'
 
 const reviews = [
   {
-    name: 'Chioma',
+    name: 'Mosope',
     rating: 5,
     text: 'I absolutely love my dress! The quality is top-notch and it fits perfectly.',
   },
@@ -14,7 +14,7 @@ const reviews = [
   {
     name: 'Temilade',
     rating: 5,
-    text: 'Every piece I’ve bought from RP has been stunning. My new go-to store.',
+    text: `Every piece I've bought from RP has been stunning. My new go-to store.`,
   },
 ]
 
@@ -32,7 +32,7 @@ export default function CustomerLove() {
                 ))}
               </div>
               <p className="text-gray-700 dark:text-gray-300 italic mb-4">"{review.text}"</p>
-              <p className="font-semibold text-[#7A1E2C] dark:text-[#B84A5A]">— {review.name}</p>
+              <p className="font-semibold" style={{ color: 'var(--emerald)' }}>— {review.name}</p>
             </div>
           ))}
         </div>

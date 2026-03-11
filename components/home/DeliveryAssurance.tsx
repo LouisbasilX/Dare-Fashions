@@ -15,8 +15,11 @@ export default function DeliveryAssurance() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           {assurances.map((item, idx) => (
             <div key={idx} className="text-center">
-              <div className="inline-block p-3 bg-[#F2C6C2] dark:bg-[#4A2C2A] rounded-full mb-3">
-                <item.icon className="w-6 h-6 text-[#7A1E2C] dark:text-[#B84A5A]" />
+              <div
+                className="inline-block p-3 rounded-full mb-3"
+                style={{ backgroundColor: 'rgba(26,92,69,0.1)' }}
+              >
+                <item.icon className="w-6 h-6" style={{ color: 'var(--emerald)' } as React.CSSProperties} />
               </div>
               <p className="font-medium text-gray-800 dark:text-gray-200">{item.text}</p>
             </div>

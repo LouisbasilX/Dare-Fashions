@@ -1,5 +1,5 @@
 {
-  "name": "rp-apparels",
+  "name": "dare-fashions",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "update-types": "del lib\\supabase\\types.ts /f /q & npx supabase gen types typescript --project-id ougvpvmqybqwhrzvkpgq > lib/supabase/types.ts"
+    "update-types": "del lib\\supabase\\types.ts /f /q & npx supabase gen types typescript --project-id xxlkvcyykwfvxwrhwhhd > lib/supabase/types.ts"
   },
   "dependencies": {
     "@google/genai": "^1.43.0",

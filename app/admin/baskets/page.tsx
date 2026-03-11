@@ -1,7 +1,7 @@
 import { createAdminClient } from '@/lib/supabase/admin'
 import { BasketCardList } from '@/components/admin/BasketCardList'
 import MessageExtractor from '@/components/admin/MessageExtractor'
-import AdminWhatsAppSettings from '@/components/admin/AdminWhatsappSettings'
+
 export default async function AdminBasketsPage({
   searchParams,
 }: {
@@ -32,7 +32,7 @@ export default async function AdminBasketsPage({
       
       {/* Filtering (optional – you can add filter UI here later) */}
       {/* Status filter could be added as select dropdowns */}
-      <AdminWhatsAppSettings />
+   
       <BasketCardList baskets={baskets ?? []} />
     </div>
   )

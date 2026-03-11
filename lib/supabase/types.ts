@@ -140,15 +140,27 @@ export type Database = {
       }
       global_settings: {
         Row: {
+          admin_gmail: string | null
+          admin_instagram_handle: string | null
+          admin_tiktok_handle: string | null
           admin_whatsapp_number: string
+          admin_x_handle: string | null
           id: number
         }
         Insert: {
+          admin_gmail?: string | null
+          admin_instagram_handle?: string | null
+          admin_tiktok_handle?: string | null
           admin_whatsapp_number: string
+          admin_x_handle?: string | null
           id?: number
         }
         Update: {
+          admin_gmail?: string | null
+          admin_instagram_handle?: string | null
+          admin_tiktok_handle?: string | null
           admin_whatsapp_number?: string
+          admin_x_handle?: string | null
           id?: number
         }
         Relationships: []

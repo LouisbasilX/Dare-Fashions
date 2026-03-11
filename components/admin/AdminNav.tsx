@@ -11,6 +11,7 @@ const navItems = [
   { href: '/admin/orders',   label: 'Orders'    },
   { href: '/admin/products', label: 'Products'  },
   { href: '/admin/users',    label: 'Users'     },
+  { href: '/admin/settings',    label: 'Settings'     },
 ]
 
 export default function AdminNav() {

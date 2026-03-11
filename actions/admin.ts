@@ -257,15 +257,22 @@ export async function deleteCloudinaryFile(fileUrl: string) {
   }
 }
 
-export async function updateAdminWhatsAppNumber(number: string) {
+// actions/admin.ts (updated action)
+export async function updateAdminSocialSettings(settings: {
+  admin_whatsapp_number?: string
+  admin_x_handle?: string
+  admin_tiktok_handle?: string
+  admin_instagram_handle?: string
+  admin_email?: string
+}) {
   await verifyAdmin()
   const adminClient = createAdminClient()
 
   const { error } = await adminClient
     .from('global_settings')
-    .update({ admin_whatsapp_number: number })
+    .update(settings)
     .eq('id', 1)
 
   if (error) throw error
-  revalidatePath('/admin/baskets')
+  revalidatePath('/admin/settings')
 }

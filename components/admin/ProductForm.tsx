@@ -5,18 +5,21 @@ import { createClient } from '@/lib/supabase/client'
 import { uploadProductImage, uploadProductVideo } from '@/actions/admin'
 import { updateProductEmbedding } from '@/actions/embedding'
 import type { ProductInsert } from '@/lib/types'
-import { BookOpen } from 'lucide-react'
+import { BookOpen, Plus, X } from 'lucide-react'
 import CatalogSelector from '@/components/admin/CatalogSelector'
 import KeywordsInput from './KeywordsInput'
 import Image from 'next/image'
 
 export default function ProductForm() {
+  // --- New Visibility State ---
+  const [isFormVisible, setIsFormVisible] = useState(false)
+
   const [uploadingImage, setUploadingImage] = useState(false)
   const [uploadingVideo,  setUploadingVideo]  = useState(false)
   const [inserting,       setInserting]       = useState(false)
   const [formError,       setFormError]       = useState<string | null>(null)
   const [imagePreview,    setImagePreview]    = useState<string | null>(null)
-  const [videoPreview, setVideoPreview] = useState<string | null>(null)
+  const [videoPreview,    setVideoPreview]    = useState<string | null>(null)
   const [videoFileName,   setVideoFileName]   = useState<string | null>(null)
   const [catalogOpen,     setCatalogOpen]     = useState(false)
   const [name,            setName]            = useState('')
@@ -31,7 +34,7 @@ export default function ProductForm() {
   const [occasions,  setOccasions]  = useState<string[]>([])
   const [sizes,      setSizes]      = useState<string[]>([])
 
-  // Auto-detect sex from name + description (unchanged)
+  // Auto-detect sex from name + description
   useEffect(() => {
     const text = (name + ' ' + description).toLowerCase()
     const femaleKeywords = ['female', 'women', 'woman', 'girl', 'ladies', 'dress']
@@ -58,7 +61,6 @@ export default function ProductForm() {
     setVideoPreview(file ? URL.createObjectURL(file) : null)
   }
 
-  // ── Submit (completely unchanged) ─────────────────────────────────────────
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormError(null)
@@ -151,6 +153,7 @@ export default function ProductForm() {
       )
 
       alert('Product added successfully!')
+      setIsFormVisible(false) // Automatically close on success
       window.location.reload()
     } catch (error: any) {
       setFormError(`Database error: ${error.message || 'Unknown error'}`)
@@ -161,12 +164,37 @@ export default function ProductForm() {
 
   const inputCls = 'w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none'
 
+  // --- Conditional Rendering Logic ---
+  if (!isFormVisible) {
+    return (
+      <div className="flex justify-center p-6">
+        <button
+          type="button"
+          onClick={() => setIsFormVisible(true)}
+          className="flex items-center gap-2 bg-gradient-to-r from-[#D4AF37] to-[#7A1E2C] hover:scale-105 transition-transform text-white font-bold py-4 px-8 rounded-full shadow-lg"
+        >
+          <Plus className="w-6 h-6" />
+          Add New Product
+        </button>
+      </div>
+    )
+  }
+
   return (
     <>
       <form
         onSubmit={handleSubmit}
-        className="bg-white dark:bg-[#1e1e1e] p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 max-w-2xl mx-auto"
+        className="bg-white dark:bg-[#1e1e1e] p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 max-w-2xl mx-auto relative"
       >
+        {/* Close Button to toggle back */}
+        <button
+          type="button"
+          onClick={() => setIsFormVisible(false)}
+          className="absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
         <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Add New Product</h2>
 
         {formError && (
@@ -225,8 +253,7 @@ export default function ProductForm() {
             <option value="unisex">Unisex</option>
           </select>
 
-          {/* ── Keywords — BEFORE media so admin fills content before assets ─ */}
-          {/*    AI Assist button lives inside KeywordsInput header             */}
+          {/* ── Keywords ──────────────────────────────────────────────────── */}
           <KeywordsInput
             colors={colors}         setColors={setColors}
             materials={materials}   setMaterials={setMaterials}
@@ -305,7 +332,7 @@ export default function ProductForm() {
         </div>
       </form>
 
-      {/* CatalogSelector portalled to body inside its own file */}
+      {/* CatalogSelector */}
       <CatalogSelector
         isOpen={catalogOpen}
         onClose={() => setCatalogOpen(false)}

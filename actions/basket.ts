@@ -395,18 +395,37 @@ export async function mergeGuestBasket(consent: boolean) {
   return { targetBasketId }
 }
 
-export async function getAdminNumber(): Promise<string> {
+export async function getAdminDetails(): Promise<{
+    number: string,
+    insta: string,
+    x: string,
+    tiktok: string,
+    email: string
+  }> {
   const supabase = await createClient()
+  const defaultDetails = {
+    number: '+2349151484676',
+    insta: '',
+    x: '',
+    tiktok: '',
+    email: ''
+  }
   const { data, error } = await supabase
     .from('global_settings')
-    .select('admin_whatsapp_number')
+    .select('*')
     .eq('id', 1)
     .single()
 
   if (error) {
-    console.error('Failed to fetch admin number:', error)
-    return '+2349019267148'
+    console.error('Failed to fetch admin details:', error)
+    return defaultDetails
   }
-
-  return data?.admin_whatsapp_number ?? '+2349019267148'
+  let res = {
+     number: data.admin_whatsapp_number,
+    insta: data.admin_instagram_handle || '',
+    x: data.admin_x_handle || '',
+    tiktok: data.admin_tiktok_handle || '',
+    email: data.admin_gmail || ''
+  } 
+  return res ?? defaultDetails
 }

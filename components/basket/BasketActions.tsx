@@ -34,7 +34,7 @@ export default function BasketActions({ basket, total, isValid }: BasketActionsP
       <button
         onClick={() => setIsModalOpen(true)}
         style={{
-          backgroundColor: 'var(--green)',
+          backgroundColor: 'var(--emerald-light)',
           color: '#FFFFFF',
           boxShadow: '0 4px 20px rgba(46,125,50,0.4)',
         }}

@@ -3,7 +3,7 @@
 import { Mail, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { getAdminNumber } from '@/actions/basket'
+import { getAdminDetails } from '@/actions/basket'
 
 // Official WhatsApp SVG icon
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -19,11 +19,14 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 export default function ContactPage() {
   const [adminNumber, setAdminNumber] = useState<string>('')
+  const [adminEmail, setAdminEmail] = useState<string>('')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getAdminNumber()
-      .then(num => setAdminNumber(num))
+    getAdminDetails()
+      .then(details => {setAdminNumber(details.number)
+                        setAdminEmail(details.email)
+      })
       .catch(err => console.error('Failed to fetch admin number:', err))
       .finally(() => setLoading(false))
   }, [])
@@ -59,10 +62,10 @@ export default function ContactPage() {
           </p>
 
           <a
-            href="mailto:rpapparels001@gmail.com"
+            href={`mailto:${adminEmail}`}
             className="group/btn inline-flex items-center justify-center w-full px-6 py-4 bg-white dark:bg-gray-800 border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
           >
-            <span className="mr-2">rpapparels001@gmail.com</span>
+            <span className="mr-2">{adminEmail}</span>
             <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" />
           </a>
         </div>

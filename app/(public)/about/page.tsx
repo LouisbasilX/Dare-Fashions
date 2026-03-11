@@ -5,13 +5,45 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#FAF7F4] dark:bg-[#1A1A1A]">
       {/* Hero Header */}
-      <div className="bg-gradient-to-r from-[#D4AF37] to-[#7A1E2C] py-16 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          About RP APPARELS
-        </h1>
-        <p className="text-lg text-white/90 max-w-2xl mx-auto">
-          Fashion with purpose, style with confidence.
-        </p>
+     {/* Hero Header */}
+      <div
+        className="py-16 px-4 text-center"
+        style={{
+          background: 'var(--gold)',
+          backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+            repeating-linear-gradient(
+              45deg,
+              rgba(0,0,0,0.2) 0px,
+              rgba(0,0,0,0.2) 2px,
+              transparent 2px,
+              transparent 8px,
+              rgba(26,92,69,0.35) 8px,
+              rgba(26,92,69,0.35) 10px,
+              transparent 10px,
+              transparent 18px
+            )
+          `,
+          boxShadow: '0 8px 32px rgba(212, 175, 55, 0.35)',
+        }}
+      >
+        <div
+          className="inline-block px-10 py-8 rounded-2xl max-w-2xl mx-auto"
+          style={{
+            background: 'rgba(255,255,255,0.07)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255,255,255,0.12)',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
+          }}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            About Dare Fashion
+          </h1>
+          <p className="text-lg" style={{ color: 'rgba(255,255,255,0.92)' }}>
+            Fashion with purpose, style with confidence.
+          </p>
+        </div>
       </div>
 
       {/* Content Cards */}
@@ -20,15 +52,15 @@ export default function AboutPage() {
           {/* Our Story */}
           <div className="bg-white dark:bg-[#1e1e1e] rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition">
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-[#D4AF37]/10 dark:bg-[#D4AF37]/20 rounded-lg">
-                <BookOpen className="w-6 h-6 text-[#7A1E2C] dark:text-[#D4AF37]" />
+              <div className="p-3 rounded-lg" style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
+                <BookOpen className="w-6 h-6" style={{ color: 'var(--emerald)' }} />
               </div>
               <div>
                 <h2 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
                   Our Story
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  RP APPARELS was created for People who understand that style is power.
+                  Dare Fashion was created for people who understand that style is power.
                   What started as a passion for fashion quickly became a mission — to provide trendy, classy and confidence‑boosting outfits that help women feel bold in every space they enter.
                   We are not just about clothes. We are about presence.
                 </p>
@@ -39,8 +71,8 @@ export default function AboutPage() {
           {/* Our Vision */}
           <div className="bg-white dark:bg-[#1e1e1e] rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition">
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-[#D4AF37]/10 dark:bg-[#D4AF37]/20 rounded-lg">
-                <Target className="w-6 h-6 text-[#7A1E2C] dark:text-[#D4AF37]" />
+              <div className="p-3 rounded-lg" style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
+                <Target className="w-6 h-6" style={{ color: 'var(--emerald)' }} />
               </div>
               <div>
                 <h2 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
@@ -56,8 +88,8 @@ export default function AboutPage() {
           {/* Our Mission */}
           <div className="bg-white dark:bg-[#1e1e1e] rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition">
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-[#D4AF37]/10 dark:bg-[#D4AF37]/20 rounded-lg">
-                <Rocket className="w-6 h-6 text-[#7A1E2C] dark:text-[#D4AF37]" />
+              <div className="p-3 rounded-lg" style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
+                <Rocket className="w-6 h-6" style={{ color: 'var(--emerald)' }} />
               </div>
               <div>
                 <h2 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
@@ -73,8 +105,8 @@ export default function AboutPage() {
           {/* What Makes Us Different */}
           <div className="bg-white dark:bg-[#1e1e1e] rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition">
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-[#D4AF37]/10 dark:bg-[#D4AF37]/20 rounded-lg">
-                <Sparkles className="w-6 h-6 text-[#7A1E2C] dark:text-[#D4AF37]" />
+              <div className="p-3 rounded-lg" style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
+                <Sparkles className="w-6 h-6" style={{ color: 'var(--emerald)' }} />
               </div>
               <div>
                 <h2 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
@@ -93,16 +125,16 @@ export default function AboutPage() {
           {/* Our Promise */}
           <div className="bg-white dark:bg-[#1e1e1e] rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition">
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-[#D4AF37]/10 dark:bg-[#D4AF37]/20 rounded-lg">
-                <Heart className="w-6 h-6 text-[#7A1E2C] dark:text-[#D4AF37]" />
+              <div className="p-3 rounded-lg" style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
+                <Heart className="w-6 h-6" style={{ color: 'var(--emerald)' }} />
               </div>
               <div>
                 <h2 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
                   Our Promise
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  When you shop with RP APPARELS, you’re not just buying an outfit.
-                  You’re investing in how you show up in the world.
+                  When you shop with Dare Fashion, you're not just buying an outfit.
+                  You're investing in how you show up in the world.
                   And we take that seriously.
                 </p>
               </div>
@@ -114,7 +146,11 @@ export default function AboutPage() {
         <div className="mt-10 text-center">
           <Link
             href="/shop"
-            className="inline-block bg-[#D4AF37] hover:bg-[#B8960F] text-gray-900 font-semibold px-8 py-3 rounded-lg transition transform hover:scale-105 shadow-md"
+            className="inline-block font-semibold px-8 py-3 rounded-lg transition transform hover:scale-105 shadow-md"
+            style={{
+              backgroundColor: 'var(--gold)',
+              color: 'black',
+            }}
           >
             Start Shopping
           </Link>

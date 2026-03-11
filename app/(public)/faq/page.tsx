@@ -42,23 +42,56 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-[#FAF7F4] dark:bg-[#1A1A1A]">
       {/* Hero Header */}
-      <div className="bg-gradient-to-r from-[#D4AF37] to-[#7A1E2C] py-16 px-4 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold text-white mb-4"
+      {/* Hero Header */}
+      <div
+        className="py-16 px-4 text-center"
+        style={{
+          background: 'var(--gold)',
+          backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+            repeating-linear-gradient(
+              45deg,
+              rgba(0,0,0,0.2) 0px,
+              rgba(0,0,0,0.2) 2px,
+              transparent 2px,
+              transparent 8px,
+              rgba(26,92,69,0.35) 8px,
+              rgba(26,92,69,0.35) 10px,
+              transparent 10px,
+              transparent 18px
+            )
+          `,
+          boxShadow: '0 8px 32px rgba(212, 175, 55, 0.35)',
+        }}
+      >
+        <div
+          className="inline-block px-10 py-8 rounded-2xl max-w-2xl mx-auto"
+          style={{
+            background: 'rgba(255,255,255,0.07)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255,255,255,0.12)',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
+          }}
         >
-          Frequently Asked Questions
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg text-white/90 max-w-2xl mx-auto"
-        >
-          Everything you need to know about shopping with RP Apparels.
-        </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-5xl font-bold text-white mb-4"
+          >
+            Frequently Asked Questions
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg"
+            style={{ color: 'rgba(255,255,255,0.92)' }}
+          >
+            Everything you need to know about shopping with Dare Fashion.
+          </motion.p>
+        </div>
       </div>
 
       {/* FAQ List */}
@@ -74,15 +107,15 @@ export default function FAQPage() {
             >
               <button
                 onClick={() => toggle(index)}
-                className="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                className="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none"
+                style={{ '--tw-ring-color': 'var(--gold)' } as React.CSSProperties}
               >
                 <span className="text-lg font-semibold text-gray-900 dark:text-white">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-5 h-5 text-[#D4AF37] transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
+                  className={`w-5 h-5 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
+                  style={{ color: 'var(--gold)' }}
                 />
               </button>
               <AnimatePresence>
@@ -116,7 +149,8 @@ export default function FAQPage() {
             Still have questions?{' '}
             <a
               href="/contact"
-              className="text-[#D4AF37] hover:text-[#B8960F] font-medium underline transition"
+              className="font-medium underline transition"
+              style={{ color: 'var(--gold)' }}
             >
               Contact us
             </a>

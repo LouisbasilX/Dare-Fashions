@@ -447,7 +447,7 @@ const existingIds = new Set(products.map(p => p.id));
 const uniqueNewProducts = initialProducts.filter(p => !existingIds.has(p.id));
 
 // 3. Update the list (Immutable way)
-const updatedProducts = [...products, ...uniqueNewProducts];
+const updatedProducts = !sex ? [...products, ...uniqueNewProducts]: [...products]
   // ── New arrivals filter (unchanged) ───────────────────────────────────────
   const filteredProducts = newProducts === 'true'
     ? updatedProducts?.filter(p => isProductNew(p.created_at))
@@ -472,26 +472,51 @@ function renderPage({
     <div className="container mx-auto px-4 py-8 page-content">
       <div className="container mx-auto px-4 py-8">
         <section className="mb-12">
-          <div className="bg-gradient-to-r from-[#D4AF37] to-[#7A1E2C] rounded-2xl p-8 text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">RP Apparels</h1>
-            <p className="text-xl opacity-90 max-w-2xl">Fashion in Vogue</p>
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/baskets"
-                className="bg-white text-[#7A1E2C] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition text-center w-full sm:w-auto"
-              >
-                View My Basket
-              </Link>
-              {isAdmin && (
-                <Link
-                  href="/admin"
-                  className="bg-[#7A1E2C] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#5A1620] transition text-center w-full sm:w-auto"
-                >
-                  Admin Dashboard
-                </Link>
-              )}
-            </div>
-          </div>
+<div
+  className="inline-block px-10 py-8 rounded-2xl max-w-2xl mx-auto w-full"
+  style={{
+    /* Using your emerald root variable for the glass background */
+    backgroundColor: 'var(--emerald-dark)',
+    /* Applying the blur and the green accent glow via shadow */
+    backdropFilter: 'blur(16px)',
+    WebkitBackdropFilter: 'blur(16px)',
+    border: '1px solid rgba(255,255,255,0.1)',
+    boxShadow: '0 0 50px rgba(26, 92, 69, 0.4)', 
+    opacity: 0.95, /* Ensuring it feels like glass/emerald */
+  }}
+>
+  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+    Owning Confidence
+  </h1>
+  <p className="text-xl max-w-2xl" style={{ color: 'rgba(255,255,255,0.92)' }}>
+    Fashion in Vogue
+  </p>
+  <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+    <Link
+      href="/baskets"
+      className="px-6 py-3 rounded-lg font-semibold transition text-center w-full sm:w-auto"
+      style={{
+        backgroundColor: '#ffffff',
+        color: 'var(--emerald-dark)',
+      }}
+    >
+      View My Basket
+    </Link>
+    {isAdmin && (
+      <Link
+        href="/admin"
+        className="px-6 py-3 rounded-lg font-semibold transition text-center w-full sm:w-auto"
+        style={{
+          backgroundColor: 'var(--emerald-dark)',
+          color: '#ffffff',
+          border: '1px solid rgba(255,255,255,0.2)'
+        }}
+      >
+        Admin Dashboard
+      </Link>
+    )}
+  </div>
+</div>
         </section>
 
         <section className="mb-8">
@@ -524,6 +549,3 @@ function renderPage({
   )
 }
 
-function renderLoader(){
-      
-}

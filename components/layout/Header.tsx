@@ -84,10 +84,12 @@ useEffect(() => {
   const navLinks = [
     { href: '/',         label: 'Home',       active: pathname === '/'                   },
     { href: '/shop',     label: 'Shop',       active: !!pathname?.startsWith('/shop')    },
+    { href: '/collection',     label: 'Collections',       active: !!pathname?.startsWith('/collection')    },
     { href: '/about',    label: 'About',      active: !!pathname?.startsWith('/about')   },
     { href: '/faq',      label: 'FAQ',        active: !!pathname?.startsWith('/faq')     },
     { href: '/baskets',  label: 'My Baskets', active: !!pathname?.startsWith('/baskets') },
     { href: '/contact',  label: 'Contact',    active: !!pathname?.startsWith('/contact') },
+   
   ]
 
   return (
@@ -178,10 +180,10 @@ useEffect(() => {
             {/* Logo */}
             <button onClick={() => handleNav('/')} className="flex items-center space-x-2 group rp-logo">
               <div className="relative w-10 h-10">
-                <Image src="/logo.png" alt="RP Apparels" fill className="object-contain" priority />
+                <Image src="/logo.png" alt="Dare Fashions" fill className="object-contain" priority />
               </div>
               <span className="font-bold text-xl text-gray-900 dark:text-white hidden sm:block">
-                RP Apparels
+                Dare Fashions
               </span>
             </button>
 

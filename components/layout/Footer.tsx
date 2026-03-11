@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Facebook, Instagram, Twitter, Mail, Phone, X} from 'lucide-react'
-import { getAdminNumber } from '@/actions/basket';
+import { getAdminDetails} from '@/actions/basket';
 import { useState, useEffect } from 'react'
 
 // Move TikTokIcon outside component to avoid re-creation
@@ -22,15 +22,23 @@ const TikTokIcon = ({ className }: IconProps) => (
 
 export default function Footer() {
   const [adminNumber, setAdminNumber] = useState<string>('')
+  const [instaHandle, setInstahandle] = useState<string>('')
+  const [xHandle, setXhandle] = useState<string>('')
+  const [tiktokHandle, setTiktokhandle] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function fetchNumber() {
       try {
-        const number = await getAdminNumber()
-        setAdminNumber(number)
+        const details = await getAdminDetails()
+        setAdminNumber(details.number)
+        setInstahandle(details.insta)
+        setTiktokhandle(details.tiktok)
+        setXhandle(details.x)
+        setEmail(details.email)
       } catch (error) {
-        console.error('Failed to fetch admin number:', error)
+        console.error('Failed to fetch admin details:', error)
       } finally {
         setLoading(false)
       }
@@ -44,7 +52,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
           {/* About */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">RP Apparels</h3>
+            <h3 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Dare Fashions</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Premium fashion for the modern individual. Quality fabrics, timeless designs.
             </p>
@@ -72,7 +80,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center justify-center md:justify-start gap-2 text-sm text-gray-600 dark:text-gray-400">
                 <Mail className="w-4 h-4" />
-                <span>rpapparels001@gmail.com</span>
+                <span>{loading ? 'Loading...' : email}</span>
               </li>
             </ul>
           </div>
@@ -82,7 +90,7 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4 text-gray-900 dark:text-white">Follow Us</h3>
             <div className="flex justify-center md:justify-start space-x-4">
               <a
-                href="https://instagram.com/rpapparels_"
+                href={`https://instagram.com/${instaHandle}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-[#D4AF37] dark:hover:text-[#E3B347]"
@@ -90,7 +98,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://x.com/rpapparels"
+                href={`https://x.com/${xHandle}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-[#D4AF37] dark:hover:text-[#E3B347]"
@@ -98,7 +106,7 @@ export default function Footer() {
                 <X className="w-5 h-5" />
               </a>
               <a
-                href="https://tiktok.com/rpapparels"
+                href={`https://tiktok.com/${tiktokHandle}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-[#D4AF37] dark:hover:text-[#E3B347]"
@@ -110,7 +118,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-600 dark:text-gray-400">
-          &copy; {new Date().getFullYear()} RP Apparels. All rights reserved.
+          &copy; {new Date().getFullYear()} Dare Fashions. All rights reserved.
         </div>
       </div>
     </footer>

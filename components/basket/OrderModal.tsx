@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { BasketWithItems } from '@/lib/types'
-import { updateBasketDetails, getAdminNumber } from '@/actions/basket'
+import { updateBasketDetails, getAdminDetails } from '@/actions/basket'
 import { createClient } from '@/lib/supabase/client'
 import { NIGERIAN_STATES } from '@/lib/constants'
 
@@ -71,8 +71,10 @@ export default function OrderModal({ basket, total, isOpen, onClose }: OrderModa
      
 
       // ✅ await inside async function — works correctly now
-      const phone = await getAdminNumber()
+      const details = await getAdminDetails()
+      const phone = details.number
 
+      
       const message =
         `🛒 *NEW ORDER RECEIVED*\n\n` +
         `📌 Basket ID: ${basket.id}\n\n` +

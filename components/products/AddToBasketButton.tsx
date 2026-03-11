@@ -78,7 +78,7 @@ export default function AddToBasketButton({
             ? 'bg-green-600 text-white shadow-[0_0_15px_rgba(34,197,94,0.5)]'
             : isInBasket
               ? 'bg-[#D4AF37] hover:bg-[#B8960F] text-gray-900'
-              : 'bg-[#7A1E2C] hover:bg-[#5A1620] text-white'
+              : 'bg-(--emerald-dark) hover:bg-[#5A1620] text-white'
           }
           disabled:bg-gray-400 disabled:cursor-not-allowed
           transform hover:scale-105 active:scale-95

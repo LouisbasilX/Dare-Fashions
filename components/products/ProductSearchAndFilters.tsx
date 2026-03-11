@@ -254,7 +254,7 @@ function FilterPanelContent({
           onClick={onApply}
           disabled={isPending}
           className="group relative px-8 py-2.5 text-sm font-bold rounded-xl overflow-hidden text-white transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-[0_4px_20px_rgba(122,30,44,0.4)] disabled:opacity-70 disabled:cursor-wait min-w-[120px]"
-          style={{ background: 'linear-gradient(135deg, #9A2E40 0%, #7A1E2C 100%)' }}
+         style={{ background: 'linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%)' }}
         >
           {!isPending && (
             <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />

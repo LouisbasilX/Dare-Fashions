@@ -175,7 +175,7 @@ export default function DownloadOrdersPDF({ orders }: { orders: Order[] }) {
   return (
     <button
       onClick={generatePDF}
-      className="bg-(--burgundy-dark) text-white px-4 py-2 rounded hover:bg-(--burgundy)"
+      className="bg-(--emerald-dark) text-white px-4 py-2 rounded hover:bg-(--burgundy)"
     >
       Download Detailed PDF Report
     </button>
